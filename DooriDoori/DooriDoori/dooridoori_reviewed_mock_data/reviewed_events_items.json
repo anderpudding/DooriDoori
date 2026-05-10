@@ -1,0 +1,564 @@
+[
+  {
+    "id": "event_001",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Vancouver Korean Foodie Meetup",
+    "nameKr": "밴쿠버 한식 미식 모임",
+    "description": "Vancouver에서 한식 좋아하는 사람들이 매달 모이는 친목 모임. 매번 다른 한식당에서 함께 식사하며 음식 이야기와 일상 공유. 현지인·한인·교포 누구나 환영하는 캐주얼한 분위기.",
+    "city": "Coquitlam",
+    "district": "Coquitlam",
+    "address": "Coquitlam 한식당 (매월 변경)",
+    "coordinates": {
+      "lat": 49.2812,
+      "lng": -122.8047
+    },
+    "imageURL": "/mockup/images/event_001.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "casual",
+      "korean-community",
+      "expat-friendly",
+      "group-friendly"
+    ],
+    "koreanRelevanceTags": [
+      "korean-community",
+      "korean-friendly",
+      "expat-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-24T18:30",
+      "endDateTime": "2026-05-24T21:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 2,
+      "learning_value": 2
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.47,
+    "freshnessScore": 0.81,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Vancouver Korean Foodie Group",
+      "attendanceEstimate": 25
+    }
+  },
+  {
+    "id": "event_002",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Language Exchange Night at Ironworks",
+    "nameKr": "아이언웍스 언어 교환 나잇",
+    "description": "Gastown 펍에서 매주 목요일 진행되는 언어 교환 모임. 영어·한국어·일본어·스페인어 테이블 운영. 음료 한잔 하면서 자연스럽게 대화하는 형식. 신청 없이 그냥 와도 OK.",
+    "city": "Vancouver",
+    "district": "Gastown",
+    "address": "235 Alexander St, Vancouver, BC V6A 1B5",
+    "coordinates": {
+      "lat": 49.2842,
+      "lng": -123.1003
+    },
+    "imageURL": "/mockup/images/event_002.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "casual",
+      "expat-friendly",
+      "after-work",
+      "alcohol-served"
+    ],
+    "koreanRelevanceTags": [
+      "korean-community",
+      "korean-friendly",
+      "expat-friendly",
+      "language-exchange",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-21T19:00",
+      "endDateTime": "2026-05-21T22:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 2.5,
+      "learning_value": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.85,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Vancouver Language Exchange",
+      "attendanceEstimate": 60
+    }
+  },
+  {
+    "id": "event_003",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Sunset Picnic at Spanish Banks",
+    "nameKr": "스패니쉬 뱅크 선셋 피크닉",
+    "description": "Spanish Banks Beach에서 매달 보름달 시기에 열리는 캐주얼 피크닉. 각자 음식 가져와서 노을 보며 이야기 나누는 자유로운 분위기. 처음 온 사람도 환영하는 newcomer-friendly 모임.",
+    "city": "Vancouver",
+    "district": "West Point Grey",
+    "address": "Spanish Banks Beach, Vancouver, BC",
+    "coordinates": {
+      "lat": 49.2766,
+      "lng": -123.2031
+    },
+    "imageURL": "/mockup/images/event_003.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "casual",
+      "outdoor",
+      "newcomer-friendly",
+      "free-entry"
+    ],
+    "koreanRelevanceTags": [
+      "newcomer-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-08T19:00",
+      "endDateTime": "2026-06-08T22:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 2,
+      "learning_value": 1
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.4,
+    "freshnessScore": 0.61,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Vancouver Newcomers Circle",
+      "attendanceEstimate": 30
+    }
+  },
+  {
+    "id": "event_004",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "Vancouver Tech Summit 2026",
+    "nameKr": "밴쿠버 테크 서밋 2026",
+    "description": "Vancouver Convention Centre에서 열리는 BC 최대 규모 테크 컨퍼런스. AI·핀테크·SaaS 트렌드 발표와 1,500+ 참가자 네트워킹 세션. 키노트는 글로벌 테크 기업 임원진.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "1055 Canada Pl, Vancouver, BC V6C 0C3",
+    "coordinates": {
+      "lat": 49.2891,
+      "lng": -123.1167
+    },
+    "imageURL": "/mockup/images/event_004.jpg",
+    "priceTier": "$$$$",
+    "priceLevel": 4,
+    "vibeTags": [
+      "formal",
+      "networking-heavy",
+      "learning-heavy",
+      "ticket-required"
+    ],
+    "koreanRelevanceTags": [
+      "career-useful",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-15T09:00",
+      "endDateTime": "2026-06-16T18:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "size": 5,
+      "learning_value": 4.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.83,
+    "freshnessScore": 0.57,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "BC Tech Association",
+      "attendanceEstimate": 1500
+    }
+  },
+  {
+    "id": "event_005",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "Data Career Workshop for Newcomers",
+    "nameKr": "이민자 대상 데이터 커리어 워크숍",
+    "description": "Vancouver Public Library에서 열리는 무료 워크숍. 캐나다 데이터 직군 취업 가이드, 이력서 리뷰, 1:1 멘토링 세션 포함. 신규 이민자와 유학생 대상으로 한국·중국·인도 출신 멘토 다수 참여.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "350 W Georgia St, Vancouver, BC V6B 6B1",
+    "coordinates": {
+      "lat": 49.279,
+      "lng": -123.1158
+    },
+    "imageURL": "/mockup/images/event_005.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "learning-heavy",
+      "newcomer-friendly",
+      "free-entry",
+      "career-focused"
+    ],
+    "koreanRelevanceTags": [
+      "korean-community",
+      "korean-friendly",
+      "newcomer-friendly",
+      "career-useful",
+      "student-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T13:00",
+      "endDateTime": "2026-05-30T17:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2,
+      "size": 3,
+      "learning_value": 5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.6,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "Vancouver Data Professionals Network",
+      "attendanceEstimate": 80
+    }
+  },
+  {
+    "id": "event_006",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "Startup Founders After-Work Drinks",
+    "nameKr": "스타트업 파운더 애프터워크 드링크",
+    "description": "Yaletown 루프탑 바에서 매달 진행되는 스타트업 창업자·투자자 네트워킹 모임. 격식 없는 분위기에서 비즈니스 카드 교환과 자연스러운 대화. 초대 기반이지만 LinkedIn 신청 가능.",
+    "city": "Vancouver",
+    "district": "Yaletown",
+    "address": "1112 Hamilton St (Rooftop), Vancouver, BC",
+    "coordinates": {
+      "lat": 49.2756,
+      "lng": -123.1219
+    },
+    "imageURL": "/mockup/images/event_006.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "networking-heavy",
+      "after-work",
+      "casual",
+      "alcohol-served"
+    ],
+    "koreanRelevanceTags": [
+      "career-useful",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-29T18:30",
+      "endDateTime": "2026-05-29T21:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 2.5,
+      "learning_value": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.54,
+    "freshnessScore": 0.74,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "BC Founders Circle",
+      "attendanceEstimate": 50
+    }
+  },
+  {
+    "id": "event_007",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "BC Tech Job Fair Spring 2026",
+    "nameKr": "BC 테크 잡 페어 스프링 2026",
+    "description": "SFU Burnaby 캠퍼스에서 진행되는 봄철 잡 페어. 60+ BC 테크 기업 부스 운영, 현장 면접 가능. 신입·주니어 포지션 위주이며, 워크 비자·LMIA 지원 가능 기업이 별도 표시됨.",
+    "city": "Burnaby",
+    "district": "Burnaby",
+    "address": "8888 University Dr, Burnaby, BC V5A 1S6",
+    "coordinates": {
+      "lat": 49.2781,
+      "lng": -122.9199
+    },
+    "imageURL": "/mockup/images/event_007.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "formal",
+      "career-focused",
+      "newcomer-friendly",
+      "free-entry"
+    ],
+    "koreanRelevanceTags": [
+      "newcomer-friendly",
+      "career-useful",
+      "student-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-17T10:00",
+      "endDateTime": "2026-05-17T16:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2,
+      "size": 4.5,
+      "learning_value": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.74,
+    "freshnessScore": 1.0,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "BC Tech Association",
+      "attendanceEstimate": 800
+    }
+  },
+  {
+    "id": "event_008",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "DOXA Documentary Film Festival",
+    "nameKr": "DOXA 다큐멘터리 영화제",
+    "description": "Vancouver의 대표 다큐멘터리 영화제. 매년 5월 SFU Goldcorp Centre, Vancity Theatre 등 여러 극장에서 진행. 글로벌 다큐 80+편 상영, 감독과의 Q&A 세션 다수.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "149 W Hastings St, Vancouver, BC V6B 1H4",
+    "coordinates": {
+      "lat": 49.2823,
+      "lng": -123.1085
+    },
+    "imageURL": "/mockup/images/event_008.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "formal",
+      "ticket-required",
+      "learning-heavy",
+      "indoor"
+    ],
+    "koreanRelevanceTags": [
+      "student-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-08T18:00",
+      "endDateTime": "2026-05-18T22:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "size": 4,
+      "learning_value": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.83,
+    "freshnessScore": 0.1,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "DOXA Documentary Film Festival Society",
+      "attendanceEstimate": 5000
+    }
+  },
+  {
+    "id": "event_009",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Emerging Artists Gallery Opening",
+    "nameKr": "신진 작가 갤러리 오프닝",
+    "description": "Granville Island의 작은 갤러리에서 열리는 신진 캐나다 작가 단체전 오프닝 리셉션. 작가 본인이 직접 작품 설명, 와인 서비스 제공. 미술 컬렉터와 학생 모두 환영하는 따뜻한 분위기.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1551 Johnston St, Vancouver, BC V6H 3R9",
+    "coordinates": {
+      "lat": 49.2715,
+      "lng": -123.1349
+    },
+    "imageURL": "/mockup/images/event_009.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "formal",
+      "free-entry",
+      "alcohol-served",
+      "indoor"
+    ],
+    "koreanRelevanceTags": [
+      "student-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-23T18:00",
+      "endDateTime": "2026-05-23T21:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2,
+      "size": 1.5,
+      "learning_value": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.46,
+    "freshnessScore": 0.82,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "Granville Island Art Collective",
+      "attendanceEstimate": 60
+    }
+  },
+  {
+    "id": "event_010",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Korean Indie Band Showcase",
+    "nameKr": "한국 인디 밴드 쇼케이스",
+    "description": "Fortune Sound Club에서 진행되는 한국 인디 밴드 4팀의 캐나다 투어 쇼케이스. 록·신스팝·인디 포크 장르 다양. 한국 음악 팬과 현지 인디 씬 마니아가 함께 모이는 자리.",
+    "city": "Vancouver",
+    "district": "Chinatown",
+    "address": "147 E Pender St, Vancouver, BC V6A 1T5",
+    "coordinates": {
+      "lat": 49.281,
+      "lng": -123.1015
+    },
+    "imageURL": "/mockup/images/event_010.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "lively",
+      "korean-community",
+      "ticket-required",
+      "alcohol-served"
+    ],
+    "koreanRelevanceTags": [
+      "korean-community",
+      "korean-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-21T20:00",
+      "endDateTime": "2026-06-21T23:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "size": 2.5,
+      "learning_value": 1.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.59,
+    "freshnessScore": 0.55,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "Fortune Sound Club",
+      "attendanceEstimate": 200
+    }
+  }
+]
