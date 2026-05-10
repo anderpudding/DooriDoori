@@ -1,0 +1,558 @@
+[
+  {
+    "id": "lifestyle_001",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_venue",
+    "subcategoryDisplayKr": "스포츠 장소",
+    "nameEn": "Hive Climbing",
+    "nameKr": "하이브 클라이밍",
+    "description": "North Vancouver의 대형 볼더링·로프 클라이밍 짐. 초보자 대상 입문 클래스부터 상급자 코스까지 운영. 매주 새로운 루트 셋팅으로 단골들의 도전 욕구 자극. 평일 저녁과 주말은 만석.",
+    "city": "North Vancouver",
+    "district": "North Vancouver",
+    "address": "127 E 2nd St, North Vancouver, BC V7L 1C1",
+    "coordinates": {
+      "lat": 49.3181,
+      "lng": -123.0728
+    },
+    "imageURL": "/mockup/images/lifestyle_001.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "active",
+      "indoor",
+      "beginner-friendly",
+      "group-required"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:00-23:00, Sat-Sun 8:00-22:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "engagement": 5,
+      "production": 4,
+      "energy": 5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.9,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "sport_venue",
+      "isRecurring": true,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_002",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_venue",
+    "subcategoryDisplayKr": "스포츠 장소",
+    "nameEn": "Kits Pool",
+    "nameKr": "키츠 풀",
+    "description": "Kitsilano Beach 옆 야외 수영장. 캐나다에서 가장 긴 137m 풀로 유명. 5월부터 9월까지 시즌 오픈. 바다 전망과 함께 수영하는 경험으로 현지인과 관광객 모두에게 인기.",
+    "city": "Vancouver",
+    "district": "Kitsilano",
+    "address": "2305 Cornwall Ave, Vancouver, BC V6K 1B5",
+    "coordinates": {
+      "lat": 49.2729,
+      "lng": -123.1606
+    },
+    "imageURL": "/mockup/images/lifestyle_002.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "outdoor",
+      "seasonal",
+      "beginner-friendly",
+      "family-event"
+    ],
+    "koreanRelevanceTags": [
+      "family-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 7:00-20:45 (May-Sep only)",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "engagement": 4,
+      "production": 4,
+      "energy": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.75,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "sport_venue",
+      "isRecurring": true,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_003",
+    "type": "event",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_meetup",
+    "subcategoryDisplayKr": "스포츠 모임",
+    "nameEn": "Stanley Park Sunrise Runners",
+    "nameKr": "스탠리 파크 선라이즈 러너",
+    "description": "매주 화·목 아침 6시 30분 Stanley Park Seawall에서 만나 함께 달리는 러닝 크루. 5km·10km 두 그룹으로 나뉘어 진행. 운동 후 근처 카페에서 함께 커피. 초보 러너도 환영.",
+    "city": "Vancouver",
+    "district": "Stanley Park",
+    "address": "Stanley Park Seawall (Lost Lagoon entrance), Vancouver, BC",
+    "coordinates": {
+      "lat": 49.3043,
+      "lng": -123.1443
+    },
+    "imageURL": "/mockup/images/lifestyle_003.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "active",
+      "outdoor",
+      "group-required",
+      "newcomer-friendly"
+    ],
+    "koreanRelevanceTags": [
+      "newcomer-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Tue, Thu 6:30-8:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "engagement": 5,
+      "production": 2,
+      "energy": 5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.75,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "sport_meetup",
+      "isRecurring": true,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_004",
+    "type": "event",
+    "category": "lifestyle",
+    "subcategoryContent": "sports_schedule",
+    "subcategoryDisplayKr": "경기일정",
+    "nameEn": "Canucks vs Maple Leafs",
+    "nameKr": "캐넉스 vs 메이플 리프스",
+    "description": "Rogers Arena에서 열리는 NHL 정규시즌 라이벌전. Vancouver Canucks와 Toronto Maple Leafs의 빅매치. 18,000석 매진 예상. 응원 분위기 절정의 캐나다 아이스하키 문화 경험 가능.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "800 Griffiths Way, Vancouver, BC V6B 6G1",
+    "coordinates": {
+      "lat": 49.2778,
+      "lng": -123.1089
+    },
+    "imageURL": "/mockup/images/lifestyle_004.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "lively",
+      "indoor",
+      "ticket-required",
+      "group-friendly"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-12T19:00",
+      "endDateTime": "2026-06-12T22:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 5,
+      "engagement": 2,
+      "production": 5,
+      "energy": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.75,
+    "freshnessScore": 0.59,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "sports_schedule",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_005",
+    "type": "event",
+    "category": "lifestyle",
+    "subcategoryContent": "festival",
+    "subcategoryDisplayKr": "페스티벌",
+    "nameEn": "Vancouver International Jazz Festival",
+    "nameKr": "밴쿠버 인터내셔널 재즈 페스티벌",
+    "description": "매년 6~7월 Vancouver 곳곳에서 열리는 도시 최대 음악 페스티벌. 무료 야외 공연부터 유료 클럽 공연까지 다양. 글로벌 재즈 아티스트 200+팀 참여. 10일간 진행되며 메인 무대는 David Lam Park.",
+    "city": "Vancouver",
+    "district": "Yaletown",
+    "address": "1300 Pacific Blvd, Vancouver, BC V6Z 2Y4",
+    "coordinates": {
+      "lat": 49.2727,
+      "lng": -123.1207
+    },
+    "imageURL": "/mockup/images/lifestyle_005.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "lively",
+      "outdoor",
+      "seasonal",
+      "free-entry"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-19T17:00",
+      "endDateTime": "2026-06-28T23:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "engagement": 2.5,
+      "production": 5,
+      "energy": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.75,
+    "freshnessScore": 0.56,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "festival",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_006",
+    "type": "event",
+    "category": "lifestyle",
+    "subcategoryContent": "festival",
+    "subcategoryDisplayKr": "페스티벌",
+    "nameEn": "Coquitlam Korean Cultural Festival",
+    "nameKr": "코퀴틀람 한국 문화 페스티벌",
+    "description": "매년 6월 Town Centre Park에서 열리는 한인 커뮤니티 주최 문화 페스티벌. K-pop 댄스 공연, 전통 음식 부스, 한복 체험존, 한식 푸드트럭 다수. 가족 단위 한인과 현지인 모두 참여하는 캐주얼 분위기.",
+    "city": "Coquitlam",
+    "district": "Coquitlam",
+    "address": "1299 Pinetree Way, Coquitlam, BC V3B 7Y3",
+    "coordinates": {
+      "lat": 49.2841,
+      "lng": -122.7959
+    },
+    "imageURL": "/mockup/images/lifestyle_006.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "family-event",
+      "outdoor",
+      "korean-community",
+      "free-entry"
+    ],
+    "koreanRelevanceTags": [
+      "korean-community",
+      "korean-friendly",
+      "family-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-14T11:00",
+      "endDateTime": "2026-06-14T20:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "engagement": 3,
+      "production": 3.5,
+      "energy": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.68,
+    "freshnessScore": 0.58,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "festival",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_007",
+    "type": "event",
+    "category": "lifestyle",
+    "subcategoryContent": "concert",
+    "subcategoryDisplayKr": "콘서트",
+    "nameEn": "Maggie Rogers Live at Orpheum",
+    "nameKr": "매기 로저스 라이브 앳 오르피움",
+    "description": "Orpheum Theatre에서 열리는 Maggie Rogers의 캐나다 투어 단독 공연. 1920년대 빈티지 극장의 고풍스러운 인테리어와 어쿠스틱 사운드 시스템. 인디 팝·포크 팬 사이에서 화제. 전석 지정.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "601 Smithe St, Vancouver, BC V6B 5G1",
+    "coordinates": {
+      "lat": 49.281,
+      "lng": -123.1218
+    },
+    "imageURL": "/mockup/images/lifestyle_007.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "lively",
+      "indoor",
+      "ticket-required",
+      "vintage"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-25T20:00",
+      "endDateTime": "2026-05-25T23:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "engagement": 2,
+      "production": 4.5,
+      "energy": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.68,
+    "freshnessScore": 0.8,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "concert",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_008",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "nature",
+    "subcategoryDisplayKr": "자연",
+    "nameEn": "Lighthouse Park",
+    "nameKr": "라이트하우스 파크",
+    "description": "West Vancouver 끝자락의 75만 평방미터 자연 보호 공원. 오래된 수목과 태평양을 한눈에 보는 트레일이 여러 갈래. Point Atkinson 등대가 시그니처 포인트. 차분한 산책에 적합.",
+    "city": "West Vancouver",
+    "district": "West Vancouver",
+    "address": "Beacon Ln, West Vancouver, BC V7W 1K6",
+    "coordinates": {
+      "lat": 49.3326,
+      "lng": -123.2616
+    },
+    "imageURL": "/mockup/images/lifestyle_008.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "outdoor",
+      "nature-immersive",
+      "free-entry",
+      "solo-friendly"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "always_open",
+      "openingHours": null,
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 1.5,
+      "engagement": 3,
+      "production": 2,
+      "energy": 3.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "nature",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_009",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "nature",
+    "subcategoryDisplayKr": "자연",
+    "nameEn": "Quarry Rock Trail",
+    "nameKr": "쿼리 락 트레일",
+    "description": "Deep Cove에서 시작하는 왕복 4km 등산 트레일. 정상에서는 Indian Arm 협만의 절경. 중급 난이도로 1.5~2시간 소요. 등산 후 Deep Cove 마을의 도넛 가게 Honey Doughnuts가 단골 코스.",
+    "city": "North Vancouver",
+    "district": "North Vancouver",
+    "address": "Panorama Dr, North Vancouver, BC",
+    "coordinates": {
+      "lat": 49.3286,
+      "lng": -122.9509
+    },
+    "imageURL": "/mockup/images/lifestyle_009.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "outdoor",
+      "nature-immersive",
+      "active",
+      "free-entry"
+    ],
+    "koreanRelevanceTags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "always_open",
+      "openingHours": null,
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 2,
+      "engagement": 4.5,
+      "production": 1.5,
+      "energy": 4.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.62,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "nature",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  },
+  {
+    "id": "lifestyle_010",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "culture",
+    "subcategoryDisplayKr": "문화",
+    "nameEn": "Museum of Anthropology at UBC",
+    "nameKr": "UBC 인류학 박물관",
+    "description": "UBC 캠퍼스 내 위치한 국제적 명성의 인류학 박물관. First Nations 문화 컬렉션과 글로벌 토착민 예술 전시. 건축물 자체도 명작으로 꼽히며 영화 촬영지로도 자주 사용됨.",
+    "city": "Vancouver",
+    "district": "UBC",
+    "address": "6393 NW Marine Dr, Vancouver, BC V6T 1Z2",
+    "coordinates": {
+      "lat": 49.2696,
+      "lng": -123.2589
+    },
+    "imageURL": "/mockup/images/lifestyle_010.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "indoor",
+      "learning-heavy",
+      "solo-friendly",
+      "instagrammable"
+    ],
+    "koreanRelevanceTags": [
+      "student-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Tue-Sun 10:00-17:00, Closed Mon",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 1.5,
+      "engagement": 2,
+      "production": 4.5,
+      "energy": 2
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "lifestyleSubtype": "culture",
+      "isRecurring": false,
+      "requiresMembership": false
+    }
+  }
+]
