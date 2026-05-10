@@ -1,24 +1,19 @@
 import SwiftUI
 
 struct RecentlyViewedCard: View {
-    let item: FeedItem
+    let item: ContentItem
 
     var body: some View {
         HStack(spacing: 12) {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(DooriStyle.softGray)
-                .frame(width: 74, height: 74)
-                .overlay {
-                    Image(systemName: item.category.symbolName)
-                        .foregroundStyle(DooriStyle.accent)
-                }
+            ContentImageView(item: item, height: 74, cornerRadius: 10)
+                .frame(width: 74)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(item.name)
+                Text(item.title)
                     .font(.system(size: 18, weight: .heavy))
                     .foregroundStyle(DooriStyle.ink)
                     .lineLimit(1)
-                Text(item.category.title)
+                Text(item.category.titleKr)
                     .font(.system(size: 12, weight: .bold, design: .monospaced))
                     .foregroundStyle(DooriStyle.accent)
                 Text(item.city)
@@ -29,9 +24,9 @@ struct RecentlyViewedCard: View {
             Spacer()
         }
         .padding(12)
-        .background(.white, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .stroke(DooriStyle.line, lineWidth: 1)
         )
     }

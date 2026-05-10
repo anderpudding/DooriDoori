@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NearYouBottomSheet: View {
-    let items: [FeedItem]
+    let items: [ContentItem]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -22,16 +22,11 @@ struct NearYouBottomSheet: View {
             VStack(spacing: 12) {
                 ForEach(items.prefix(3)) { item in
                     HStack(spacing: 12) {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .fill(DooriStyle.softGray)
-                            .frame(width: 74, height: 74)
-                            .overlay {
-                                Image(systemName: item.category.symbolName)
-                                    .foregroundStyle(DooriStyle.accent)
-                            }
+                        ContentImageView(item: item, height: 74, cornerRadius: 10)
+                            .frame(width: 74)
 
                         VStack(alignment: .leading, spacing: 6) {
-                            Text(item.name)
+                            Text(item.title)
                                 .font(.system(size: 17, weight: .heavy))
                                 .foregroundStyle(DooriStyle.ink)
                                 .lineLimit(1)
@@ -39,16 +34,16 @@ struct NearYouBottomSheet: View {
                                 .font(.system(size: 12, weight: .semibold))
                                 .foregroundStyle(DooriStyle.muted)
                                 .lineLimit(1)
-                            Text("0.\(items.firstIndex(of: item) ?? 2 + 4) km away")
+                            Text("0.\((items.firstIndex(of: item) ?? 2) + 4) km away")
                                 .font(.system(size: 12, weight: .bold, design: .monospaced))
                                 .foregroundStyle(DooriStyle.accent)
                         }
                         Spacer()
                     }
                     .padding(10)
-                    .background(.white, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .overlay(
-                        RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke(DooriStyle.line, lineWidth: 1)
                     )
                 }

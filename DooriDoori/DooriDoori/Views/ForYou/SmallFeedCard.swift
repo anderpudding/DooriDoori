@@ -1,56 +1,57 @@
 import SwiftUI
 
 struct SmallFeedCard: View {
-    let item: FeedItem
+    let rankedItem: RankedContentItem
+    let isSaved: Bool
+    let onToggleSaved: () -> Void
     let onTap: () -> Void
+
+    private var item: ContentItem { rankedItem.item }
 
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 14) {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(DooriStyle.softGray)
-                    .frame(width: 92, height: 92)
-                    .overlay {
-                        Image(systemName: item.category.symbolName)
-                            .font(.system(size: 26, weight: .semibold))
+            VStack(alignment: .leading, spacing: 9) {
+                ContentImageView(item: item, height: 92, cornerRadius: 10)
+
+                HStack(alignment: .top, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(item.category.titleKr)
+                            .font(.system(size: 11, weight: .semibold, design: .monospaced))
                             .foregroundStyle(DooriStyle.accent)
+
+                        Text(item.title)
+                            .font(.system(size: 16, weight: .black))
+                            .foregroundStyle(.black)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.75)
+
+                        Text(item.district)
+                            .font(.system(size: 12, weight: .medium, design: .monospaced))
+                            .foregroundStyle(Color.black.opacity(0.62))
+
+                        Text(item.priceTier)
+                            .font(.system(size: 12, weight: .medium, design: .monospaced))
+                            .foregroundStyle(Color.black.opacity(0.62))
                     }
 
-                VStack(alignment: .leading, spacing: 7) {
-                    Text(item.category.title)
-                        .font(.system(size: 11, weight: .bold, design: .monospaced))
-                        .foregroundStyle(DooriStyle.accent)
+                    Spacer(minLength: 0)
 
-                    Text(item.name)
-                        .font(.system(size: 19, weight: .heavy))
-                        .foregroundStyle(DooriStyle.ink)
-                        .lineLimit(1)
-
-                    Text(item.address)
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(DooriStyle.muted)
-                        .lineLimit(2)
-
-                    HStack(spacing: 8) {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 12, weight: .bold))
+                    Button(action: onToggleSaved) {
+                        Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                            .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(DooriStyle.accent)
-                        Text(String(format: "%.1f", item.rating))
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundStyle(DooriStyle.ink)
-                        Text(item.budgetLabel)
-                            .font(.system(size: 13, weight: .semibold))
-                            .foregroundStyle(DooriStyle.muted)
+                            .frame(width: 28, height: 28)
                     }
+                    .buttonStyle(.plain)
                 }
-
-                Spacer(minLength: 0)
             }
-            .padding(12)
-            .background(.white, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+            .padding(10)
+            .frame(width: 172, alignment: .topLeading)
+            .frame(minHeight: 204, alignment: .topLeading)
+            .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .stroke(DooriStyle.line, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color.black, lineWidth: 1)
             )
         }
         .buttonStyle(.plain)

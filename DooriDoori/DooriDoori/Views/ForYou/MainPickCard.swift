@@ -1,26 +1,18 @@
 import SwiftUI
 
 struct MainPickCard: View {
-    let item: FeedItem
+    let rankedItem: RankedContentItem
+    let isSaved: Bool
+    let onToggleSaved: () -> Void
     let onTap: () -> Void
 
+    private var item: ContentItem { rankedItem.item }
+
     var body: some View {
-        Button(action: onTap) {
-            VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
+            Button(action: onTap) {
                 ZStack(alignment: .topLeading) {
-                    Image(item.imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 227)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(
-                            LinearGradient(
-                                colors: [.clear, .white.opacity(0.66)],
-                                startPoint: .center,
-                                endPoint: .bottom
-                            )
-                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        )
+                    ContentImageView(item: item, height: 233, cornerRadius: 10)
 
                     HStack(spacing: 5) {
                         Image(systemName: "sparkle")
@@ -28,61 +20,80 @@ struct MainPickCard: View {
                         Text("AI 픽")
                             .font(.system(size: 13, weight: .medium, design: .monospaced))
                     }
-                    .foregroundStyle(DooriStyle.ink)
-                    .padding(.horizontal, 10)
+                    .foregroundStyle(Color.black)
+                    .padding(.horizontal, 11)
                     .frame(height: 25)
                     .background(.white, in: Capsule())
                     .padding(.leading, 18)
                     .padding(.top, 16)
+                }
+            }
+            .buttonStyle(.plain)
 
-                    HStack(spacing: 10) {
-                        IconCircleButton(symbolName: "hand.thumbsup.fill", foreground: DooriStyle.accent, background: .white.opacity(0.94), size: 38) {}
-                        IconCircleButton(symbolName: "hand.thumbsdown", foreground: DooriStyle.ink, background: .white.opacity(0.94), size: 38) {}
+            VStack(alignment: .leading, spacing: 7) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(item.category.titleKr)
+                        .font(.system(size: 13, weight: .medium, design: .monospaced))
+                        .foregroundStyle(DooriStyle.accent)
+
+                    Spacer()
+
+                    Button(action: onToggleSaved) {
+                        Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                            .font(.system(size: 19, weight: .semibold))
+                            .foregroundStyle(DooriStyle.accent)
+                            .frame(width: 38, height: 38)
+                            .background(.white, in: Circle())
+                            .overlay(Circle().stroke(Color.black, lineWidth: 1))
                     }
-                    .padding(14)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(isSaved ? "Unsave item" : "Save item")
                 }
 
-                VStack(alignment: .leading, spacing: 7) {
-                    Text(item.category.title)
-                        .font(.system(size: 13, weight: .medium, design: .monospaced))
-                        .foregroundStyle(DooriStyle.accentSoft)
+                Text(item.title)
+                    .font(.system(size: 25, weight: .black))
+                    .foregroundStyle(.black)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
 
-                    Text(item.name)
-                        .font(.system(size: 25, weight: .heavy))
-                        .foregroundStyle(DooriStyle.ink)
-                        .tracking(0.5)
+                if let nameKr = item.nameKr, !nameKr.isEmpty {
+                    Text(nameKr)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(DooriStyle.accent)
+                }
 
-                    Label(item.address, systemImage: "location")
-                        .font(.system(size: 13, weight: .regular, design: .monospaced))
-                        .foregroundStyle(Color.black.opacity(0.54))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
+                Label(item.address, systemImage: "location")
+                    .font(.system(size: 13, weight: .regular, design: .monospaced))
+                    .foregroundStyle(Color.black.opacity(0.76))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
 
-                    Label(item.budgetLabel, systemImage: "dollarsign")
-                        .font(.system(size: 13, weight: .regular, design: .monospaced))
-                        .foregroundStyle(Color.black.opacity(0.54))
+                Label(item.priceTier, systemImage: "dollarsign")
+                    .font(.system(size: 13, weight: .regular, design: .monospaced))
+                    .foregroundStyle(Color.black.opacity(0.76))
 
-                    HStack(spacing: 8) {
+                Button(action: onTap) {
+                    HStack(alignment: .top, spacing: 8) {
                         Image(systemName: "sparkle")
                             .font(.system(size: 12, weight: .bold))
-                        Text(item.recommendationReason)
-                            .font(.system(size: 12, weight: .regular))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
+                            .padding(.top, 2)
+                        Text(rankedItem.reason)
+                            .font(.system(size: 13, weight: .medium, design: .monospaced))
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
                     }
-                    .foregroundStyle(DooriStyle.accent)
-                    .frame(maxWidth: .infinity, minHeight: 50)
-                    .padding(.horizontal, 14)
+                    .foregroundStyle(DooriStyle.ink)
+                    .frame(maxWidth: .infinity, minHeight: 63, alignment: .leading)
+                    .padding(.horizontal, 16)
                     .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(Color.black.opacity(0.1), lineWidth: 1)
+                            .stroke(Color.black, lineWidth: 1)
                     )
                     .padding(.top, 8)
                 }
+                .buttonStyle(.plain)
             }
         }
-        .buttonStyle(.plain)
     }
 }

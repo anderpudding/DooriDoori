@@ -17,7 +17,7 @@ enum MainTab: String, CaseIterable, Identifiable {
 }
 
 enum MainRoute: Hashable {
-    case detail(FeedItem)
+    case detail(ContentItem)
     case nearYou
 }
 
@@ -51,7 +51,13 @@ struct MainTabView: View {
             .navigationDestination(for: MainRoute.self) { route in
                 switch route {
                 case .detail(let item):
-                    FeedDetailView(item: item)
+                    FeedDetailView(
+                        item: item,
+                        reason: recommendations.reason(for: item),
+                        isSaved: recommendations.isSaved(item)
+                    ) {
+                        recommendations.toggleSaved(item)
+                    }
                 case .nearYou:
                     NearYouView(items: recommendations.items)
                 }

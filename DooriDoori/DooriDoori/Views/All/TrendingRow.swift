@@ -2,17 +2,17 @@ import SwiftUI
 
 struct TrendingRow: View {
     let rank: Int
-    let item: FeedItem
+    let item: ContentItem
 
     var body: some View {
         HStack(spacing: 16) {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(DooriStyle.softGray)
-                .frame(width: 149, height: 106)
+            ContentImageView(item: item, height: 106, cornerRadius: 10)
+                .frame(width: 149)
 
             HStack(spacing: 12) {
                 Text("#\(rank)")
-                Text("Name")
+                Text(item.title)
+                    .lineLimit(1)
             }
             .font(.system(size: 15, weight: .regular, design: .monospaced))
             .foregroundStyle(DooriStyle.ink)
