@@ -3,7 +3,10 @@ import SwiftUI
 struct FeedDetailView: View {
     @Environment(\.dismiss) private var dismiss
 
-    let item: FeedItem
+    let item: ContentItem
+    let reason: String
+    let isSaved: Bool
+    let onToggleSaved: () -> Void
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -11,121 +14,130 @@ struct FeedDetailView: View {
                 topImage
 
                 VStack(alignment: .leading, spacing: 18) {
-                    Text(item.category.title)
-                        .font(.system(size: 13, weight: .bold, design: .monospaced))
-                        .foregroundStyle(DooriStyle.accent)
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(item.category.titleKr)
+                            .font(.system(size: 13, weight: .medium, design: .monospaced))
+                            .foregroundStyle(DooriStyle.accent)
 
-                    Text(item.name)
-                        .font(.system(size: 38, weight: .heavy))
-                        .foregroundStyle(DooriStyle.ink)
+                        Spacer()
 
-                    Label(item.address, systemImage: "location")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(DooriStyle.muted)
-
-                    Label(item.budgetLabel, systemImage: "wallet.pass")
-                        .font(.system(size: 15, weight: .bold))
-                        .foregroundStyle(DooriStyle.ink)
-
-                    Divider()
-                        .padding(.vertical, 6)
-
-                    Text("Reviews")
-                        .font(.system(size: 24, weight: .heavy))
-                        .foregroundStyle(DooriStyle.ink)
-
-                    HStack(spacing: 10) {
-                        reviewChip("all", selected: true)
-                        reviewChip("korean", selected: false)
-                        reviewChip("local", selected: false)
+                        Button(action: onToggleSaved) {
+                            Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                                .font(.system(size: 21, weight: .semibold))
+                                .foregroundStyle(DooriStyle.accent)
+                                .frame(width: 42, height: 42)
+                                .background(.white, in: Circle())
+                                .overlay(Circle().stroke(Color.black, lineWidth: 1))
+                        }
+                        .buttonStyle(.plain)
                     }
 
-                    reviewPlaceholder
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(item.title)
+                            .font(.system(size: 32, weight: .black))
+                            .foregroundStyle(.black)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.75)
 
-                    PrimaryButton(title: "Visit website", symbolName: "safari") {}
-                        .padding(.top, 8)
+                        if let nameKr = item.nameKr, !nameKr.isEmpty {
+                            Text(nameKr)
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundStyle(DooriStyle.accent)
+                        }
+                    }
+
+                    VStack(alignment: .leading, spacing: 10) {
+                        detailLabel("location", item.address)
+                        detailLabel("mappin.and.ellipse", "\(item.district), \(item.city)")
+                        detailLabel("wallet.pass", item.priceTier)
+                        detailLabel("calendar", item.schedule.displayText)
+                        detailLabel("tray.full", item.sourceType.rawValue.capitalized)
+                        if let rating = item.rating {
+                            detailLabel("star.fill", String(format: "%.1f", rating))
+                        }
+                    }
+
+                    reasonBox
+
+                    Divider().background(Color.black)
+
+                    infoSection(title: item.subcategoryDisplayKr ?? item.subcategoryContent.capitalized) {
+                        Text(item.description)
+                            .font(.system(size: 15, weight: .regular))
+                            .foregroundStyle(Color.black.opacity(0.78))
+                            .lineSpacing(5)
+                    }
+
+                    infoSection(title: "Vibes") {
+                        tagWrap(tags: item.vibeTags)
+                    }
+
+                    infoSection(title: "Korean relevance") {
+                        tagWrap(tags: item.koreanRelevanceTags)
+                    }
                 }
-                .padding(22)
+                .padding(17)
             }
         }
-        .background(Color.white)
+        .background(DooriStyle.canvas)
         .navigationBarBackButtonHidden()
         .ignoresSafeArea(edges: .top)
     }
 
     private var topImage: some View {
         ZStack(alignment: .topLeading) {
-            RoundedRectangle(cornerRadius: 0)
-                .fill(
-                    LinearGradient(
-                        colors: [DooriStyle.warm, Color(red: 0.97, green: 0.72, blue: 0.62)],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .frame(height: 360)
-                .overlay {
-                    Image(systemName: "photo")
-                        .font(.system(size: 50, weight: .light))
-                        .foregroundStyle(.white.opacity(0.8))
-                }
+            ContentImageView(item: item, height: 381, cornerRadius: 0)
 
-            IconCircleButton(symbolName: "chevron.left", background: .white.opacity(0.92), size: 46) {
+            IconCircleButton(symbolName: "chevron.left", background: .white.opacity(0.94), size: 46) {
                 dismiss()
             }
             .padding(.top, 58)
-            .padding(.leading, 20)
-
-            HStack(spacing: 7) {
-                ForEach(0..<3, id: \.self) { index in
-                    Capsule()
-                        .fill(index == 0 ? .white : .white.opacity(0.45))
-                        .frame(width: index == 0 ? 18 : 7, height: 7)
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .padding(.bottom, 20)
+            .padding(.leading, 18)
         }
     }
 
-    private func reviewChip(_ title: String, selected: Bool) -> some View {
-        Text(title)
-            .font(.system(size: 13, weight: .bold, design: .monospaced))
-            .foregroundStyle(selected ? .white : DooriStyle.ink)
-            .padding(.horizontal, 17)
-            .frame(height: 36)
-            .background(selected ? DooriStyle.accent : DooriStyle.softGray, in: Capsule())
+    private var reasonBox: some View {
+        HStack(alignment: .top, spacing: 8) {
+            Image(systemName: "sparkle")
+                .font(.system(size: 13, weight: .bold))
+                .padding(.top, 2)
+            Text(reason)
+                .font(.system(size: 13, weight: .medium, design: .monospaced))
+                .lineSpacing(3)
+        }
+        .foregroundStyle(DooriStyle.ink)
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 1))
     }
 
-    private var reviewPlaceholder: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack {
-                Circle()
-                    .fill(DooriStyle.softGray)
-                    .frame(width: 42, height: 42)
+    private func detailLabel(_ symbol: String, _ text: String) -> some View {
+        Label(text, systemImage: symbol)
+            .font(.system(size: 13, weight: .regular, design: .monospaced))
+            .foregroundStyle(Color.black.opacity(0.76))
+    }
 
-                VStack(alignment: .leading, spacing: 5) {
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(DooriStyle.line)
-                        .frame(width: 112, height: 10)
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(DooriStyle.line.opacity(0.7))
-                        .frame(width: 72, height: 8)
-                }
-                Spacer()
-            }
-
-            Text("한국인 방문자와 로컬 리뷰를 비교해볼 수 있는 리뷰 카드 영역입니다.")
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundStyle(DooriStyle.muted)
-                .lineSpacing(4)
+    private func infoSection<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundStyle(.black)
+            content()
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, minHeight: 150, alignment: .topLeading)
-        .background(.white, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .stroke(DooriStyle.line, lineWidth: 1)
-        )
+    }
+
+    private func tagWrap(tags: [String]) -> some View {
+        FlowLayout(spacing: 8, rowSpacing: 8) {
+            ForEach(tags, id: \.self) { tag in
+                Text(tag)
+                    .font(.system(size: 12, weight: .medium, design: .monospaced))
+                    .foregroundStyle(DooriStyle.accent)
+                    .padding(.horizontal, 10)
+                    .frame(height: 30)
+                    .background(.white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 1))
+            }
+        }
     }
 }

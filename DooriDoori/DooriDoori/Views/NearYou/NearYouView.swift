@@ -3,7 +3,7 @@ import SwiftUI
 struct NearYouView: View {
     @Environment(\.dismiss) private var dismiss
 
-    let items: [FeedItem]
+    let items: [ContentItem]
 
     var body: some View {
         ZStack(alignment: .topLeading) {

@@ -6,14 +6,14 @@ struct CategoryChip: View {
 
     var body: some View {
         Text(title)
-            .font(.system(size: 14, weight: .bold, design: .monospaced))
-            .foregroundStyle(isSelected ? .white : DooriStyle.ink)
-            .padding(.horizontal, 22)
+            .font(.system(size: 13, weight: .medium, design: .monospaced))
+            .foregroundStyle(isSelected ? .white : DooriStyle.accentSoft)
+            .padding(.horizontal, 18)
             .frame(height: 38)
-            .background(isSelected ? DooriStyle.accentSoft : .white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .background(isSelected ? DooriStyle.accent : .white, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(isSelected ? Color.black.opacity(0.24) : Color.black.opacity(0.07), lineWidth: 1)
+                    .stroke(Color.black, lineWidth: 1)
             )
     }
 }

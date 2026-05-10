@@ -16,6 +16,15 @@ struct AccountView: View {
                     }
                 }
 
+                if !viewModel.savedItems.isEmpty {
+                    SectionHeader(title: "Saved")
+                    VStack(spacing: 12) {
+                        ForEach(viewModel.savedItems.prefix(4)) { item in
+                            RecentlyViewedCard(item: item)
+                        }
+                    }
+                }
+
                 SectionHeader(title: "AI Preference")
                 VStack(spacing: 0) {
                     Toggle(isOn: $aiPreferencesEnabled) {
@@ -39,7 +48,7 @@ struct AccountView: View {
                                 Text("Edit preferences")
                                     .font(.system(size: 18, weight: .heavy))
                                     .foregroundStyle(DooriStyle.ink)
-                                Text("Food, events, lifestyle")
+                                Text(viewModel.preference.selectedCategories.joined(separator: ", "))
                                     .font(.system(size: 13, weight: .semibold))
                                     .foregroundStyle(DooriStyle.muted)
                             }
