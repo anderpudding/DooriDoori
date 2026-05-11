@@ -5,8 +5,11 @@ struct FeedDetailView: View {
 
     let item: ContentItem
     let reason: String
-    let isSaved: Bool
-    let onToggleSaved: () -> Void
+    @ObservedObject var savedItemStore: SavedItemStore
+
+    private var isSaved: Bool {
+        savedItemStore.isSaved(item)
+    }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -21,7 +24,9 @@ struct FeedDetailView: View {
 
                         Spacer()
 
-                        Button(action: onToggleSaved) {
+                        Button {
+                            savedItemStore.toggle(item)
+                        } label: {
                             Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
                                 .font(.system(size: 21, weight: .semibold))
                                 .foregroundStyle(DooriStyle.accent)

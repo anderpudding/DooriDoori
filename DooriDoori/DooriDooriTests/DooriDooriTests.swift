@@ -4,11 +4,11 @@ import Testing
 
 struct DooriDooriTests {
     @Test func reviewedSeedDataDecodesAndUsesNormalizedCategories() throws {
-        let data = try Data(contentsOf: reviewedDataURL())
-        let items = try JSONDecoder().decode([ContentItem].self, from: data)
+        let items = try reviewedItems()
 
         #expect(items.count == 30)
         #expect(Set(items.map(\.category.rawValue)) == ["food", "events", "lifestyle"])
+        #expect(items.filter { $0.type == .event }.allSatisfy { $0.category.rawValue != "event" })
         let allItemsAreActive = items.allSatisfy { $0.isActive }
         #expect(allItemsAreActive)
     }
@@ -47,6 +47,64 @@ struct DooriDooriTests {
         #expect(ranked.first?.item.id == "strong")
         #expect((ranked.first?.score ?? 0) > (ranked.last?.score ?? 0))
         #expect(ranked.first?.reason.contains("Coquitlam") == true)
+    }
+
+    @Test func recommendationScenariosUseReviewedSeedData() throws {
+        let service = RecommendationService()
+        let items = try reviewedItems()
+
+        let foodPreference = UserPreference(
+            selectedCategories: ["food"],
+            preferredDistricts: ["Coquitlam"],
+            budgetLevel: 2,
+            vibeTags: ["korean-community", "cozy"],
+            infoNeeds: [],
+            languagePreference: .both,
+            updatedAt: Date()
+        )
+        #expect(service.rankedItems(for: foodPreference, items: items).first?.item.id == "food_001")
+
+        let eventsPreference = UserPreference(
+            selectedCategories: ["events"],
+            preferredDistricts: ["Downtown"],
+            budgetLevel: 4,
+            vibeTags: ["career-focused"],
+            infoNeeds: [],
+            languagePreference: .both,
+            updatedAt: Date()
+        )
+        #expect(service.rankedItems(for: eventsPreference, items: items).first?.item.id == "event_005")
+
+        let lifestylePreference = UserPreference(
+            selectedCategories: ["lifestyle"],
+            preferredDistricts: ["North Vancouver"],
+            budgetLevel: 0,
+            vibeTags: ["outdoor"],
+            infoNeeds: [],
+            languagePreference: .both,
+            updatedAt: Date()
+        )
+        #expect(service.rankedItems(for: lifestylePreference, items: items).first?.item.id == "lifestyle_009")
+    }
+
+    @Test func categoryFilteringAndInactiveExclusionWork() {
+        let service = RecommendationService()
+        let preference = UserPreference.defaultValue
+        let items = [
+            makeItem(id: "food", category: .food),
+            makeItem(id: "event", category: .events),
+            makeItem(id: "lifestyle", category: .lifestyle),
+            makeItem(id: "inactive", category: .food, isActive: false)
+        ]
+
+        let allRanked = service.rankedItems(for: preference, items: items)
+        #expect(Set(allRanked.map(\.item.id)) == ["food", "event", "lifestyle"])
+
+        let foodRanked = service.rankedItems(for: preference, items: items, categoryFilter: .food)
+        #expect(foodRanked.map(\.item.id) == ["food"])
+
+        let eventRanked = service.rankedItems(for: preference, items: items, categoryFilter: .events)
+        #expect(eventRanked.map(\.item.category) == [.events])
     }
 
     @Test func storesPersistPreferencesAndSavedIDs() {
@@ -89,6 +147,11 @@ struct DooriDooriTests {
             .appendingPathComponent("dooridoori_mvp_content_items.json")
         #expect(FileManager.default.fileExists(atPath: url.path))
         return url
+    }
+
+    private func reviewedItems() throws -> [ContentItem] {
+        let data = try Data(contentsOf: reviewedDataURL())
+        return try JSONDecoder().decode([ContentItem].self, from: data)
     }
 
     private func makeItem(

@@ -1,4 +1,4 @@
-import SwiftUI
+import Foundation
 
 enum ContentCategory: String, CaseIterable, Identifiable, Codable, Hashable {
     case food
@@ -32,6 +32,7 @@ enum ContentCategory: String, CaseIterable, Identifiable, Codable, Hashable {
     }
 }
 
+/// UI-only filter state for the Personal Page chips. Domain category values stay in `ContentCategory`.
 enum ContentCategoryFilter: String, CaseIterable, Identifiable, Hashable {
     case all
     case food
