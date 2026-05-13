@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		88DF09E32FB53AB1002F8377 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 88DF09E22FB53AB1002F8377 /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		88935DE32FA8830900F62CF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		88935DEC2FA8830900F62CF1 /* DooriDooriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DooriDooriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		88DF09EE2FB53D1B002F8377 /* Exceptions for "DooriDoori" folder in "DooriDoori" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 88935DD42FA8830600F62CF1 /* DooriDoori */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		88935DD72FA8830600F62CF1 /* DooriDoori */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				88DF09EE2FB53D1B002F8377 /* Exceptions for "DooriDoori" folder in "DooriDoori" target */,
+			);
 			path = DooriDoori;
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88DF09E32FB53AB1002F8377 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			);
 			name = DooriDoori;
 			packageProductDependencies = (
+				88DF09E22FB53AB1002F8377 /* Supabase */,
 			);
 			productName = DooriDoori;
 			productReference = 88935DD52FA8830600F62CF1 /* DooriDoori.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 88935DCC2FA8830600F62CF1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				88DF09E12FB53AB1002F8377 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 88935DD62FA8830600F62CF1 /* Products */;
 			projectDirPath = "";
@@ -271,6 +293,8 @@
 /* Begin XCBuildConfiguration section */
 		88935DF42FA8830900F62CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 88935DD72FA8830600F62CF1 /* DooriDoori */;
+			baseConfigurationReferenceRelativePath = SupabaseConfig.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -335,6 +359,8 @@
 		};
 		88935DF52FA8830900F62CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 88935DD72FA8830600F62CF1 /* DooriDoori */;
+			baseConfigurationReferenceRelativePath = SupabaseConfig.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -392,6 +418,8 @@
 		};
 		88935DF72FA8830900F62CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 88935DD72FA8830600F62CF1 /* DooriDoori */;
+			baseConfigurationReferenceRelativePath = SupabaseConfig.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -400,6 +428,7 @@
 				DEVELOPMENT_TEAM = P786RFNH6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DooriDoori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +453,8 @@
 		};
 		88935DF82FA8830900F62CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 88935DD72FA8830600F62CF1 /* DooriDoori */;
+			baseConfigurationReferenceRelativePath = SupabaseConfig.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -432,6 +463,7 @@
 				DEVELOPMENT_TEAM = P786RFNH6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DooriDoori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88DF09E12FB53AB1002F8377 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88DF09E22FB53AB1002F8377 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88DF09E12FB53AB1002F8377 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88935DCD2FA8830600F62CF1 /* Project object */;
 }
