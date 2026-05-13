@@ -1,62 +1,93 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
 xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.xcuserdatad/
 
-## Obj-C/Swift specific
-*.hmap
-
-## App packaging
+## Build outputs
+DerivedData/
+build/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+## Obj-C / Swift specific
+*.hmap
 
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
 
 # Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
-
 .build/
+.swiftpm/
+
+# Usually commit Package.resolved for app projects to keep dependency versions stable.
+# Package.resolved
 
 # CocoaPods
 #
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+# If this project uses CocoaPods and you want reproducible installs without pod install,
+# you may choose to commit Pods/. Otherwise, keep this ignored.
+Pods/
 
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
 Carthage/Build/
+Carthage/Checkouts/
 
 # fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/test_output/
+
+# Node / Supabase Edge Functions
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+deno.lock
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local config / secrets
+*.local
+*.secret
+Secrets.xcconfig
+Local.xcconfig
+Config.local.xcconfig
+GoogleService-Info.local.plist
+
+# Supabase
+supabase/.temp/
+supabase/.branches/
+supabase/.env
+supabase/.env.*
+supabase/functions/.env
+supabase/functions/.env.*
+
+# Logs
+*.log
+
+# API keys / credentials
+*service-role*
+*service_role*
+*secret*
+*apikey*
+*api-key*
+*credentials*
