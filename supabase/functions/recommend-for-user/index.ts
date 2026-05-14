@@ -84,13 +84,21 @@ type RecommendationResponseItem = {
   score_breakdown: ScoreBreakdown;
 };
 
+type GeminiRerankItem = {
+  id: string;
+  rank: number;
+  reason: string;
+  confidence: number;
+};
+
 type GeminiRerankResult = {
-  rankedItems: Array<{
-    id?: unknown;
-    rank?: unknown;
-    reason?: unknown;
-    confidence?: unknown;
-  }>;
+  rankedItems: GeminiRerankItem[];
+};
+
+type GeminiRerankerParams = {
+  apiKey: string;
+  userProfile: Record<string, unknown>;
+  candidates: Record<string, unknown>[];
 };
 
 function jsonResponse(body: Record<string, unknown>, status = 200): Response {
@@ -280,63 +288,62 @@ function compactCandidate(item: RecommendedCandidate): Record<string, unknown> {
   };
 }
 
-function buildGeminiPrompt(params: {
-  userProfile: Record<string, unknown>;
-  candidates: Record<string, unknown>[];
-}): string {
-  return JSON.stringify({
-    instruction: [
-      "You are the recommendation reranking engine for DooriDoori.",
-      "Choose exactly Top 5 items from the provided candidates.",
-      "Never invent new items.",
-      "Never return an id outside the candidate list.",
-      "Use only the provided structured metadata.",
-      "Do not use external knowledge.",
-      "Do not mention Google reviews or scraped reviews.",
-      "Return valid JSON only.",
-      "No markdown.",
-      "No commentary outside JSON.",
-    ],
-    rankingCriteria: [
-      "user preference fit",
-      "category match",
-      "area/location match",
-      "budget match",
-      "vibe match",
-      "activity match",
-      "content quality",
-      "engagement signal",
-      "Korean community fit",
-    ],
-    expectedOutput: {
-      rankedItems: [
-        {
-          id: "candidate_id",
-          rank: 1,
-          reason: "Short personalized reason.",
-          confidence: 0.87,
-        },
-      ],
-    },
-    userProfile: params.userProfile,
-    candidates: params.candidates,
-  });
+function buildGeminiPrompt(params: GeminiRerankerParams): string {
+  return `You are the recommendation reranking engine for DooriDoori.
+
+Choose exactly the top 5 items from the provided candidates.
+Never invent new items.
+Never return an id outside the candidate list.
+Use only the provided structured metadata.
+Do not use external knowledge.
+Do not mention Google reviews or scraped reviews.
+Return valid JSON only.
+No markdown.
+No commentary outside JSON.
+
+Ranking criteria:
+- user preference fit
+- category match
+- area/location match
+- budget match
+- vibe match
+- activity match
+- content quality
+- engagement signal
+- Korean community fit
+
+Required JSON schema:
+{
+  "rankedItems": [
+    {
+      "id": "candidate_id",
+      "rank": 1,
+      "reason": "Short personalized reason.",
+      "confidence": 0.87
+    }
+  ]
 }
 
-async function callGeminiReranker(params: {
-  apiKey: string;
-  userProfile: Record<string, unknown>;
-  candidates: Record<string, unknown>[];
-}): Promise<GeminiRerankResult> {
-  const response = await fetch(
-    `${GEMINI_ENDPOINT}?key=${encodeURIComponent(params.apiKey)}`,
-    {
+User profile:
+${JSON.stringify(params.userProfile)}
+
+Candidates:
+${JSON.stringify(params.candidates)}`;
+}
+
+async function callGeminiReranker(
+  params: GeminiRerankerParams,
+): Promise<GeminiRerankResult> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+  try {
+    const response = await fetch(`${GEMINI_ENDPOINT}?key=${params.apiKey}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contents: [
           {
-            role: "user",
             parts: [{ text: buildGeminiPrompt(params) }],
           },
         ],
@@ -346,25 +353,28 @@ async function callGeminiReranker(params: {
           responseMimeType: "application/json",
         },
       }),
-    },
-  );
+      signal: controller.signal,
+    });
 
-  if (!response.ok) {
-    throw new Error(`Gemini API request failed with status ${response.status}`);
-  }
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Gemini API error: ${response.status} ${errorText}`);
+    }
 
-  const data = await response.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const data = await response.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-  if (typeof text !== "string" || !text.trim()) {
-    throw new Error("Gemini response was empty");
-  }
+    if (typeof text !== "string" || !text.trim()) {
+      throw new Error("Gemini returned empty response text.");
+    }
 
-  try {
-    return JSON.parse(text) as GeminiRerankResult;
-  } catch (error) {
-    console.warn("Invalid Gemini JSON received");
-    throw new Error(`Gemini response was not valid JSON: ${String(error)}`);
+    try {
+      return JSON.parse(text) as GeminiRerankResult;
+    } catch (error) {
+      throw new Error(`Failed to parse Gemini JSON response: ${String(error)}`);
+    }
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
@@ -373,7 +383,6 @@ function validateAndMergeGeminiResults(params: {
   top20Candidates: RecommendedCandidate[];
 }): FinalRecommendation[] {
   if (!Array.isArray(params.geminiResult.rankedItems)) {
-    console.warn("Gemini rankedItems was not an array");
     throw new Error("Gemini rankedItems was not an array");
   }
 
@@ -429,9 +438,6 @@ function validateAndMergeGeminiResults(params: {
     }
   }
 
-  console.info(
-    `Gemini validation produced ${finalItems.length} valid recommendations`,
-  );
   return finalItems;
 }
 
@@ -554,9 +560,6 @@ serve(async (req) => {
     const geminiApiKey = Deno.env.get("GEMINI_API_KEY")?.trim();
 
     if (!geminiApiKey) {
-      console.warn(
-        "GEMINI_API_KEY is missing; returning deterministic fallback",
-      );
       const fallback = buildDeterministicFallbackResponse(top20Candidates);
       const fallbackRecommendations = buildDeterministicFallbackRecommendations(
         top20Candidates,
@@ -593,11 +596,7 @@ serve(async (req) => {
         source: "gemini",
       });
     } catch (error) {
-      console.warn(
-        `Gemini reranking failed; using deterministic fallback: ${
-          String(error)
-        }`,
-      );
+      console.error("Gemini reranking failed:", error);
       const fallback = buildDeterministicFallbackResponse(top20Candidates);
       const fallbackRecommendations = buildDeterministicFallbackRecommendations(
         top20Candidates,

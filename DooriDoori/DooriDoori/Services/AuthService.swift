@@ -19,7 +19,7 @@ final class AuthService {
 
     @discardableResult
     func ensureSession() async throws -> String {
-        if let session = try? await client.auth.session {
+        if let session = try? await client.auth.session, !session.isExpired {
             return session.user.id.uuidString
         }
 
