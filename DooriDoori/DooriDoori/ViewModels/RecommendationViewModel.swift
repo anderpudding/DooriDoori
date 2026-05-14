@@ -77,11 +77,11 @@ final class RecommendationViewModel: ObservableObject {
     }
 
     func savePreference(_ preference: UserPreference) {
-        preferenceStore.save(preference)
         Task {
             do {
                 try await preferenceService.upsertPreference(preference)
                 await MainActor.run {
+                    preferenceStore.save(preference)
                     needsOnboarding = false
                     load()
                 }
@@ -163,6 +163,10 @@ final class RecommendationViewModel: ObservableObject {
                 rankedRecommendations = []
                 loadState = .empty
                 return
+            }
+
+            if let remotePreference = try await preferenceService.fetchPreference() {
+                preferenceStore.save(remotePreference)
             }
 
             async let fetchedRecommendations = recommendationService.fetchRecommendations()

@@ -49,41 +49,32 @@ struct DooriDooriTests {
         #expect(ranked.first?.reason.contains("Coquitlam") == true)
     }
 
-    @Test func supabaseRecommendationResponseDecodesSnakeCasePayload() throws {
+    @Test func supabaseRecommendationResponseDecodesPhase3CandidatePayload() throws {
         let json = """
         {
-          "recommendations": [
+          "candidates": [
             {
-              "id": "11111111-1111-1111-1111-111111111111",
-              "title": "Rice Workshop",
-              "type": "place",
-              "category": "food",
-              "subcategories": ["restaurant"],
-              "area": "Burnaby",
-              "city": "Burnaby",
-              "address": "123 Sample St",
-              "budget_level": "medium",
-              "vibe_tags": ["cozy"],
-              "activity_tags": ["dinner"],
-              "short_description": "Comforting Korean food.",
-              "detail_description": "A neighborhood pick with casual seating.",
-              "image_url": null,
-              "quality_score": 0.86,
-              "korean_community_fit": 0.9,
-              "view_count": 4,
-              "save_count": 2,
-              "review_count": 1,
-              "is_active": true,
-              "is_approved": true,
-              "created_at": "2026-05-13T00:00:00Z",
+              "content": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "title": "Rice Workshop",
+                "type": "place",
+                "category": "food",
+                "subcategories": ["restaurant"],
+                "area": "Burnaby",
+                "city": "Burnaby",
+                "budgetLevel": "medium",
+                "vibeTags": ["cozy"],
+                "activityTags": ["dinner"],
+                "shortDescription": "Comforting Korean food.",
+                "imageUrl": null
+              },
               "rank": 1,
-              "reason": "Matches cozy Korean food in Burnaby.",
-              "gemini_confidence": 0.87,
-              "deterministic_score": 0.91,
-              "score_breakdown": {
+              "reason": "Recommended because it matches your food preferences in burnaby.",
+              "deterministicScore": 0.91,
+              "modelName": "deterministic_v1",
+              "scoreBreakdown": {
                 "categoryMatch": 1,
                 "vibeMatch": 1,
-                "activityMatch": 1,
                 "locationMatch": 0.5,
                 "budgetMatch": 1,
                 "contentQuality": 0.86,
@@ -93,7 +84,13 @@ struct DooriDooriTests {
               }
             }
           ],
-          "source": "gemini"
+          "metadata": {
+            "candidateCount": 1,
+            "returnedCount": 1,
+            "usedGemini": false,
+            "phase": "deterministic_scoring",
+            "modelName": "deterministic_v1"
+          }
         }
         """
 
@@ -106,11 +103,11 @@ struct DooriDooriTests {
         #expect(candidate.contentItem.priceLevel == 2)
         #expect(candidate.contentItem.activityTags == ["dinner"])
         #expect(candidate.rank == 1)
-        #expect(candidate.reason == "Matches cozy Korean food in Burnaby.")
-        #expect(candidate.geminiConfidence == 0.87)
+        #expect(candidate.reason == "Recommended because it matches your food preferences in burnaby.")
         #expect(candidate.deterministicScore == 0.91)
         #expect(candidate.scoreBreakdown.contentQuality == 0.86)
-        #expect(response.source == "gemini")
+        #expect(response.metadata?.usedGemini == false)
+        #expect(response.metadata?.phase == "deterministic_scoring")
     }
 
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {

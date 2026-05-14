@@ -57,7 +57,6 @@ struct UserPreferencesPayload: Codable, Equatable {
 }
 
 struct ScoreBreakdown: Codable, Hashable {
-    let deterministicScore: Double?
     let categoryMatch: Double
     let vibeMatch: Double
     let activityMatch: Double?
@@ -67,16 +66,12 @@ struct ScoreBreakdown: Codable, Hashable {
     let engagementScore: Double
     let koreanCommunityFit: Double?
     let freshnessOrDiversity: Double
-    let geminiRank: Int?
-    let geminiConfidence: Double?
 }
 
 struct RecommendedContentItem: Identifiable, Codable, Hashable {
     let contentItem: ContentItem
-    let finalScore: Double?
     let rank: Int
     let reason: String
-    let confidence: Double?
     let deterministicScore: Double
     let modelName: String?
     let scoreBreakdown: ScoreBreakdown
@@ -85,12 +80,8 @@ struct RecommendedContentItem: Identifiable, Codable, Hashable {
 
     enum CodingKeys: String, CodingKey {
         case content
-        case finalScore
-        case finalScoreSnake = "final_score"
         case rank
         case reason
-        case confidence
-        case geminiConfidenceSnake = "gemini_confidence"
         case deterministicScore
         case deterministicScoreSnake = "deterministic_score"
         case modelName
@@ -101,19 +92,15 @@ struct RecommendedContentItem: Identifiable, Codable, Hashable {
 
     init(
         contentItem: ContentItem,
-        finalScore: Double? = nil,
         rank: Int,
         reason: String,
-        confidence: Double?,
         deterministicScore: Double,
         modelName: String? = nil,
         scoreBreakdown: ScoreBreakdown
     ) {
         self.contentItem = contentItem
-        self.finalScore = finalScore
         self.rank = rank
         self.reason = reason
-        self.confidence = confidence
         self.deterministicScore = deterministicScore
         self.modelName = modelName
         self.scoreBreakdown = scoreBreakdown
@@ -123,12 +110,8 @@ struct RecommendedContentItem: Identifiable, Codable, Hashable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         contentItem = try container.decodeIfPresent(ContentItem.self, forKey: .content)
             ?? ContentItem(from: decoder)
-        finalScore = try container.decodeIfPresent(Double.self, forKey: .finalScore)
-            ?? container.decodeIfPresent(Double.self, forKey: .finalScoreSnake)
         rank = try container.decodeIfPresent(Int.self, forKey: .rank) ?? 0
         reason = try container.decodeIfPresent(String.self, forKey: .reason) ?? ""
-        confidence = try container.decodeIfPresent(Double.self, forKey: .confidence)
-            ?? container.decodeIfPresent(Double.self, forKey: .geminiConfidenceSnake)
         deterministicScore = try container.decodeIfPresent(Double.self, forKey: .deterministicScore)
             ?? container.decode(Double.self, forKey: .deterministicScoreSnake)
         modelName = try container.decodeIfPresent(String.self, forKey: .modelName)
@@ -140,10 +123,8 @@ struct RecommendedContentItem: Identifiable, Codable, Hashable {
     func encode(to encoder: Encoder) throws {
         try contentItem.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(finalScore, forKey: .finalScore)
         try container.encode(rank, forKey: .rank)
         try container.encode(reason, forKey: .reason)
-        try container.encodeIfPresent(confidence, forKey: .confidence)
         try container.encode(deterministicScore, forKey: .deterministicScore)
         try container.encodeIfPresent(modelName, forKey: .modelName)
         try container.encode(scoreBreakdown, forKey: .scoreBreakdown)
@@ -176,6 +157,7 @@ struct RecommendationMetadata: Decodable, Hashable {
     let candidateCount: Int
     let returnedCount: Int
     let usedGemini: Bool
+    let phase: String?
     let modelName: String
 }
 

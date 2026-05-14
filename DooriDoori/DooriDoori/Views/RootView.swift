@@ -13,16 +13,19 @@ struct RootView: View {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(DooriStyle.canvas)
-            } else if hasCompletedOnboarding && preferenceStore.hasStoredPreference {
+            } else if hasCompletedOnboarding {
                 MainTabView()
             } else {
                 OnboardingView(initialPreference: preferenceStore.preference) { preference in
-                    preferenceStore.save(preference)
                     Task {
                         do {
                             try await preferenceService.upsertPreference(preference)
+                            preferenceStore.save(preference)
                             hasCompletedOnboarding = true
                         } catch {
+                            #if DEBUG
+                            print("Failed to save onboarding preferences:", error)
+                            #endif
                             hasCompletedOnboarding = false
                         }
                     }
@@ -42,6 +45,9 @@ struct RootView: View {
 
             do {
                 hasCompletedOnboarding = try await preferenceService.hasCompletedOnboarding()
+                if hasCompletedOnboarding, let remotePreference = try await preferenceService.fetchPreference() {
+                    preferenceStore.save(remotePreference)
+                }
             } catch {
                 hasCompletedOnboarding = preferenceStore.hasStoredPreference
             }

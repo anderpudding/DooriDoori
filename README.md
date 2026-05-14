@@ -1,40 +1,63 @@
 # DooriDoori
+
 KDD AI Project Study Group 2
 
-## Supabase Edge Function Gemini setup
+## Phase 2: Onboarding Preferences
 
-`recommend-for-user` builds deterministic recommendation scores first, keeps only
-the Top 20 compact candidates, and then asks Gemini to rerank those candidates
-into a final Top 5. Gemini never creates new content: the Edge Function validates
-that every returned id exists in the deterministic Top 20 and falls back to the
-deterministic Top 5 if Gemini is unavailable or returns invalid output.
+Onboarding preferences are stored in `public.user_preferences` with one row per
+Supabase Auth user. The iOS app signs in through Supabase, uses the authenticated
+`user_id`, and upserts:
 
-The Gemini payload only includes structured `content_items` metadata and
-`user_preferences`. It does not send Google review text, external scraped review
-text, raw external API data, or embedding similarity data.
+- `preferred_categories`
+- `preferred_areas`
+- `budget_level`
+- `vibe_tags`
+- `activity_tags`
+- `language_preference`
+- `travel_preference`
+- `negative_tags`
+- `onboarding_completed`
 
-Required secret:
+If a preference row exists, the app can load it back into the local
+`PreferenceStore`. If no row exists, the app routes the user to onboarding or
+uses safe local defaults while onboarding is shown.
 
-- `GEMINI_API_KEY`
+## Phase 3: Deterministic Recommendations
 
-Optional secret:
+`recommend-for-user` is deterministic-only in Phase 3. It:
 
-- `GEMINI_MODEL=gemini-2.5-flash-lite`
+1. Requires an authenticated Supabase user.
+2. Loads the current user's `user_preferences`.
+3. Loads only active and approved `content_items`.
+4. Applies basic pre-filtering.
+5. Calculates normalized deterministic scores.
+6. Returns up to 20 candidates sorted by `deterministicScore`.
 
-Local development:
+Gemini reranking is Phase 4 and is intentionally not called by this function.
 
-1. Create `supabase/.env`.
-2. Add `GEMINI_API_KEY=...`.
-3. Optionally add `GEMINI_MODEL=gemini-2.5-flash-lite`.
-4. Run `supabase functions serve recommend-for-user --env-file supabase/.env`.
+### Local Edge Function
 
-Local tests:
+Create `supabase/.env`:
+
+```sh
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_optional_for_result_writes
+```
+
+Serve locally:
+
+```sh
+supabase functions serve recommend-for-user --env-file supabase/.env
+```
+
+Run Edge Function tests if Deno is installed:
 
 ```sh
 deno test --allow-net supabase/functions/recommend-for-user
 ```
 
-Example local request:
+Example request:
 
 ```sh
 curl -i \
@@ -43,10 +66,50 @@ curl -i \
   http://127.0.0.1:54321/functions/v1/recommend-for-user
 ```
 
-Production:
+Expected response shape:
 
-1. Run `supabase secrets set GEMINI_API_KEY=...`.
-2. Optionally run `supabase secrets set GEMINI_MODEL=gemini-2.5-flash-lite`.
-3. Run `supabase functions deploy recommend-for-user`.
+```json
+{
+  "candidates": [
+    {
+      "content": {
+        "id": "...",
+        "title": "...",
+        "type": "place",
+        "category": "food",
+        "subcategories": [],
+        "area": "burnaby",
+        "city": "Burnaby",
+        "budgetLevel": "medium",
+        "vibeTags": [],
+        "activityTags": [],
+        "shortDescription": "...",
+        "imageUrl": "..."
+      },
+      "deterministicScore": 0.82,
+      "rank": 1,
+      "reason": "Recommended because it matches your food preferences in burnaby.",
+      "modelName": "deterministic_v1",
+      "scoreBreakdown": {
+        "categoryMatch": 1,
+        "vibeMatch": 0.75,
+        "locationMatch": 1,
+        "budgetMatch": 0.6,
+        "contentQuality": 0.84,
+        "engagementScore": 0.32,
+        "freshnessOrDiversity": 0.5
+      }
+    }
+  ],
+  "metadata": {
+    "candidateCount": 20,
+    "returnedCount": 20,
+    "usedGemini": false,
+    "phase": "deterministic_scoring",
+    "modelName": "deterministic_v1"
+  }
+}
+```
 
-Do not put `GEMINI_API_KEY` in the iOS app, Xcode config, `Info.plist`, or Swift files.
+The response also includes a `recommendations` key with the same array for
+compatibility with the current iOS decoder.

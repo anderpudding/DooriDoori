@@ -41,6 +41,19 @@ struct PreferenceService {
         }
     }
 
+    func fetchPreference() async throws -> UserPreference? {
+        let userId = try await authService.ensureSession()
+        let rows: [UserPreferencesRow] = try await client
+            .from("user_preferences")
+            .select("*")
+            .eq("user_id", value: userId)
+            .limit(1)
+            .execute()
+            .value
+
+        return rows.first?.userPreference
+    }
+
     func hasCompletedOnboarding() async throws -> Bool {
         let userId = try await authService.ensureSession()
         let rows: [OnboardingStatus] = try await client
@@ -70,5 +83,59 @@ private struct OnboardingStatus: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case onboardingCompleted = "onboarding_completed"
+    }
+}
+
+private struct UserPreferencesRow: Decodable {
+    let preferredCategories: [String]
+    let preferredAreas: [String]
+    let budgetLevel: String
+    let vibeTags: [String]
+    let activityTags: [String]
+    let languagePreference: String
+    let updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case preferredCategories = "preferred_categories"
+        case preferredAreas = "preferred_areas"
+        case budgetLevel = "budget_level"
+        case vibeTags = "vibe_tags"
+        case activityTags = "activity_tags"
+        case languagePreference = "language_preference"
+        case updatedAt = "updated_at"
+    }
+
+    var userPreference: UserPreference {
+        UserPreference(
+            selectedCategories: preferredCategories,
+            preferredDistricts: preferredAreas,
+            budgetLevel: Self.appBudgetLevel(from: budgetLevel),
+            vibeTags: vibeTags,
+            infoNeeds: activityTags,
+            languagePreference: Self.appLanguagePreference(from: languagePreference),
+            updatedAt: Self.date(from: updatedAt) ?? Date()
+        )
+    }
+
+    private static func appBudgetLevel(from level: String) -> Int {
+        switch level {
+        case "low": 1
+        case "medium": 2
+        case "high": 3
+        default: 2
+        }
+    }
+
+    private static func appLanguagePreference(from preference: String) -> LanguagePreference {
+        switch preference {
+        case "korean_friendly": .ko
+        case "english_okay": .en
+        default: .both
+        }
+    }
+
+    private static func date(from value: String?) -> Date? {
+        guard let value else { return nil }
+        return ISO8601DateFormatter().date(from: value)
     }
 }
