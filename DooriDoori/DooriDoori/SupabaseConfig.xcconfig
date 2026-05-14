@@ -1,0 +1,9 @@
+//
+//  SupabaseConfig.xcconfig
+//  DooriDoori
+//
+//  Created by Sungjun Lee on 2026-05-13.
+//
+
+SUPABASE_URL = https:/$()/awkstkwtlldphizvjdft.supabase.co
+SUPABASE_ANON_KEY = sb_publishable_F3J7VheYRXgcCjafjO2WOQ_7PSbAAwk

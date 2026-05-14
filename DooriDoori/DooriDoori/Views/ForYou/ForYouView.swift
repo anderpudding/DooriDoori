@@ -34,6 +34,12 @@ struct ForYouView: View {
                 showsPreferences = false
             }
         }
+        .onAppear {
+            viewModel.load()
+        }
+        .onChange(of: viewModel.needsOnboarding) { needsOnboarding in
+            showsPreferences = needsOnboarding
+        }
     }
 
     private var loadedContent: some View {
@@ -154,7 +160,7 @@ struct ForYouView: View {
 
     private func errorState(_ message: String) -> some View {
         VStack(spacing: 12) {
-            Text("로컬 데이터를 불러오지 못했어요")
+            Text("추천을 불러오지 못했어요")
                 .font(.system(size: 17, weight: .bold))
                 .foregroundStyle(DooriStyle.ink)
             Text(message)

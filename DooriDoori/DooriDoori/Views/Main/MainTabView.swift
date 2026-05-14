@@ -54,7 +54,8 @@ struct MainTabView: View {
                     FeedDetailView(
                         item: item,
                         reason: recommendations.reason(for: item),
-                        savedItemStore: recommendations.savedItemStore
+                        savedItemStore: recommendations.savedItemStore,
+                        onToggleSaved: recommendations.toggleSaved
                     )
                 case .nearYou:
                     NearYouView(items: recommendations.items)
