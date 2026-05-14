@@ -132,7 +132,11 @@ struct DooriDooriTests {
         #expect(object["preferred_categories"] as? [String] == ["food", "events"])
         #expect(object["preferred_areas"] as? [String] == ["Burnaby"])
         #expect(object["budget_level"] as? String == "medium")
+        #expect(object["vibe_tags"] as? [String] == ["cozy"])
+        #expect(object["activity_tags"] as? [String] == ["dinner"])
         #expect(object["language_preference"] as? String == "any")
+        #expect(object["travel_preference"] as? String == "any")
+        #expect(object["negative_tags"] as? [String] == [])
         #expect(object["onboarding_completed"] as? Bool == true)
     }
 

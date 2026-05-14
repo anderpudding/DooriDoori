@@ -19,10 +19,26 @@ struct PreferenceService {
         let userId = try await authService.ensureSession()
         let payload = UserPreferencesPayload(userId: userId, preference: preference)
 
-        try await client
-            .from("user_preferences")
-            .upsert(payload, onConflict: "user_id")
-            .execute()
+        #if DEBUG
+        print("Upserting user_preferences for Supabase user id:", userId)
+        #endif
+
+        do {
+            try await client
+                .from("user_preferences")
+                .upsert(payload, onConflict: "user_id")
+                .execute()
+
+            #if DEBUG
+            print("user_preferences upsert succeeded for Supabase user id:", userId)
+            #endif
+        } catch {
+            #if DEBUG
+            print("user_preferences upsert failed for Supabase user id \(userId):", error)
+            #endif
+
+            throw error
+        }
     }
 
     func hasCompletedOnboarding() async throws -> Bool {
@@ -35,7 +51,17 @@ struct PreferenceService {
             .execute()
             .value
 
-        return rows.first?.onboardingCompleted == true
+        let isCompleted = rows.first?.onboardingCompleted == true
+
+        #if DEBUG
+        if rows.isEmpty {
+            print("No user_preferences row found for Supabase user id:", userId)
+        } else {
+            print("user_preferences onboarding_completed for Supabase user id \(userId):", isCompleted)
+        }
+        #endif
+
+        return isCompleted
     }
 }
 

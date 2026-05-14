@@ -5,6 +5,7 @@ struct RootView: View {
     @StateObject private var preferenceStore = PreferenceStore()
     @State private var isCheckingSession = true
     private let preferenceService = PreferenceService()
+    private let authService = AuthService.shared
 
     var body: some View {
         Group {
@@ -30,6 +31,15 @@ struct RootView: View {
         }
         .tint(DooriStyle.accent)
         .task {
+            #if DEBUG
+            do {
+                try await authService.ensureSession()
+                await authService.printCurrentSupabaseAccessTokenOnce()
+            } catch {
+                print("Session setup failed:", error)
+            }
+            #endif
+
             do {
                 hasCompletedOnboarding = try await preferenceService.hasCompletedOnboarding()
             } catch {

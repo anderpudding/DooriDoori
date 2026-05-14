@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import Supabase
 
 final class RecommendationViewModel: ObservableObject {
     enum LoadState: Equatable {
@@ -173,6 +174,19 @@ final class RecommendationViewModel: ObservableObject {
             refreshRecommendations()
             loadState = rankedRecommendations.isEmpty ? .empty : .loaded
         } catch {
+            if Self.isMissingUserPreferencesError(error) {
+                #if DEBUG
+                print("recommend-for-user returned missing user_preferences; routing to onboarding:", error)
+                #endif
+
+                needsOnboarding = true
+                items = []
+                recommendations = []
+                rankedRecommendations = []
+                loadState = .empty
+                return
+            }
+
             do {
                 items = try seedContentService.loadContentItems()
                 recommendations = []
@@ -185,5 +199,14 @@ final class RecommendationViewModel: ObservableObject {
                 loadState = .failed(error.localizedDescription)
             }
         }
+    }
+
+    private static func isMissingUserPreferencesError(_ error: Error) -> Bool {
+        guard case let FunctionsError.httpError(code, data) = error, code == 404 else {
+            return false
+        }
+
+        let message = String(data: data, encoding: .utf8) ?? ""
+        return message.contains("User preferences not found")
     }
 }
