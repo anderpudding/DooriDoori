@@ -52,7 +52,7 @@ struct DooriDooriTests {
     @Test func supabaseRecommendationResponseDecodesSnakeCasePayload() throws {
         let json = """
         {
-          "candidates": [
+          "recommendations": [
             {
               "id": "11111111-1111-1111-1111-111111111111",
               "title": "Rice Workshop",
@@ -76,31 +76,41 @@ struct DooriDooriTests {
               "is_active": true,
               "is_approved": true,
               "created_at": "2026-05-13T00:00:00Z",
+              "rank": 1,
+              "reason": "Matches cozy Korean food in Burnaby.",
+              "gemini_confidence": 0.87,
               "deterministic_score": 0.91,
               "score_breakdown": {
                 "categoryMatch": 1,
                 "vibeMatch": 1,
+                "activityMatch": 1,
                 "locationMatch": 0.5,
                 "budgetMatch": 1,
                 "contentQuality": 0.86,
                 "engagementScore": 0.3,
+                "koreanCommunityFit": 0.9,
                 "freshnessOrDiversity": 1
               }
             }
-          ]
+          ],
+          "source": "gemini"
         }
         """
 
         let response = try JSONDecoder().decode(RecommendationResponse.self, from: Data(json.utf8))
-        let candidate = try #require(response.candidates.first)
+        let candidate = try #require(response.recommendations.first)
 
         #expect(candidate.contentItem.title == "Rice Workshop")
         #expect(candidate.contentItem.category == .food)
         #expect(candidate.contentItem.district == "Burnaby")
         #expect(candidate.contentItem.priceLevel == 2)
         #expect(candidate.contentItem.activityTags == ["dinner"])
+        #expect(candidate.rank == 1)
+        #expect(candidate.reason == "Matches cozy Korean food in Burnaby.")
+        #expect(candidate.geminiConfidence == 0.87)
         #expect(candidate.deterministicScore == 0.91)
         #expect(candidate.scoreBreakdown.contentQuality == 0.86)
+        #expect(response.source == "gemini")
     }
 
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {

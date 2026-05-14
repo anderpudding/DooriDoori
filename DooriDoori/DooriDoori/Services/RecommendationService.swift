@@ -33,7 +33,7 @@ struct RecommendationService {
     func fetchRecommendations() async throws -> [RecommendedContentItem] {
         _ = try await authService.ensureSession()
         let response: RecommendationResponse = try await client.functions.invoke("recommend-for-user")
-        return Array(response.candidates.prefix(20))
+        return Array(response.recommendations.prefix(5))
     }
 
     func rankedItems(
@@ -140,6 +140,9 @@ struct RecommendationService {
     }
 
     func reason(for recommendation: RecommendedContentItem) -> String {
+        if !recommendation.reason.isEmpty {
+            return recommendation.reason
+        }
         let score = Int((recommendation.deterministicScore * 100).rounded())
         return "Recommended by your current taste profile with a deterministic score of \(score)."
     }
