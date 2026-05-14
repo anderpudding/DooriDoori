@@ -2,6 +2,10 @@ import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const DETERMINISTIC_MODEL_NAME = "deterministic_v1";
+const FALLBACK_MODEL_NAME = "deterministic_fallback";
+export const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite";
+const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta";
+const GEMINI_TIMEOUT_MS = 10_000;
 const MIN_QUALITY_SCORE = 0.45;
 
 type ContentItem = {
@@ -53,6 +57,13 @@ type ScoreBreakdown = {
   freshnessOrDiversity: number;
 };
 
+type StoredScoreBreakdown = ScoreBreakdown & {
+  deterministicScore: number;
+  geminiRank?: number;
+  geminiConfidence?: number;
+  fallback?: boolean;
+};
+
 type Candidate = ContentItem & {
   title: string;
   subcategories: string[];
@@ -68,6 +79,33 @@ type Candidate = ContentItem & {
   average_rating: number;
   recommendation_score: number;
   score_breakdown: ScoreBreakdown;
+};
+
+type FinalRecommendation = Candidate & {
+  rank: number;
+  reason: string;
+  confidence: number | null;
+  final_score: number;
+  model_name: string;
+  stored_score_breakdown: StoredScoreBreakdown;
+};
+
+type GeminiRerankItem = {
+  id: string;
+  rank: number;
+  reason: string;
+  confidence: number;
+};
+
+type GeminiRerankResult = {
+  rankedItems: GeminiRerankItem[];
+};
+
+type RerankOutcome = {
+  recommendations: FinalRecommendation[];
+  usedGemini: boolean;
+  modelName: string;
+  fallbackReason?: string;
 };
 
 function jsonResponse(body: Record<string, unknown>, status = 200): Response {
@@ -290,11 +328,332 @@ export function selectTopCandidates(params: {
     .slice(0, params.limit ?? 20);
 }
 
-function deterministicReason(item: Candidate): string {
-  return `Recommended because it matches your ${item.category} preferences in ${item.area}.`;
+function deterministicReason(_item: Candidate): string {
+  return "Matches your selected category, preferred area, and vibe preferences.";
 }
 
-function serializeCandidate(item: Candidate, rank: number) {
+function storedScoreBreakdown(
+  item: Candidate,
+  extra?: {
+    geminiRank?: number;
+    geminiConfidence?: number;
+    fallback?: boolean;
+  },
+): StoredScoreBreakdown {
+  return {
+    ...item.score_breakdown,
+    deterministicScore: item.recommendation_score,
+    ...(extra?.geminiRank !== undefined ? { geminiRank: extra.geminiRank } : {}),
+    ...(extra?.geminiConfidence !== undefined
+      ? { geminiConfidence: extra.geminiConfidence }
+      : {}),
+    ...(extra?.fallback ? { fallback: true } : {}),
+  };
+}
+
+function rankScore(rank: number): number {
+  return (6 - rank) / 5;
+}
+
+function geminiFinalScore(
+  item: Candidate,
+  rank: number,
+  confidence: number,
+): number {
+  return clamp01(
+    item.recommendation_score * 0.70 +
+      confidence * 0.20 +
+      rankScore(rank) * 0.10,
+  );
+}
+
+function compactUserProfile(prefs: UserPreferences): Record<string, unknown> {
+  return {
+    preferredCategories: prefs.preferred_categories,
+    preferredAreas: prefs.preferred_areas,
+    budgetLevel: prefs.budget_level,
+    vibeTags: prefs.vibe_tags,
+    activityTags: prefs.activity_tags,
+    languagePreference: prefs.language_preference,
+    travelPreference: prefs.travel_preference,
+    negativeTags: prefs.negative_tags,
+  };
+}
+
+function compactCandidate(item: Candidate): Record<string, unknown> {
+  return {
+    id: item.id,
+    title: item.title,
+    type: item.type,
+    category: item.category,
+    subcategories: item.subcategories,
+    area: item.area,
+    city: item.city,
+    budgetLevel: item.budget_level,
+    vibeTags: item.vibe_tags,
+    activityTags: item.activity_tags,
+    shortDescription: item.short_description,
+    qualityScore: item.quality_score,
+    koreanCommunityFit: item.korean_community_fit,
+    viewCount: item.view_count,
+    saveCount: item.save_count,
+    reviewCount: item.review_count,
+    averageRating: item.average_rating,
+    deterministicScore: item.recommendation_score,
+    scoreBreakdown: item.score_breakdown,
+  };
+}
+
+function geminiInstruction(): string {
+  return `You are the reranking engine for DooriDoori, a local discovery app for Vancouver Korean residents.
+
+You will receive one user profile and up to 20 candidate content items.
+Your task is to select the best 5 items for this user.
+
+Rules:
+- Only select ids from the provided candidates.
+- Do not invent new ids, places, events, or facts.
+- Use deterministicScore as an important signal, but improve the final ranking based on contextual fit.
+- Prioritize user preference match, Korean-community relevance, area match, vibe/activity match, budget fit, quality, and engagement.
+- Avoid recommending items that strongly match negativeTags.
+- Return exactly 5 items if at least 5 candidates are provided.
+- Return fewer only if fewer candidates are provided.
+- Each reason must be short, user-facing, and based only on provided metadata.
+- Do not mention internal scoring details.
+- Do not mention model reasoning.
+- Do not mention unavailable information.
+- Output must be valid JSON matching the schema.`;
+}
+
+export function parseGeminiRerankJson(text: string): GeminiRerankResult {
+  try {
+    return JSON.parse(text) as GeminiRerankResult;
+  } catch (error) {
+    throw new Error(`Failed to parse Gemini JSON response: ${String(error)}`);
+  }
+}
+
+async function callGeminiReranker(params: {
+  apiKey: string;
+  modelName: string;
+  prefs: UserPreferences;
+  candidates: Candidate[];
+}): Promise<GeminiRerankResult> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), GEMINI_TIMEOUT_MS);
+  const endpoint =
+    `${GEMINI_API_BASE}/models/${params.modelName}:generateContent?key=${params.apiKey}`;
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: {
+          parts: [{ text: geminiInstruction() }],
+        },
+        contents: [
+          {
+            role: "user",
+            parts: [{
+              text: JSON.stringify({
+                userProfile: compactUserProfile(params.prefs),
+                candidates: params.candidates.map(compactCandidate),
+              }),
+            }],
+          },
+        ],
+        generationConfig: {
+          temperature: 0.15,
+          maxOutputTokens: 1000,
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              rankedItems: {
+                type: "ARRAY",
+                items: {
+                  type: "OBJECT",
+                  properties: {
+                    id: { type: "STRING" },
+                    rank: { type: "INTEGER" },
+                    reason: { type: "STRING" },
+                    confidence: { type: "NUMBER" },
+                  },
+                  required: ["id", "rank", "reason", "confidence"],
+                },
+              },
+            },
+            required: ["rankedItems"],
+          },
+        },
+      }),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Gemini API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (typeof text !== "string" || !text.trim()) {
+      throw new Error("Gemini returned empty response text");
+    }
+
+    return parseGeminiRerankJson(text);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+export function validateAndMergeGeminiResults(params: {
+  geminiResult: GeminiRerankResult;
+  top20Candidates: Candidate[];
+  modelName: string;
+}): FinalRecommendation[] {
+  const expectedCount = Math.min(5, params.top20Candidates.length);
+
+  if (!Array.isArray(params.geminiResult.rankedItems)) {
+    throw new Error("Gemini rankedItems was not an array");
+  }
+
+  if (
+    params.geminiResult.rankedItems.length > 5 ||
+    params.geminiResult.rankedItems.length !== expectedCount
+  ) {
+    throw new Error(
+      `Gemini returned ${params.geminiResult.rankedItems.length} rankedItems; expected ${expectedCount}`,
+    );
+  }
+
+  const byId = new Map(params.top20Candidates.map((item) => [item.id, item]));
+  const usedIds = new Set<string>();
+  const usedRanks = new Set<number>();
+
+  const recommendations = params.geminiResult.rankedItems.map((rankedItem) => {
+    if (typeof rankedItem.id !== "string" || !byId.has(rankedItem.id)) {
+      throw new Error(`Gemini returned unknown candidate id: ${rankedItem.id}`);
+    }
+    if (usedIds.has(rankedItem.id)) {
+      throw new Error(`Gemini returned duplicate id: ${rankedItem.id}`);
+    }
+    if (
+      !Number.isInteger(rankedItem.rank) ||
+      rankedItem.rank < 1 ||
+      rankedItem.rank > expectedCount
+    ) {
+      throw new Error(`Gemini returned invalid rank for id: ${rankedItem.id}`);
+    }
+    if (usedRanks.has(rankedItem.rank)) {
+      throw new Error(`Gemini returned duplicate rank: ${rankedItem.rank}`);
+    }
+    if (
+      typeof rankedItem.reason !== "string" ||
+      rankedItem.reason.trim().length === 0
+    ) {
+      throw new Error(`Gemini returned empty reason for id: ${rankedItem.id}`);
+    }
+    if (
+      typeof rankedItem.confidence !== "number" ||
+      rankedItem.confidence < 0 ||
+      rankedItem.confidence > 1
+    ) {
+      throw new Error(
+        `Gemini returned invalid confidence for id: ${rankedItem.id}`,
+      );
+    }
+
+    usedIds.add(rankedItem.id);
+    usedRanks.add(rankedItem.rank);
+
+    const candidate = byId.get(rankedItem.id)!;
+    return {
+      ...candidate,
+      rank: rankedItem.rank,
+      reason: rankedItem.reason.trim(),
+      confidence: rankedItem.confidence,
+      final_score: geminiFinalScore(
+        candidate,
+        rankedItem.rank,
+        rankedItem.confidence,
+      ),
+      model_name: params.modelName,
+      stored_score_breakdown: storedScoreBreakdown(candidate, {
+        geminiRank: rankedItem.rank,
+        geminiConfidence: rankedItem.confidence,
+      }),
+    };
+  });
+
+  return recommendations.sort((a, b) => a.rank - b.rank);
+}
+
+export function buildDeterministicFallbackRecommendations(
+  candidates: Candidate[],
+): FinalRecommendation[] {
+  return candidates.slice(0, 5).map((item, index) => ({
+    ...item,
+    rank: index + 1,
+    reason: deterministicReason(item),
+    confidence: null,
+    final_score: item.recommendation_score,
+    model_name: FALLBACK_MODEL_NAME,
+    stored_score_breakdown: storedScoreBreakdown(item, { fallback: true }),
+  }));
+}
+
+export async function buildRerankedRecommendations(params: {
+  geminiApiKey?: string;
+  geminiModel: string;
+  prefs: UserPreferences;
+  top20Candidates: Candidate[];
+  reranker?: () => Promise<GeminiRerankResult>;
+}): Promise<RerankOutcome> {
+  if (!params.geminiApiKey) {
+    return {
+      recommendations: buildDeterministicFallbackRecommendations(
+        params.top20Candidates,
+      ),
+      usedGemini: false,
+      modelName: FALLBACK_MODEL_NAME,
+      fallbackReason: "missing_gemini_api_key",
+    };
+  }
+
+  try {
+    const geminiResult = params.reranker
+      ? await params.reranker()
+      : await callGeminiReranker({
+        apiKey: params.geminiApiKey,
+        modelName: params.geminiModel,
+        prefs: params.prefs,
+        candidates: params.top20Candidates,
+      });
+
+    return {
+      recommendations: validateAndMergeGeminiResults({
+        geminiResult,
+        top20Candidates: params.top20Candidates,
+        modelName: params.geminiModel,
+      }),
+      usedGemini: true,
+      modelName: params.geminiModel,
+    };
+  } catch (error) {
+    return {
+      recommendations: buildDeterministicFallbackRecommendations(
+        params.top20Candidates,
+      ),
+      usedGemini: false,
+      modelName: FALLBACK_MODEL_NAME,
+      fallbackReason: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+function serializeRecommendation(item: FinalRecommendation) {
   return {
     content: {
       id: item.id,
@@ -310,29 +669,31 @@ function serializeCandidate(item: Candidate, rank: number) {
       shortDescription: item.short_description,
       imageUrl: item.image_url,
     },
+    finalScore: item.final_score,
     deterministicScore: item.recommendation_score,
-    rank,
-    reason: deterministicReason(item),
-    modelName: DETERMINISTIC_MODEL_NAME,
-    scoreBreakdown: item.score_breakdown,
+    rank: item.rank,
+    reason: item.reason,
+    confidence: item.confidence,
+    modelName: item.model_name,
+    scoreBreakdown: item.stored_score_breakdown,
   };
 }
 
 export function buildRecommendationResultRows(params: {
   userId: string;
-  candidates: Candidate[];
+  recommendations: FinalRecommendation[];
   generatedAt: string;
 }) {
-  return params.candidates.map((item, index) => ({
+  return params.recommendations.map((item) => ({
     user_id: params.userId,
     content_id: item.id,
-    rank: index + 1,
-    final_score: item.recommendation_score,
+    rank: item.rank,
+    final_score: item.final_score,
     deterministic_score: item.recommendation_score,
-    gemini_confidence: null,
-    score_breakdown: item.score_breakdown,
-    reason: deterministicReason(item),
-    model_name: DETERMINISTIC_MODEL_NAME,
+    gemini_confidence: item.confidence,
+    score_breakdown: item.stored_score_breakdown,
+    reason: item.reason,
+    model_name: item.model_name,
     generated_at: params.generatedAt,
   }));
 }
@@ -340,8 +701,11 @@ export function buildRecommendationResultRows(params: {
 async function saveRecommendationResults(params: {
   supabase: any;
   userId: string;
-  candidates: Candidate[];
+  recommendations: FinalRecommendation[];
 }) {
+  // Keep only the latest recommendation batch per user. This is the simplest
+  // safe approach for the current iOS Home For You flow because the client does
+  // not need to choose between historical generated_at batches.
   const { error: deleteError } = await params.supabase
     .from("recommendation_results")
     .delete()
@@ -356,7 +720,7 @@ async function saveRecommendationResults(params: {
 
   const rows = buildRecommendationResultRows({
     userId: params.userId,
-    candidates: params.candidates,
+    recommendations: params.recommendations,
     generatedAt: new Date().toISOString(),
   });
 
@@ -383,6 +747,9 @@ async function handler(req: Request): Promise<Response> {
     const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
     const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")
       ?.trim();
+    const geminiApiKey = Deno.env.get("GEMINI_API_KEY")?.trim();
+    const geminiModel = Deno.env.get("GEMINI_MODEL")?.trim() ||
+      DEFAULT_GEMINI_MODEL;
 
     const supabase = createClient(supabaseUrl, supabaseAnonKey, {
       global: {
@@ -428,37 +795,62 @@ async function handler(req: Request): Promise<Response> {
       return jsonResponse({ error: itemsError.message }, 500);
     }
 
-    const candidates = selectTopCandidates({
-      prefs: normalizePrefs(prefs),
+    const normalizedPrefs = normalizePrefs(prefs);
+    const top20Candidates = selectTopCandidates({
+      prefs: normalizedPrefs,
       items: (items ?? []) as ContentItem[],
       limit: 20,
     });
 
     console.info(
-      `recommend-for-user deterministic candidate count: ${candidates.length}`,
+      `recommend-for-user deterministic candidate count: ${top20Candidates.length}`,
     );
+
+    if (!top20Candidates.length) {
+      return jsonResponse({
+        recommendations: [],
+        metadata: {
+          candidateCount: 0,
+          returnedCount: 0,
+          usedGemini: false,
+          modelName: "none",
+          phase: "gemini_reranking",
+        },
+      });
+    }
+
+    const rerankOutcome = await buildRerankedRecommendations({
+      geminiApiKey,
+      geminiModel,
+      prefs: normalizedPrefs,
+      top20Candidates,
+    });
 
     await saveRecommendationResults({
       supabase: persistenceClient,
       userId: user.id,
-      candidates,
+      recommendations: rerankOutcome.recommendations,
     });
 
-    const serialized = candidates.map((item, index) =>
-      serializeCandidate(item, index + 1)
+    console.info(
+      `recommend-for-user usedGemini=${rerankOutcome.usedGemini} returned=${rerankOutcome.recommendations.length}`,
     );
+    if (rerankOutcome.fallbackReason) {
+      console.warn(
+        `recommend-for-user fallback reason: ${rerankOutcome.fallbackReason}`,
+      );
+    }
 
     return jsonResponse({
-      candidates: serialized,
-      // Compatibility for existing iOS decoding while Phase 3 transitions to
-      // the canonical candidates key.
-      recommendations: serialized,
+      recommendations: rerankOutcome.recommendations.map(
+        serializeRecommendation,
+      ),
       metadata: {
-        candidateCount: candidates.length,
-        returnedCount: candidates.length,
-        usedGemini: false,
-        phase: "deterministic_scoring",
-        modelName: DETERMINISTIC_MODEL_NAME,
+        candidateCount: top20Candidates.length,
+        returnedCount: rerankOutcome.recommendations.length,
+        usedGemini: rerankOutcome.usedGemini,
+        modelName: rerankOutcome.modelName,
+        phase: "gemini_reranking",
       },
     });
   } catch (error) {

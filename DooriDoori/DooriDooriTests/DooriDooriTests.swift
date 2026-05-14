@@ -49,10 +49,10 @@ struct DooriDooriTests {
         #expect(ranked.first?.reason.contains("Coquitlam") == true)
     }
 
-    @Test func supabaseRecommendationResponseDecodesPhase3CandidatePayload() throws {
+    @Test func supabaseRecommendationResponseDecodesPhase4RecommendationPayload() throws {
         let json = """
         {
-          "candidates": [
+          "recommendations": [
             {
               "content": {
                 "id": "11111111-1111-1111-1111-111111111111",
@@ -69,10 +69,13 @@ struct DooriDooriTests {
                 "imageUrl": null
               },
               "rank": 1,
-              "reason": "Recommended because it matches your food preferences in burnaby.",
-              "deterministicScore": 0.91,
-              "modelName": "deterministic_v1",
+              "reason": "Matches your preference for cozy Korean-friendly cafes in Burnaby.",
+              "finalScore": 0.94,
+              "deterministicScore": 0.82,
+              "confidence": 0.87,
+              "modelName": "gemini-2.5-flash-lite",
               "scoreBreakdown": {
+                "deterministicScore": 0.82,
                 "categoryMatch": 1,
                 "vibeMatch": 1,
                 "locationMatch": 0.5,
@@ -80,16 +83,18 @@ struct DooriDooriTests {
                 "contentQuality": 0.86,
                 "engagementScore": 0.3,
                 "koreanCommunityFit": 0.9,
-                "freshnessOrDiversity": 1
+                "freshnessOrDiversity": 1,
+                "geminiRank": 1,
+                "geminiConfidence": 0.87
               }
             }
           ],
           "metadata": {
-            "candidateCount": 1,
+            "candidateCount": 20,
             "returnedCount": 1,
-            "usedGemini": false,
-            "phase": "deterministic_scoring",
-            "modelName": "deterministic_v1"
+            "usedGemini": true,
+            "phase": "gemini_reranking",
+            "modelName": "gemini-2.5-flash-lite"
           }
         }
         """
@@ -103,11 +108,14 @@ struct DooriDooriTests {
         #expect(candidate.contentItem.priceLevel == 2)
         #expect(candidate.contentItem.activityTags == ["dinner"])
         #expect(candidate.rank == 1)
-        #expect(candidate.reason == "Recommended because it matches your food preferences in burnaby.")
-        #expect(candidate.deterministicScore == 0.91)
+        #expect(candidate.reason == "Matches your preference for cozy Korean-friendly cafes in Burnaby.")
+        #expect(candidate.finalScore == 0.94)
+        #expect(candidate.confidence == 0.87)
+        #expect(candidate.deterministicScore == 0.82)
         #expect(candidate.scoreBreakdown.contentQuality == 0.86)
-        #expect(response.metadata?.usedGemini == false)
-        #expect(response.metadata?.phase == "deterministic_scoring")
+        #expect(candidate.scoreBreakdown.geminiRank == 1)
+        #expect(response.metadata?.usedGemini == true)
+        #expect(response.metadata?.phase == "gemini_reranking")
     }
 
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {

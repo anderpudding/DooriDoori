@@ -1,8 +1,15 @@
-import { assertEquals } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import {
+  assertEquals,
+  assertThrows,
+} from "https://deno.land/std@0.224.0/assert/mod.ts";
+import {
+  buildDeterministicFallbackRecommendations,
   buildRecommendationResultRows,
+  buildRerankedRecommendations,
   calculateDeterministicScore,
+  parseGeminiRerankJson,
   selectTopCandidates,
+  validateAndMergeGeminiResults,
 } from "./index.ts";
 
 function content(overrides: Record<string, unknown> = {}) {
@@ -41,6 +48,19 @@ const prefs = {
   travel_preference: "any",
   negative_tags: [],
 } as any;
+
+function topCandidates(count = 6) {
+  return selectTopCandidates({
+    prefs,
+    items: Array.from({ length: count }, (_, index) =>
+      content({
+        id: `item-${index + 1}`,
+        save_count: count - index,
+        quality_score: 0.9 - index / 100,
+      })
+    ),
+  });
+}
 
 Deno.test("selectTopCandidates excludes inactive and unapproved content", () => {
   const candidates = selectTopCandidates({
@@ -135,18 +155,215 @@ Deno.test("missing optional content fields do not crash candidate selection", ()
   assertEquals(candidates[0].image_url, null);
 });
 
-Deno.test("recommendation_results rows are deterministic_v1", () => {
-  const candidates = selectTopCandidates({
-    prefs,
-    items: [content({ id: "result-row" })],
+Deno.test("valid Gemini output returns Top 5 sorted by rank", () => {
+  const candidates = topCandidates();
+  const recommendations = validateAndMergeGeminiResults({
+    top20Candidates: candidates,
+    modelName: "gemini-2.5-flash-lite",
+    geminiResult: {
+      rankedItems: [
+        {
+          id: "item-2",
+          rank: 2,
+          reason: "Good cozy cafe fit in Burnaby.",
+          confidence: 0.8,
+        },
+        {
+          id: "item-1",
+          rank: 1,
+          reason: "Strong match for Korean-friendly cozy cafes.",
+          confidence: 0.9,
+        },
+        {
+          id: "item-3",
+          rank: 3,
+          reason: "Matches your food and vibe preferences.",
+          confidence: 0.7,
+        },
+        {
+          id: "item-4",
+          rank: 4,
+          reason: "Relevant nearby pick for your budget.",
+          confidence: 0.6,
+        },
+        {
+          id: "item-5",
+          rank: 5,
+          reason: "Good option for a cozy local outing.",
+          confidence: 0.5,
+        },
+      ],
+    },
   });
+
+  assertEquals(recommendations.map((item) => item.id), [
+    "item-1",
+    "item-2",
+    "item-3",
+    "item-4",
+    "item-5",
+  ]);
+  assertEquals(recommendations[0].confidence, 0.9);
+  assertEquals(recommendations[0].model_name, "gemini-2.5-flash-lite");
+  assertEquals(recommendations[0].stored_score_breakdown.geminiRank, 1);
+});
+
+Deno.test("Gemini id outside candidates is rejected", () => {
+  const candidates = topCandidates();
+
+  assertThrows(
+    () =>
+      validateAndMergeGeminiResults({
+        top20Candidates: candidates,
+        modelName: "gemini-2.5-flash-lite",
+        geminiResult: {
+          rankedItems: [
+            {
+              id: "not-a-candidate",
+              rank: 1,
+              reason: "Looks relevant.",
+              confidence: 0.8,
+            },
+            ...[2, 3, 4, 5].map((rank) => ({
+              id: `item-${rank}`,
+              rank,
+              reason: "Looks relevant.",
+              confidence: 0.8,
+            })),
+          ],
+        },
+      }),
+    Error,
+    "unknown candidate id",
+  );
+});
+
+Deno.test("duplicate Gemini ids are rejected", () => {
+  const candidates = topCandidates();
+
+  assertThrows(
+    () =>
+      validateAndMergeGeminiResults({
+        top20Candidates: candidates,
+        modelName: "gemini-2.5-flash-lite",
+        geminiResult: {
+          rankedItems: [
+            {
+              id: "item-1",
+              rank: 1,
+              reason: "Looks relevant.",
+              confidence: 0.8,
+            },
+            {
+              id: "item-1",
+              rank: 2,
+              reason: "Looks relevant.",
+              confidence: 0.8,
+            },
+            ...[3, 4, 5].map((rank) => ({
+              id: `item-${rank}`,
+              rank,
+              reason: "Looks relevant.",
+              confidence: 0.8,
+            })),
+          ],
+        },
+      }),
+    Error,
+    "duplicate id",
+  );
+});
+
+Deno.test("invalid JSON is rejected for fallback handling", () => {
+  assertThrows(
+    () => parseGeminiRerankJson("{bad json"),
+    Error,
+    "Failed to parse Gemini JSON response",
+  );
+});
+
+Deno.test("invalid JSON falls back through rerank path", async () => {
+  const outcome = await buildRerankedRecommendations({
+    geminiApiKey: "test-key",
+    geminiModel: "gemini-2.5-flash-lite",
+    prefs,
+    top20Candidates: topCandidates(),
+    reranker: () => Promise.resolve(parseGeminiRerankJson("{bad json")),
+  });
+
+  assertEquals(outcome.usedGemini, false);
+  assertEquals(outcome.modelName, "deterministic_fallback");
+  assertEquals(outcome.recommendations.length, 5);
+});
+
+Deno.test("missing GEMINI_API_KEY falls back", async () => {
+  const outcome = await buildRerankedRecommendations({
+    geminiApiKey: undefined,
+    geminiModel: "gemini-2.5-flash-lite",
+    prefs,
+    top20Candidates: topCandidates(),
+  });
+
+  assertEquals(outcome.usedGemini, false);
+  assertEquals(outcome.modelName, "deterministic_fallback");
+  assertEquals(outcome.recommendations.length, 5);
+});
+
+Deno.test("Gemini timeout or request failure falls back", async () => {
+  const outcome = await buildRerankedRecommendations({
+    geminiApiKey: "test-key",
+    geminiModel: "gemini-2.5-flash-lite",
+    prefs,
+    top20Candidates: topCandidates(),
+    reranker: () => Promise.reject(new Error("The operation timed out")),
+  });
+
+  assertEquals(outcome.usedGemini, false);
+  assertEquals(outcome.modelName, "deterministic_fallback");
+  assertEquals(outcome.fallbackReason, "The operation timed out");
+});
+
+Deno.test("deterministic fallback returns valid Top 5", () => {
+  const fallback = buildDeterministicFallbackRecommendations(topCandidates());
+
+  assertEquals(fallback.length, 5);
+  assertEquals(fallback[0].model_name, "deterministic_fallback");
+  assertEquals(fallback[0].confidence, null);
+  assertEquals(fallback[0].stored_score_breakdown.fallback, true);
+});
+
+Deno.test("recommendation_results rows include reason and model_name", () => {
+  const fallback = buildDeterministicFallbackRecommendations(topCandidates());
   const rows = buildRecommendationResultRows({
     userId: "user-1",
-    candidates,
+    recommendations: fallback,
     generatedAt: "2026-05-14T12:00:00.000Z",
   });
 
-  assertEquals(rows[0].model_name, "deterministic_v1");
-  assertEquals(rows[0].gemini_confidence, null);
-  assertEquals(rows[0].final_score, candidates[0].recommendation_score);
+  assertEquals(rows.length, 5);
+  assertEquals(rows[0].reason, fallback[0].reason);
+  assertEquals(rows[0].model_name, "deterministic_fallback");
+  assertEquals(rows[0].score_breakdown.fallback, true);
+});
+
+Deno.test("endpoint helpers work with fewer than 5 candidates", async () => {
+  const candidates = topCandidates(3);
+  const outcome = await buildRerankedRecommendations({
+    geminiApiKey: "test-key",
+    geminiModel: "gemini-2.5-flash-lite",
+    prefs,
+    top20Candidates: candidates,
+    reranker: () =>
+      Promise.resolve({
+        rankedItems: candidates.map((candidate, index) => ({
+          id: candidate.id,
+          rank: index + 1,
+          reason: "Relevant local pick for your preferences.",
+          confidence: 0.7,
+        })),
+      }),
+  });
+
+  assertEquals(outcome.usedGemini, true);
+  assertEquals(outcome.recommendations.length, 3);
 });
