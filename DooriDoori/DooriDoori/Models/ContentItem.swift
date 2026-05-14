@@ -108,6 +108,7 @@ struct ContentItem: Identifiable, Codable, Hashable {
         case title
         case description
         case shortDescription = "short_description"
+        case shortDescriptionCamel = "shortDescription"
         case detailDescription = "detail_description"
         case city
         case district
@@ -117,11 +118,15 @@ struct ContentItem: Identifiable, Codable, Hashable {
         case lat
         case lng
         case imageURL = "image_url"
+        case imageURLCamel = "imageUrl"
         case priceTier = "price_tier"
         case budgetLevel = "budget_level"
+        case budgetLevelCamel = "budgetLevel"
         case priceLevel = "price_level"
         case vibeTags = "vibe_tags"
+        case vibeTagsCamel = "vibeTags"
         case activityTags = "activity_tags"
+        case activityTagsCamel = "activityTags"
         case koreanRelevanceTags = "korean_relevance_tags"
         case schedule
         case dimensionScores = "dimension_scores"
@@ -228,6 +233,7 @@ struct ContentItem: Identifiable, Codable, Hashable {
         nameKr = try container.decodeIfPresent(String.self, forKey: .nameKr)
 
         let shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
+            ?? container.decodeIfPresent(String.self, forKey: .shortDescriptionCamel)
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? shortDescription ?? ""
         detailDescription = try container.decodeIfPresent(String.self, forKey: .detailDescription)
 
@@ -246,19 +252,25 @@ struct ContentItem: Identifiable, Codable, Hashable {
         }
 
         imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL)
+            ?? container.decodeIfPresent(String.self, forKey: .imageURLCamel)
         subcategoryContent = try container.decodeIfPresent(String.self, forKey: .subcategoryContent)
             ?? subcategories.first
             ?? category.rawValue
         subcategoryDisplayKr = try container.decodeIfPresent(String.self, forKey: .subcategoryDisplayKr)
 
         let decodedBudgetLevel = try container.decodeIfPresent(String.self, forKey: .budgetLevel)
+            ?? container.decodeIfPresent(String.self, forKey: .budgetLevelCamel)
         priceTier = try container.decodeIfPresent(String.self, forKey: .priceTier)
             ?? Self.priceTier(from: decodedBudgetLevel)
         priceLevel = try container.decodeIfPresent(Int.self, forKey: .priceLevel)
             ?? Self.priceLevel(from: decodedBudgetLevel)
 
-        vibeTags = try container.decodeIfPresent([String].self, forKey: .vibeTags) ?? []
-        let decodedActivityTags = try container.decodeIfPresent([String].self, forKey: .activityTags) ?? []
+        vibeTags = try container.decodeIfPresent([String].self, forKey: .vibeTags)
+            ?? container.decodeIfPresent([String].self, forKey: .vibeTagsCamel)
+            ?? []
+        let decodedActivityTags = try container.decodeIfPresent([String].self, forKey: .activityTags)
+            ?? container.decodeIfPresent([String].self, forKey: .activityTagsCamel)
+            ?? []
         activityTags = decodedActivityTags
         koreanRelevanceTags = try container.decodeIfPresent([String].self, forKey: .koreanRelevanceTags)
             ?? decodedActivityTags.filter { $0.contains("korean") }

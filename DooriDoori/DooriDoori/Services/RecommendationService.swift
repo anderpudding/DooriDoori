@@ -74,7 +74,7 @@ struct RecommendationService {
             .map { recommendation in
                 RankedContentItem(
                     item: recommendation.contentItem,
-                    score: recommendation.deterministicScore,
+                    score: recommendation.finalScore ?? recommendation.deterministicScore,
                     reason: reason(for: recommendation)
                 )
             }

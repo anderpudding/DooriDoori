@@ -57,6 +57,7 @@ struct UserPreferencesPayload: Codable, Equatable {
 }
 
 struct ScoreBreakdown: Codable, Hashable {
+    let deterministicScore: Double?
     let categoryMatch: Double
     let vibeMatch: Double
     let activityMatch: Double?
@@ -66,70 +67,98 @@ struct ScoreBreakdown: Codable, Hashable {
     let engagementScore: Double
     let koreanCommunityFit: Double?
     let freshnessOrDiversity: Double
+    let geminiRank: Int?
+    let geminiConfidence: Double?
 }
 
 struct RecommendedContentItem: Identifiable, Codable, Hashable {
     let contentItem: ContentItem
+    let finalScore: Double?
     let rank: Int
     let reason: String
-    let geminiConfidence: Double?
+    let confidence: Double?
     let deterministicScore: Double
+    let modelName: String?
     let scoreBreakdown: ScoreBreakdown
 
     var id: String { contentItem.id }
 
     enum CodingKeys: String, CodingKey {
+        case content
+        case finalScore
+        case finalScoreSnake = "final_score"
         case rank
         case reason
-        case geminiConfidence = "gemini_confidence"
-        case deterministicScore = "deterministic_score"
-        case scoreBreakdown = "score_breakdown"
+        case confidence
+        case geminiConfidenceSnake = "gemini_confidence"
+        case deterministicScore
+        case deterministicScoreSnake = "deterministic_score"
+        case modelName
+        case modelNameSnake = "model_name"
+        case scoreBreakdown
+        case scoreBreakdownSnake = "score_breakdown"
     }
 
     init(
         contentItem: ContentItem,
+        finalScore: Double? = nil,
         rank: Int,
         reason: String,
-        geminiConfidence: Double?,
+        confidence: Double?,
         deterministicScore: Double,
+        modelName: String? = nil,
         scoreBreakdown: ScoreBreakdown
     ) {
         self.contentItem = contentItem
+        self.finalScore = finalScore
         self.rank = rank
         self.reason = reason
-        self.geminiConfidence = geminiConfidence
+        self.confidence = confidence
         self.deterministicScore = deterministicScore
+        self.modelName = modelName
         self.scoreBreakdown = scoreBreakdown
     }
 
     init(from decoder: Decoder) throws {
-        contentItem = try ContentItem(from: decoder)
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        contentItem = try container.decodeIfPresent(ContentItem.self, forKey: .content)
+            ?? ContentItem(from: decoder)
+        finalScore = try container.decodeIfPresent(Double.self, forKey: .finalScore)
+            ?? container.decodeIfPresent(Double.self, forKey: .finalScoreSnake)
         rank = try container.decodeIfPresent(Int.self, forKey: .rank) ?? 0
         reason = try container.decodeIfPresent(String.self, forKey: .reason) ?? ""
-        geminiConfidence = try container.decodeIfPresent(Double.self, forKey: .geminiConfidence)
-        deterministicScore = try container.decode(Double.self, forKey: .deterministicScore)
-        scoreBreakdown = try container.decode(ScoreBreakdown.self, forKey: .scoreBreakdown)
+        confidence = try container.decodeIfPresent(Double.self, forKey: .confidence)
+            ?? container.decodeIfPresent(Double.self, forKey: .geminiConfidenceSnake)
+        deterministicScore = try container.decodeIfPresent(Double.self, forKey: .deterministicScore)
+            ?? container.decode(Double.self, forKey: .deterministicScoreSnake)
+        modelName = try container.decodeIfPresent(String.self, forKey: .modelName)
+            ?? container.decodeIfPresent(String.self, forKey: .modelNameSnake)
+        scoreBreakdown = try container.decodeIfPresent(ScoreBreakdown.self, forKey: .scoreBreakdown)
+            ?? container.decode(ScoreBreakdown.self, forKey: .scoreBreakdownSnake)
     }
 
     func encode(to encoder: Encoder) throws {
         try contentItem.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(finalScore, forKey: .finalScore)
         try container.encode(rank, forKey: .rank)
         try container.encode(reason, forKey: .reason)
-        try container.encodeIfPresent(geminiConfidence, forKey: .geminiConfidence)
+        try container.encodeIfPresent(confidence, forKey: .confidence)
         try container.encode(deterministicScore, forKey: .deterministicScore)
+        try container.encodeIfPresent(modelName, forKey: .modelName)
         try container.encode(scoreBreakdown, forKey: .scoreBreakdown)
     }
 }
 
 struct RecommendationResponse: Decodable {
     let recommendations: [RecommendedContentItem]
-    let source: String
+    let metadata: RecommendationMetadata?
+    let source: String?
 
     enum CodingKeys: String, CodingKey {
         case recommendations
         case candidates
+        case metadata
         case source
     }
 
@@ -138,8 +167,16 @@ struct RecommendationResponse: Decodable {
         recommendations = try container.decodeIfPresent([RecommendedContentItem].self, forKey: .recommendations)
             ?? container.decodeIfPresent([RecommendedContentItem].self, forKey: .candidates)
             ?? []
-        source = try container.decodeIfPresent(String.self, forKey: .source) ?? "legacy_candidates"
+        metadata = try container.decodeIfPresent(RecommendationMetadata.self, forKey: .metadata)
+        source = try container.decodeIfPresent(String.self, forKey: .source)
     }
+}
+
+struct RecommendationMetadata: Decodable, Hashable {
+    let candidateCount: Int
+    let returnedCount: Int
+    let usedGemini: Bool
+    let modelName: String
 }
 
 struct SavedItem: Codable, Identifiable, Hashable {
