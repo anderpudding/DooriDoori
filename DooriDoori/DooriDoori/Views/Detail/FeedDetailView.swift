@@ -6,6 +6,9 @@ struct FeedDetailView: View {
     let item: ContentItem
     let reason: String
     @ObservedObject var savedItemStore: SavedItemStore
+    let onToggleSaved: (ContentItem) -> Void
+
+    private let interactionService = InteractionService()
 
     private var isSaved: Bool {
         savedItemStore.isSaved(item)
@@ -25,7 +28,7 @@ struct FeedDetailView: View {
                         Spacer()
 
                         Button {
-                            savedItemStore.toggle(item)
+                            onToggleSaved(item)
                         } label: {
                             Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
                                 .font(.system(size: 21, weight: .semibold))
@@ -73,12 +76,29 @@ struct FeedDetailView: View {
                             .lineSpacing(5)
                     }
 
+                    if let detailDescription = item.detailDescription, !detailDescription.isEmpty {
+                        infoSection(title: "Details") {
+                            Text(detailDescription)
+                                .font(.system(size: 15, weight: .regular))
+                                .foregroundStyle(Color.black.opacity(0.78))
+                                .lineSpacing(5)
+                        }
+                    }
+
                     infoSection(title: "Vibes") {
                         tagWrap(tags: item.vibeTags)
                     }
 
-                    infoSection(title: "Korean relevance") {
-                        tagWrap(tags: item.koreanRelevanceTags)
+                    if !item.activityTags.isEmpty {
+                        infoSection(title: "Activities") {
+                            tagWrap(tags: item.activityTags)
+                        }
+                    }
+
+                    if !item.koreanRelevanceTags.isEmpty {
+                        infoSection(title: "Korean relevance") {
+                            tagWrap(tags: item.koreanRelevanceTags)
+                        }
                     }
                 }
                 .padding(17)
@@ -87,6 +107,9 @@ struct FeedDetailView: View {
         .background(DooriStyle.canvas)
         .navigationBarBackButtonHidden()
         .ignoresSafeArea(edges: .top)
+        .task {
+            try? await interactionService.record(contentId: item.id, interactionType: "view")
+        }
     }
 
     private var topImage: some View {

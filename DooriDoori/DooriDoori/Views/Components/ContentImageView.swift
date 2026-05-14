@@ -7,6 +7,27 @@ struct ContentImageView: View {
 
     var body: some View {
         ZStack {
+            if let imageURL = item.imageURL, let url = URL(string: imageURL) {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        placeholder
+                    }
+                }
+            } else {
+                placeholder
+            }
+        }
+        .frame(height: height)
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+    }
+
+    private var placeholder: some View {
+        ZStack {
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .fill(DooriStyle.softGray)
 
@@ -25,7 +46,5 @@ struct ContentImageView: View {
                     .foregroundStyle(.white)
             }
         }
-        .frame(height: height)
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
     }
 }

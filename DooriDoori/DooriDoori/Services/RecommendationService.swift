@@ -1,4 +1,5 @@
 import Foundation
+import Supabase
 
 struct RankedContentItem: Identifiable, Hashable {
     let item: ContentItem
@@ -9,12 +10,31 @@ struct RankedContentItem: Identifiable, Hashable {
 }
 
 struct RecommendationService {
+    private let injectedClient: SupabaseClient?
+    private let injectedAuthService: AuthService?
+    private var client: SupabaseClient { injectedClient ?? SupabaseManager.shared.client }
+    private var authService: AuthService { injectedAuthService ?? .shared }
+
+    init(
+        client: SupabaseClient? = nil,
+        authService: AuthService? = nil
+    ) {
+        injectedClient = client
+        injectedAuthService = authService
+    }
+
     private let koreanSignalTags: Set<String> = [
         "korean-community",
         "korean-friendly",
         "newcomer-friendly",
         "curated-for-vancouver-koreans"
     ]
+
+    func fetchRecommendations() async throws -> [RecommendedContentItem] {
+        _ = try await authService.ensureSession()
+        let response: RecommendationResponse = try await client.functions.invoke("recommend-for-user")
+        return Array(response.candidates.prefix(20))
+    }
 
     func rankedItems(
         for preference: UserPreference,
@@ -39,6 +59,24 @@ struct RecommendationService {
                     return $0.item.popularityScore > $1.item.popularityScore
                 }
                 return $0.score > $1.score
+            }
+    }
+
+    func rankedItems(
+        from recommendations: [RecommendedContentItem],
+        categoryFilter: ContentCategory? = nil
+    ) -> [RankedContentItem] {
+        recommendations
+            .filter { recommendation in
+                guard let categoryFilter else { return true }
+                return recommendation.contentItem.category == categoryFilter
+            }
+            .map { recommendation in
+                RankedContentItem(
+                    item: recommendation.contentItem,
+                    score: recommendation.deterministicScore,
+                    reason: reason(for: recommendation)
+                )
             }
     }
 
@@ -99,6 +137,11 @@ struct RecommendationService {
 
         let summary = parts.prefix(3).joined(separator: ", ")
         return "Recommended because it matches \(summary)."
+    }
+
+    func reason(for recommendation: RecommendedContentItem) -> String {
+        let score = Int((recommendation.deterministicScore * 100).rounded())
+        return "Recommended by your current taste profile with a deterministic score of \(score)."
     }
 
     private func normalize(_ value: String) -> String {

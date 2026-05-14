@@ -17,6 +17,20 @@ final class SavedItemStore: ObservableObject {
         savedItemIDs.contains(item.id)
     }
 
+    func replace(with ids: Set<String>) {
+        savedItemIDs = ids
+        persist()
+    }
+
+    func setSaved(_ isSaved: Bool, for item: ContentItem) {
+        if isSaved {
+            savedItemIDs.insert(item.id)
+        } else {
+            savedItemIDs.remove(item.id)
+        }
+        persist()
+    }
+
     func toggle(_ item: ContentItem) {
         if savedItemIDs.contains(item.id) {
             savedItemIDs.remove(item.id)

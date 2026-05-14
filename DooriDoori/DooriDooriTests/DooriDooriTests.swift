@@ -49,6 +49,83 @@ struct DooriDooriTests {
         #expect(ranked.first?.reason.contains("Coquitlam") == true)
     }
 
+    @Test func supabaseRecommendationResponseDecodesSnakeCasePayload() throws {
+        let json = """
+        {
+          "candidates": [
+            {
+              "id": "11111111-1111-1111-1111-111111111111",
+              "title": "Rice Workshop",
+              "type": "place",
+              "category": "food",
+              "subcategories": ["restaurant"],
+              "area": "Burnaby",
+              "city": "Burnaby",
+              "address": "123 Sample St",
+              "budget_level": "medium",
+              "vibe_tags": ["cozy"],
+              "activity_tags": ["dinner"],
+              "short_description": "Comforting Korean food.",
+              "detail_description": "A neighborhood pick with casual seating.",
+              "image_url": null,
+              "quality_score": 0.86,
+              "korean_community_fit": 0.9,
+              "view_count": 4,
+              "save_count": 2,
+              "review_count": 1,
+              "is_active": true,
+              "is_approved": true,
+              "created_at": "2026-05-13T00:00:00Z",
+              "deterministic_score": 0.91,
+              "score_breakdown": {
+                "categoryMatch": 1,
+                "vibeMatch": 1,
+                "locationMatch": 0.5,
+                "budgetMatch": 1,
+                "contentQuality": 0.86,
+                "engagementScore": 0.3,
+                "freshnessOrDiversity": 1
+              }
+            }
+          ]
+        }
+        """
+
+        let response = try JSONDecoder().decode(RecommendationResponse.self, from: Data(json.utf8))
+        let candidate = try #require(response.candidates.first)
+
+        #expect(candidate.contentItem.title == "Rice Workshop")
+        #expect(candidate.contentItem.category == .food)
+        #expect(candidate.contentItem.district == "Burnaby")
+        #expect(candidate.contentItem.priceLevel == 2)
+        #expect(candidate.contentItem.activityTags == ["dinner"])
+        #expect(candidate.deterministicScore == 0.91)
+        #expect(candidate.scoreBreakdown.contentQuality == 0.86)
+    }
+
+    @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {
+        let preference = UserPreference(
+            selectedCategories: ["food", "events"],
+            preferredDistricts: ["Burnaby"],
+            budgetLevel: 2,
+            vibeTags: ["cozy"],
+            infoNeeds: ["dinner"],
+            languagePreference: .both,
+            updatedAt: Date()
+        )
+
+        let payload = UserPreferencesPayload(userId: "user-1", preference: preference)
+        let data = try JSONEncoder().encode(payload)
+        let object = try #require(JSONSerialization.jsonObject(with: data) as? [String: Any])
+
+        #expect(object["user_id"] as? String == "user-1")
+        #expect(object["preferred_categories"] as? [String] == ["food", "events"])
+        #expect(object["preferred_areas"] as? [String] == ["Burnaby"])
+        #expect(object["budget_level"] as? String == "medium")
+        #expect(object["language_preference"] as? String == "any")
+        #expect(object["onboarding_completed"] as? Bool == true)
+    }
+
     @Test func recommendationScenariosUseReviewedSeedData() throws {
         let service = RecommendationService()
         let items = try reviewedItems()
