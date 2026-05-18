@@ -134,3 +134,49 @@ Expected response shape:
 If fallback is used, `metadata.usedGemini` is `false` and `metadata.modelName`
 is `deterministic_fallback`. The fallback response still returns valid Top 5
 recommendations with deterministic template reasons.
+
+## Step 4: FSQ OS Places Import
+
+FSQ OS Places is the base POI candidate layer for food and lifestyle places.
+Google Places remains a display/enrichment layer only for metadata such as
+photos, ratings, hours, and directions. Do not use Google review text, scraped
+reviews, or FSQ raw metadata as recommendation inputs.
+
+Prepare a small local export sample at one of:
+
+```sh
+supabase/seed_data/fsq_places_sample.json
+supabase/seed_data/fsq_places_sample.csv
+```
+
+Do not commit real FSQ tokens or large raw dataset exports. The repo ignores
+`supabase/seed_data/*` except for the small sample filenames above.
+
+Dry run:
+
+```sh
+node scripts/importers/fsq-os-places.mjs \
+  --file supabase/seed_data/fsq_places_sample.json \
+  --dry-run \
+  --limit 25
+```
+
+Real import:
+
+```sh
+SUPABASE_URL=your_supabase_project_url \
+SUPABASE_SERVICE_ROLE_KEY=your_server_side_service_role_key \
+node scripts/importers/fsq-os-places.mjs \
+  --file supabase/seed_data/fsq_places_sample.json \
+  --limit 25
+```
+
+The service role key is for local/server import execution only. Never put it in
+iOS client code or checked-in config.
+
+The importer writes `content_items` with `source_type = "fsq_os"` and stores the
+external id at `source_refs.fsq_place_id`. Imported rows are idempotent: the
+script updates an existing FSQ OS row with the same FSQ place id, and the
+database also has a unique partial index for that external id. FSQ rows default
+to `is_approved = false`, so they remain curator-owned base POI candidates and
+do not appear in recommendations until manually approved.

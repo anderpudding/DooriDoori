@@ -11,10 +11,12 @@ enum SourceType: String, Codable, Hashable {
     case manual
     case googlePlaces = "google_places"
     case fsq
+    case fsqOS = "fsq_os"
     case meetup
     case eventbrite
     case luma
     case cityOpenData = "city_open_data"
+    case cityVan = "city_van"
     case unknown
 
     init(from decoder: Decoder) throws {
