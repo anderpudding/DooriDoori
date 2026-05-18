@@ -35,9 +35,9 @@ struct MainTabView: View {
                 ZStack {
                     switch appState.selectedTab {
                     case .all:
-                        AllView(viewModel: recommendations) {
-                            path.append(.nearYou)
-                        }
+                        AllView(viewModel: recommendations, onSelectItem: { item in
+                            path.append(.detail(item))
+                        })
                     case .forYou:
                         ForYouView(
                             viewModel: recommendations,
