@@ -9,9 +9,12 @@ struct FeedDetailView: View {
 
     @State private var reviews: [Review] = []
     @State private var reviewLoadFailed = false
+    @State private var googlePlaceDetails: GooglePlaceDisplayData?
+    @State private var googlePhotoURL: URL?
 
     private let interactionService = InteractionService()
     private let reviewService = ReviewService()
+    private let googlePlaceService = GooglePlaceService()
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -28,6 +31,12 @@ struct FeedDetailView: View {
                         .foregroundStyle(DooriStyle.ink)
                         .lineLimit(2)
                         .minimumScaleFactor(0.75)
+
+                    if let googleDisplayName, googleDisplayName != item.title {
+                        Text(googleDisplayName)
+                            .dooriText(.bodySmall, english: true)
+                            .foregroundStyle(DooriStyle.muted)
+                    }
 
                     detailFacts
 
@@ -52,6 +61,15 @@ struct FeedDetailView: View {
                             .lineSpacing(5)
                     }
 
+                    if let openingHours = openingHoursText {
+                        infoSection(title: "영업 시간") {
+                            Text(openingHours)
+                                .dooriText(.bodySmall, english: true)
+                                .foregroundStyle(DooriStyle.longText)
+                                .lineSpacing(5)
+                        }
+                    }
+
                     Divider()
                         .background(Color.black)
                         .padding(.top, 12)
@@ -68,13 +86,31 @@ struct FeedDetailView: View {
         .ignoresSafeArea(edges: .top)
         .task {
             try? await interactionService.record(contentId: item.id, interactionType: "view")
-            await loadReviews()
+            async let reviewsTask: Void = loadReviews()
+            async let googleTask: Void = loadGooglePlaceDetails()
+            _ = await (reviewsTask, googleTask)
         }
     }
 
     private var topImage: some View {
         ZStack(alignment: .topLeading) {
-            ContentImageView(item: item, height: 381, cornerRadius: 0)
+            if let googlePhotoURL {
+                AsyncImage(url: googlePhotoURL) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ContentImageView(item: item, height: 381, cornerRadius: 0)
+                    }
+                }
+                .frame(height: 381)
+                .clipShape(RoundedRectangle(cornerRadius: 0, style: .continuous))
+                // TODO: Display Google photo author attribution alongside this image when authorAttributions are present.
+            } else {
+                ContentImageView(item: item, height: 381, cornerRadius: 0)
+            }
 
             IconCircleButton(symbolName: "chevron.left", background: .white.opacity(0.94), size: 34) {
                 dismiss()
@@ -94,7 +130,7 @@ struct FeedDetailView: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack(spacing: 5) {
                 LocationVectorIcon(size: 16)
-                Text(item.address)
+                Text(displayAddress)
                     .dooriText(.bodySmall, english: true)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -105,11 +141,15 @@ struct FeedDetailView: View {
             detailLabel("mappin.and.ellipse", "\(item.district), \(item.city)")
             detailLabel("wallet.pass", item.priceTier)
 
-            if let rating = item.rating {
+            if let rating = googlePlaceDetails?.rating ?? item.rating {
                 detailLabel(
                     "star.fill",
-                    "\(String(format: "%.1f", rating)) · 리뷰 \(item.reviewCount ?? reviews.count)"
+                    ratingText(rating: rating)
                 )
+            }
+
+            if let businessStatus = googlePlaceDetails?.businessStatus {
+                detailLabel("checkmark.seal", businessStatus.replacingOccurrences(of: "_", with: " "))
             }
         }
         .foregroundStyle(DooriStyle.longText)
@@ -126,8 +166,36 @@ struct FeedDetailView: View {
     }
 
     private var mapsURL: URL {
+        if let googleMapsUri = googlePlaceDetails?.googleMapsUri,
+           let url = URL(string: googleMapsUri) {
+            return url
+        }
+
         let encoded = item.address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         return URL(string: "http://maps.apple.com/?q=\(encoded)&ll=\(item.latitude),\(item.longitude)")!
+    }
+
+    private var displayAddress: String {
+        googlePlaceDetails?.formattedAddress ?? item.address
+    }
+
+    private var googleDisplayName: String? {
+        googlePlaceDetails?.displayName?.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var openingHoursText: String? {
+        let descriptions = googlePlaceDetails?.currentOpeningHours?.weekdayDescriptions
+            ?? googlePlaceDetails?.regularOpeningHours?.weekdayDescriptions
+        guard let descriptions, !descriptions.isEmpty else { return nil }
+        return descriptions.joined(separator: "\n")
+    }
+
+    private func ratingText(rating: Double) -> String {
+        if let userRatingCount = googlePlaceDetails?.userRatingCount {
+            return "\(String(format: "%.1f", rating)) · Google \(userRatingCount)"
+        }
+
+        return "\(String(format: "%.1f", rating)) · 리뷰 \(item.reviewCount ?? reviews.count)"
     }
 
     private var reviewSection: some View {
@@ -226,6 +294,23 @@ struct FeedDetailView: View {
             reviewLoadFailed = false
         } catch {
             reviewLoadFailed = true
+        }
+    }
+
+    @MainActor
+    private func loadGooglePlaceDetails() async {
+        guard item.type == .place else { return }
+
+        do {
+            let details = try await googlePlaceService.fetchGooglePlaceDetails(contentItemId: item.id)
+            googlePlaceDetails = details
+
+            if let photoName = details.photos.first?.name {
+                googlePhotoURL = try await googlePlaceService.fetchGooglePlacePhotoURL(photoName: photoName)
+            }
+        } catch {
+            googlePlaceDetails = nil
+            googlePhotoURL = nil
         }
     }
 }

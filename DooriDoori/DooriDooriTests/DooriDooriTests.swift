@@ -138,6 +138,46 @@ struct DooriDooriTests {
         }
     }
 
+    @Test func googlePlaceDisplayDataDecodesWithoutReviewText() throws {
+        let json = """
+        {
+          "placeId": "ChIJ123",
+          "displayName": "Sample Cafe",
+          "formattedAddress": "123 Main St, Vancouver, BC",
+          "latitude": 49.25,
+          "longitude": -123.1,
+          "rating": 4.5,
+          "userRatingCount": 120,
+          "regularOpeningHours": {
+            "openNow": true,
+            "weekdayDescriptions": ["Monday: 9:00 AM – 5:00 PM"]
+          },
+          "currentOpeningHours": null,
+          "googleMapsUri": "https://maps.google.com/?cid=123",
+          "websiteUri": "https://example.com",
+          "nationalPhoneNumber": "(604) 555-0100",
+          "businessStatus": "OPERATIONAL",
+          "photos": [
+            {
+              "name": "places/ChIJ123/photos/photo-resource",
+              "widthPx": 1200,
+              "heightPx": 800,
+              "authorAttributions": []
+            }
+          ]
+        }
+        """
+
+        let details = try JSONDecoder().decode(GooglePlaceDisplayData.self, from: Data(json.utf8))
+
+        #expect(details.placeId == "ChIJ123")
+        #expect(details.displayName == "Sample Cafe")
+        #expect(details.rating == 4.5)
+        #expect(details.userRatingCount == 120)
+        #expect(details.regularOpeningHours?.weekdayDescriptions?.first == "Monday: 9:00 AM – 5:00 PM")
+        #expect(details.photos.first?.name == "places/ChIJ123/photos/photo-resource")
+    }
+
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {
         let preference = UserPreference(
             selectedCategories: ["food", "events"],
