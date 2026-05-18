@@ -6,7 +6,7 @@ struct CategoryChip: View {
 
     var body: some View {
         Text(title)
-            .font(.system(size: 13, weight: .medium, design: .monospaced))
+            .dooriText(.bodySmall)
             .foregroundStyle(isSelected ? .white : DooriStyle.accentSoft)
             .padding(.horizontal, 18)
             .frame(height: 38)

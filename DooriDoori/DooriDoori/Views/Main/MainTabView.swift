@@ -19,6 +19,9 @@ enum MainTab: String, CaseIterable, Identifiable {
 enum MainRoute: Hashable {
     case detail(ContentItem)
     case nearYou
+    case allPicks
+    case notifications
+    case writeReview(ContentItem)
 }
 
 struct MainTabView: View {
@@ -36,9 +39,18 @@ struct MainTabView: View {
                             path.append(.nearYou)
                         }
                     case .forYou:
-                        ForYouView(viewModel: recommendations) { item in
-                            path.append(.detail(item))
-                        }
+                        ForYouView(
+                            viewModel: recommendations,
+                            onSelectItem: { item in
+                                path.append(.detail(item))
+                            },
+                            onShowAllPicks: {
+                                path.append(.allPicks)
+                            },
+                            onShowNotifications: {
+                                path.append(.notifications)
+                            }
+                        )
                     case .account:
                         AccountView(viewModel: recommendations)
                     }
@@ -54,11 +66,20 @@ struct MainTabView: View {
                     FeedDetailView(
                         item: item,
                         reason: recommendations.reason(for: item),
-                        savedItemStore: recommendations.savedItemStore,
-                        onToggleSaved: recommendations.toggleSaved
+                        onWriteReview: { selectedItem in
+                            path.append(.writeReview(selectedItem))
+                        }
                     )
                 case .nearYou:
                     NearYouView(items: recommendations.items)
+                case .allPicks:
+                    AllPicksView(viewModel: recommendations) { item in
+                        path.append(.detail(item))
+                    }
+                case .notifications:
+                    NotificationView()
+                case .writeReview(let item):
+                    ReviewWriteView(item: item)
                 }
             }
         }
