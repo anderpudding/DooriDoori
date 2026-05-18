@@ -4,20 +4,37 @@ struct AllView: View {
     @ObservedObject var viewModel: RecommendationViewModel
     let onSelectItem: (ContentItem) -> Void
 
-    @State private var selectedRegion = "전체"
+    @State private var selectedRegion = "Vancouver"
     @State private var selectedCategoryFilter: ContentCategoryFilter = .all
     @State private var visibleCount = 8
 
     private var availableRegions: [String] {
-        let districts = Array(Set(viewModel.items.map { $0.district })).sorted()
-        return ["전체"] + districts
+        let cities = viewModel.items.map(\.city).filter { !$0.isEmpty }
+        let districts = viewModel.items.map(\.district).filter { !$0.isEmpty }
+        return Array(Set(cities + districts)).sorted { lhs, rhs in
+            if lhs == "Vancouver" { return true }
+            if rhs == "Vancouver" { return false }
+            return lhs < rhs
+        }
     }
 
     private var popularPlaces: [ContentItem] {
-        let pool = selectedRegion == "전체"
-            ? viewModel.items
-            : viewModel.items.filter { $0.district == selectedRegion }
-        return Array(pool.sorted { $0.viewCount > $1.viewCount }.prefix(9))
+        let regionPool = viewModel.items.filter {
+            $0.city == selectedRegion || $0.district == selectedRegion
+        }
+        let pool = regionPool.isEmpty ? viewModel.items : regionPool
+        let sortedMeaningful = pool
+            .filter { $0.viewCount > 0 }
+            .sorted { lhs, rhs in
+                if lhs.viewCount == rhs.viewCount {
+                    return originalIndex(lhs) < originalIndex(rhs)
+                }
+                return lhs.viewCount > rhs.viewCount
+            }
+        let fillItems = pool.filter { candidate in
+            !sortedMeaningful.contains(where: { $0.id == candidate.id })
+        }
+        return Array((sortedMeaningful + fillItems).prefix(9))
     }
 
     private var filteredCategoryItems: [ContentItem] {
@@ -52,6 +69,11 @@ struct AllView: View {
             .padding(.bottom, 32)
         }
         .background(DooriStyle.canvas)
+        .onAppear {
+            if !availableRegions.contains(selectedRegion), let firstRegion = availableRegions.first {
+                selectedRegion = firstRegion
+            }
+        }
         .onChange(of: selectedCategoryFilter) {
             visibleCount = 8
         }
@@ -95,24 +117,17 @@ struct AllView: View {
             }
         } label: {
             HStack(spacing: 4) {
-                Image(systemName: "mappin.circle.fill")
-                    .font(.system(size: 12))
+                LocationVectorIcon(size: 16)
                     .foregroundStyle(DooriStyle.accent)
                 Text(selectedRegion)
-                    .dooriText(.captionSmall)
+                    .dooriText(.body)
                     .foregroundStyle(DooriStyle.ink)
                 Image(systemName: "chevron.down")
-                    .font(.system(size: 10, weight: .semibold))
-                    .foregroundStyle(DooriStyle.muted)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(DooriStyle.ink)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 7)
-            .background(.white, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color.black.opacity(0.1), lineWidth: 1)
-            )
         }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Category Section
@@ -158,6 +173,10 @@ struct AllView: View {
                     }
             }
         }
+    }
+
+    private func originalIndex(_ item: ContentItem) -> Int {
+        viewModel.items.firstIndex(where: { $0.id == item.id }) ?? Int.max
     }
 
     // MARK: - States

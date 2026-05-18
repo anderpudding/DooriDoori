@@ -6,8 +6,8 @@ struct CategoryContentCard: View {
 
     var body: some View {
         Button(action: onTap) {
-            VStack(alignment: .leading, spacing: 0) {
-                ContentImageView(item: item, height: 130, cornerRadius: 0)
+            VStack(alignment: .leading, spacing: 10) {
+                ContentImageView(item: item, height: 147, cornerRadius: 10)
                     .frame(maxWidth: .infinity)
 
                 VStack(alignment: .leading, spacing: 4) {
@@ -22,21 +22,20 @@ struct CategoryContentCard: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     HStack(spacing: 3) {
-                        Image(systemName: "mappin")
-                            .font(.system(size: 10))
+                        LocationVectorIcon(size: 12)
                         Text(item.district)
                             .dooriText(.captionSmall, english: true)
                             .lineLimit(1)
                     }
                     .foregroundStyle(DooriStyle.muted)
                 }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(12)
+            .frame(height: 256, alignment: .top)
             .background(DooriStyle.surface)
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .cardShadow()
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.black, lineWidth: 1))
         }
         .buttonStyle(.plain)
     }

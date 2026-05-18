@@ -22,8 +22,7 @@ struct PopularPlaceCard: View {
                     Spacer(minLength: 4)
 
                     HStack(spacing: 4) {
-                        Image(systemName: "mappin")
-                            .font(.system(size: 11))
+                        LocationVectorIcon(size: 16)
                         Text(item.district)
                             .dooriText(.bodySmall, english: true)
                             .lineLimit(1)
@@ -33,7 +32,7 @@ struct PopularPlaceCard: View {
                     HStack(spacing: 4) {
                         Image(systemName: "person.2")
                             .font(.system(size: 11))
-                        Text("\(item.viewCount)명이 관심있음")
+                        Text("\(item.viewCount)명이 관심 있음")
                             .dooriText(.bodySmall)
                     }
                     .foregroundStyle(DooriStyle.muted)
@@ -41,12 +40,13 @@ struct PopularPlaceCard: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 ContentImageView(item: item, height: 88, cornerRadius: 10)
-                    .frame(width: 88)
+                    .frame(width: 114)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
+            .frame(height: 127)
             .background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .cardShadow()
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.black, lineWidth: 1))
         }
         .buttonStyle(.plain)
     }
