@@ -118,6 +118,26 @@ struct DooriDooriTests {
         #expect(response.metadata?.phase == "gemini_reranking")
     }
 
+    @Test func sourceTypeDecodesBackendSourceValuesAndUnknowns() throws {
+        let decoder = JSONDecoder()
+        let cases: [(String, SourceType)] = [
+            ("curated", .curated),
+            ("manual", .manual),
+            ("google_places", .googlePlaces),
+            ("fsq", .fsq),
+            ("meetup", .meetup),
+            ("eventbrite", .eventbrite),
+            ("luma", .luma),
+            ("city_open_data", .cityOpenData),
+            ("future_source", .unknown)
+        ]
+
+        for (rawValue, expected) in cases {
+            let data = Data("\"\(rawValue)\"".utf8)
+            #expect(try decoder.decode(SourceType.self, from: data) == expected)
+        }
+    }
+
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {
         let preference = UserPreference(
             selectedCategories: ["food", "events"],

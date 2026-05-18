@@ -9,8 +9,19 @@ enum ContentType: String, Codable, Hashable {
 enum SourceType: String, Codable, Hashable {
     case curated
     case manual
-    case google
+    case googlePlaces = "google_places"
+    case fsq
     case meetup
+    case eventbrite
+    case luma
+    case cityOpenData = "city_open_data"
+    case unknown
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = SourceType(rawValue: rawValue) ?? .unknown
+    }
 }
 
 struct ContentSchedule: Codable, Hashable {
