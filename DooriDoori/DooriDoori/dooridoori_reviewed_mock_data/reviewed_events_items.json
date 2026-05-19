@@ -1,564 +1,2290 @@
 [
   {
-    "id": "event_001",
+    "id": "event_luma_001",
     "type": "event",
     "category": "events",
-    "subcategoryContent": "social",
-    "subcategoryDisplayKr": "일반소셜",
-    "nameEn": "Vancouver Korean Foodie Meetup",
-    "nameKr": "밴쿠버 한식 미식 모임",
-    "description": "Vancouver에서 한식 좋아하는 사람들이 매달 모이는 친목 모임. 매번 다른 한식당에서 함께 식사하며 음식 이야기와 일상 공유. 현지인·한인·교포 누구나 환영하는 캐주얼한 분위기.",
-    "city": "Coquitlam",
-    "district": "Coquitlam",
-    "address": "Coquitlam 한식당 (매월 변경)",
-    "coordinates": {
-      "lat": 49.2812,
-      "lng": -122.8047
-    },
-    "imageURL": "/mockup/images/event_001.jpg",
-    "priceTier": "$$",
-    "priceLevel": 2,
-    "vibeTags": [
-      "casual",
-      "korean-community",
-      "expat-friendly",
-      "group-friendly"
-    ],
-    "koreanRelevanceTags": [
-      "korean-community",
-      "korean-friendly",
-      "expat-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "schedule": {
-      "type": "one_time",
-      "openingHours": null,
-      "startDateTime": "2026-05-24T18:30",
-      "endDateTime": "2026-05-24T21:00"
-    },
-    "dimensionScores": {
-      "atmosphere": 4,
-      "size": 2,
-      "learning_value": 2
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.47,
-    "freshnessScore": 0.81,
-    "isActive": true,
-    "rating": null,
-    "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "eventSubtype": "social",
-      "hostName": "Vancouver Korean Foodie Group",
-      "attendanceEstimate": 25
-    }
-  },
-  {
-    "id": "event_002",
-    "type": "event",
-    "category": "events",
-    "subcategoryContent": "social",
-    "subcategoryDisplayKr": "일반소셜",
-    "nameEn": "Language Exchange Night at Ironworks",
-    "nameKr": "아이언웍스 언어 교환 나잇",
-    "description": "Gastown 펍에서 매주 목요일 진행되는 언어 교환 모임. 영어·한국어·일본어·스페인어 테이블 운영. 음료 한잔 하면서 자연스럽게 대화하는 형식. 신청 없이 그냥 와도 OK.",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Salazar Awards Ceremony",
+    "nameKr": "살라자르 어워즈 시상식",
+    "description": "밴쿠버 지역 예술·문화 씬에서 활약한 창작자들을 조명하는 연례 시상식. 감독·배우·예술가 등 다양한 부문 시상. 격식 있는 이브닝 행사로 드레스코드 있음.",
     "city": "Vancouver",
-    "district": "Gastown",
-    "address": "235 Alexander St, Vancouver, BC V6A 1B5",
+    "district": "Downtown",
+    "address": "677 W Cordova St, Vancouver, BC V6B 1G8",
     "coordinates": {
-      "lat": 49.2842,
-      "lng": -123.1003
+      "lat": 49.287,
+      "lng": -123.111
     },
-    "imageURL": "/mockup/images/event_002.jpg",
-    "priceTier": "$",
-    "priceLevel": 1,
+    "imageURL": "/mockup/images/event_luma_001.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
     "vibeTags": [
-      "casual",
-      "expat-friendly",
-      "after-work",
-      "alcohol-served"
-    ],
-    "koreanRelevanceTags": [
-      "korean-community",
-      "korean-friendly",
-      "expat-friendly",
-      "language-exchange",
-      "curated-for-vancouver-koreans"
+      "formal",
+      "indoor",
+      "arts-culture",
+      "ticket-required"
     ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-05-21T19:00",
-      "endDateTime": "2026-05-21T22:00"
+      "startDateTime": "2026-05-20T18:00",
+      "endDateTime": "2026-05-20T21:30"
     },
     "dimensionScores": {
       "atmosphere": 3.5,
       "size": 2.5,
-      "learning_value": 3
+      "learning_value": 2.5
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.55,
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.52,
     "freshnessScore": 0.85,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "social",
-      "hostName": "Vancouver Language Exchange",
-      "attendanceEstimate": 60
-    }
+      "eventSubtype": "arts_culture",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 80,
+      "lumaUrl": "https://lu.ma/m7kaisfp",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_001.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "formal",
+      "indoor",
+      "arts-culture",
+      "ticket-required",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.635,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 62,
+    "save_count": 12
   },
   {
-    "id": "event_003",
+    "id": "event_luma_002",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Granville Island Sketch Collage: Coffee, Bookstore & People with Becky Cao",
+    "nameKr": "그랜빌 아일랜드 스케치 콜라주 with 베키 카오",
+    "description": "Granville Island에서 커피숍·서점·오가는 사람들을 스케치하며 도시 풍경을 콜라주로 담는 워크숍. 베키 카오 강사와 함께하는 현장 드로잉. 초보 환영.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1661 Duranleau St, Vancouver, BC V6H 3S3",
+    "coordinates": {
+      "lat": 49.2714,
+      "lng": -123.1354
+    },
+    "imageURL": "/mockup/images/event_luma_002.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "creative",
+      "workshop",
+      "outdoor",
+      "beginner-friendly"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T10:00",
+      "endDateTime": "2026-05-30T13:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 1.5,
+      "learning_value": 4
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.61,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 20,
+      "lumaUrl": "https://lu.ma/dy3xb2ez",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_002.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "workshop",
+      "outdoor",
+      "beginner-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.652,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 73,
+    "save_count": 15
+  },
+  {
+    "id": "event_luma_003",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Where do I even begin?: Learning to Simplify Very Complicated Scenes with Rita Sabler",
+    "nameKr": "복잡한 장면 단순화하기 with 리타 세이블러",
+    "description": "복잡한 도시 풍경이나 실내를 어떻게 단순하게 스케치할지 막막한 이들을 위한 실습 워크숍. 리타 세이블러 강사가 복잡한 씬을 빠르게 정리하는 핵심 기법 전수. SOLD OUT.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1661 Duranleau St, Vancouver, BC V6H 3S3",
+    "coordinates": {
+      "lat": 49.2714,
+      "lng": -123.1354
+    },
+    "imageURL": "/mockup/images/event_luma_003.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "creative",
+      "workshop",
+      "indoor",
+      "learning-heavy"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T10:00",
+      "endDateTime": "2026-05-30T13:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 1.5,
+      "learning_value": 4.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.65,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 18,
+      "lumaUrl": "https://lu.ma/xeybw5zd",
+      "isSoldOut": true,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_003.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "workshop",
+      "indoor",
+      "learning-heavy",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.678,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 78,
+    "save_count": 16
+  },
+  {
+    "id": "event_luma_004",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "The Side-Hustle Blueprint for Designers: Design, Structure, & Scale",
+    "nameKr": "디자이너를 위한 부업 설계도: 디자인·구조·스케일",
+    "description": "프리랜서 디자이너·크리에이티브가 부업이나 1인 사업으로 확장하는 방법을 단계별로 다루는 무료 실무 워크숍. 사업 구조 설계, 가격 책정, 스케일 전략까지 커버.",
+    "city": "Vancouver",
+    "district": "Gastown",
+    "address": "425 Carrall St, Vancouver, BC V6B 6E3",
+    "coordinates": {
+      "lat": 49.2822,
+      "lng": -123.1042
+    },
+    "imageURL": "/mockup/images/event_luma_004.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "learning-heavy",
+      "career-focused",
+      "workshop",
+      "free-entry"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T10:30",
+      "endDateTime": "2026-05-30T13:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "size": 2,
+      "learning_value": 4.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 40,
+      "lumaUrl": "https://lu.ma/g3izk916",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "career"
+    ],
+    "image_url": "/mockup/images/event_luma_004.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "career",
+      "learning-heavy",
+      "career-focused",
+      "workshop",
+      "free-entry",
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "quality_score": 0.633,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 70,
+    "save_count": 14
+  },
+  {
+    "id": "event_luma_005",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Along the Granville Shoreline: Sketchwalk with Heather Souliere",
+    "nameKr": "그랜빌 해안가 스케치워크 with 헤더 술리에르",
+    "description": "Granville Island 해안 산책로를 따라 걸으며 수변 풍경과 건물을 느슨하고 자유롭게 그리는 야외 스케치워크. 헤더 술리에르 강사 가이드. 20달러 참가비.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1600 Johnston St, Vancouver, BC V6H 3R9",
+    "coordinates": {
+      "lat": 49.2712,
+      "lng": -123.1358
+    },
+    "imageURL": "/mockup/images/event_luma_005.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "creative",
+      "outdoor",
+      "beginner-friendly",
+      "casual"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T11:30",
+      "endDateTime": "2026-05-30T14:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 3.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 15,
+      "lumaUrl": "https://lu.ma/rlsl5sx4",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_005.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "outdoor",
+      "beginner-friendly",
+      "casual",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.633,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 70,
+    "save_count": 14
+  },
+  {
+    "id": "event_luma_006",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Paint, Chai & Connection",
+    "nameKr": "페인트, 차이, 그리고 연결",
+    "description": "차이 한 잔과 함께하는 힐링 페인팅 소셜. Ripple Room 주최 아늑한 아트 모임. 그림 실력보다 연결과 창의적 표현에 초점. 초보 누구나 환영. 40달러 참가비.",
+    "city": "Vancouver",
+    "district": "Mount Pleasant",
+    "address": "2-338 E 7th Ave, Vancouver, BC V5T 1N7",
+    "coordinates": {
+      "lat": 49.2617,
+      "lng": -123.0966
+    },
+    "imageURL": "/mockup/images/event_luma_006.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "casual",
+      "creative",
+      "newcomer-friendly",
+      "indoor"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T11:30",
+      "endDateTime": "2026-05-30T14:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "The Ripple Room",
+      "attendanceEstimate": 20,
+      "lumaUrl": "https://lu.ma/po933e4h",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_006.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "casual",
+      "creative",
+      "newcomer-friendly",
+      "indoor",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.613,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 66,
+    "save_count": 13
+  },
+  {
+    "id": "event_luma_007",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Build a 5-Minute Drawing Habit with Nishant Jain",
+    "nameKr": "하루 5분 드로잉 습관 만들기 with 니샨트 자인",
+    "description": "매일 5분만 투자해도 지속 가능한 드로잉 루틴을 만드는 실습 강좌. 니샨트 자인 강사가 쉽고 재밌는 스케치 습관 형성법을 가이드. 실력 무관 환영. 55달러.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1661 Duranleau St, Vancouver, BC V6H 3S3",
+    "coordinates": {
+      "lat": 49.2714,
+      "lng": -123.1354
+    },
+    "imageURL": "/mockup/images/event_luma_007.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "learning-heavy",
+      "indoor",
+      "beginner-friendly",
+      "creative"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T14:00",
+      "endDateTime": "2026-05-30T16:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 1.5,
+      "learning_value": 4
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 18,
+      "lumaUrl": "https://lu.ma/d12f7t0t",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_007.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "learning-heavy",
+      "indoor",
+      "beginner-friendly",
+      "creative",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.613,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 66,
+    "save_count": 13
+  },
+  {
+    "id": "event_luma_008",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Expressive Seascapes with Maria Coryell-Martin",
+    "nameKr": "표현적 바다 풍경화 with 마리아 코리엘-마틴",
+    "description": "바다와 항구 풍경을 수채화·잉크로 자유롭게 표현하는 워크숍. 파도·빛·반영 등 바다 요소를 화면에 담는 기법 학습. SOLD OUT — 웨이팅리스트 신청 가능.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1661 Duranleau St, Vancouver, BC V6H 3S3",
+    "coordinates": {
+      "lat": 49.2714,
+      "lng": -123.1354
+    },
+    "imageURL": "/mockup/images/event_luma_008.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "learning-heavy",
+      "indoor",
+      "creative",
+      "ticket-required"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T14:00",
+      "endDateTime": "2026-05-30T17:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 1.5,
+      "learning_value": 4.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.68,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 18,
+      "lumaUrl": "https://lu.ma/wt48c5xh",
+      "isSoldOut": true,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_008.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "learning-heavy",
+      "indoor",
+      "creative",
+      "ticket-required",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.698,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 82,
+    "save_count": 16
+  },
+  {
+    "id": "event_luma_009",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Creating Visual Shortcuts: Sketchwalk with Rita Sabler",
+    "nameKr": "시각적 단축키 만들기 스케치워크 with 리타 세이블러",
+    "description": "복잡한 도시 장면을 빠르게 포착하는 나만의 시각적 단축 기호를 만드는 야외 스케치워크. Granville Island 일대 투어. SOLD OUT.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1600 Johnston St, Vancouver, BC V6H 3R9",
+    "coordinates": {
+      "lat": 49.2712,
+      "lng": -123.1358
+    },
+    "imageURL": "/mockup/images/event_luma_009.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "creative",
+      "outdoor",
+      "learning-heavy"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T15:00",
+      "endDateTime": "2026-05-30T17:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 4
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.62,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 15,
+      "lumaUrl": "https://lu.ma/xzas926a",
+      "isSoldOut": true,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_009.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "outdoor",
+      "learning-heavy",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.659,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 74,
+    "save_count": 15
+  },
+  {
+    "id": "event_luma_010",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Loose Lines along False Creek: Sketchwalk with Ian DeHoog",
+    "nameKr": "팔스 크릭 루즈 라인 스케치워크 with 이안 드 호그",
+    "description": "False Creek 수변을 따라 자유롭고 느슨한 선으로 도시 풍경을 담는 야외 스케치워크. 완성도보다 표현의 자유에 집중하는 가이드 투어. SOLD OUT.",
+    "city": "Vancouver",
+    "district": "False Creek",
+    "address": "1600 Marinaside Crescent, Vancouver, BC V6Z 2Z4",
+    "coordinates": {
+      "lat": 49.2744,
+      "lng": -123.1243
+    },
+    "imageURL": "/mockup/images/event_luma_010.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "creative",
+      "outdoor",
+      "casual",
+      "beginner-friendly"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-31T10:00",
+      "endDateTime": "2026-05-31T12:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "size": 1.5,
+      "learning_value": 3.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.6,
+    "freshnessScore": 0.72,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 15,
+      "lumaUrl": "https://lu.ma/79m2xc25",
+      "isSoldOut": true,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_010.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "outdoor",
+      "casual",
+      "beginner-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.642,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 72,
+    "save_count": 14
+  },
+  {
+    "id": "event_luma_011",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "Sketching Vignettes: Sketchwalk with Peri-Laine Nilan",
+    "nameKr": "비네트 스케치워크 with 페리-레인 닐런",
+    "description": "작고 완결된 비네트(vignette) 스타일로 도시의 한 장면을 포착하는 스케치워크. Granville Island 일대를 걸으며 간결하고 감성적인 드로잉 기법 학습. 20달러.",
+    "city": "Vancouver",
+    "district": "Granville Island",
+    "address": "1661 Duranleau St, Vancouver, BC V6H 3S3",
+    "coordinates": {
+      "lat": 49.2714,
+      "lng": -123.1354
+    },
+    "imageURL": "/mockup/images/event_luma_011.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "creative",
+      "outdoor",
+      "beginner-friendly",
+      "casual"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-31T10:00",
+      "endDateTime": "2026-05-31T12:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 3.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.72,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "USk Vancouver Sketch Weekend 2026",
+      "attendanceEstimate": 15,
+      "lumaUrl": "https://lu.ma/11veqgbx",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_011.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "creative",
+      "outdoor",
+      "beginner-friendly",
+      "casual",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.61,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 66,
+    "save_count": 13
+  },
+  {
+    "id": "event_luma_012",
     "type": "event",
     "category": "events",
     "subcategoryContent": "social",
     "subcategoryDisplayKr": "일반소셜",
-    "nameEn": "Sunset Picnic at Spanish Banks",
-    "nameKr": "스패니쉬 뱅크 선셋 피크닉",
-    "description": "Spanish Banks Beach에서 매달 보름달 시기에 열리는 캐주얼 피크닉. 각자 음식 가져와서 노을 보며 이야기 나누는 자유로운 분위기. 처음 온 사람도 환영하는 newcomer-friendly 모임.",
+    "nameEn": "Art & Letters to Future Me - Art Hangout",
+    "nameKr": "미래의 나에게: 아트 & 레터 소셜",
+    "description": "예술 활동과 글쓰기를 결합한 힐링 아트 소셜. 미래의 자신에게 편지를 쓰고, 그림·콜라주로 표현. Creative Hangouts 주최. 가볍고 따뜻한 분위기. 5달러 참가비.",
     "city": "Vancouver",
-    "district": "West Point Grey",
-    "address": "Spanish Banks Beach, Vancouver, BC",
+    "district": "Mount Pleasant",
+    "address": "2-338 E 1st Ave, Vancouver, BC V5T 1A5",
     "coordinates": {
-      "lat": 49.2766,
-      "lng": -123.2031
+      "lat": 49.268,
+      "lng": -123.0965
     },
-    "imageURL": "/mockup/images/event_003.jpg",
+    "imageURL": "/mockup/images/event_luma_012.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "casual",
+      "creative",
+      "newcomer-friendly",
+      "indoor"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-31T13:00",
+      "endDateTime": "2026-05-31T16:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 1.5,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.48,
+    "freshnessScore": 0.72,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Creative Hangouts",
+      "attendanceEstimate": 25,
+      "lumaUrl": "https://lu.ma/nc32nchd",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_012.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "casual",
+      "creative",
+      "newcomer-friendly",
+      "indoor",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.564,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 58,
+    "save_count": 12
+  },
+  {
+    "id": "event_luma_013",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "'Land Marks' Opening Art Party",
+    "nameKr": "'랜드 마크스' 오프닝 아트 파티",
+    "description": "Spur Projects 주최 'Land Marks' 전시 오프닝 파티. 지역 예술가의 새 전시를 함께 축하하는 캐주얼한 갤러리 이벤트. 드링크 서비스 제공. 무료 입장.",
+    "city": "Vancouver",
+    "district": "Gastown",
+    "address": "270 E Cordova St, Vancouver, BC V6A 1L4",
+    "coordinates": {
+      "lat": 49.2826,
+      "lng": -123.099
+    },
+    "imageURL": "/mockup/images/event_luma_013.jpg",
     "priceTier": "free",
     "priceLevel": 0,
     "vibeTags": [
       "casual",
-      "outdoor",
-      "newcomer-friendly",
-      "free-entry"
-    ],
-    "koreanRelevanceTags": [
-      "newcomer-friendly",
-      "curated-for-vancouver-koreans"
+      "free-entry",
+      "alcohol-served",
+      "indoor"
     ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-06-08T19:00",
-      "endDateTime": "2026-06-08T22:00"
+      "startDateTime": "2026-06-05T18:00",
+      "endDateTime": "2026-06-05T21:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 1.5,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.46,
+    "freshnessScore": 0.64,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "Spur Projects - 'Land Marks' Art Party",
+      "attendanceEstimate": 60,
+      "lumaUrl": "https://lu.ma/lj6c02vn",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_013.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "casual",
+      "free-entry",
+      "alcohol-served",
+      "indoor",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.523,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 55,
+    "save_count": 11
+  },
+  {
+    "id": "event_luma_014",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "AI Film Club: 06/11",
+    "nameKr": "AI 필름 클럽: 6월 11일",
+    "description": "BC + AI Events 주최 AI 영화 클럽 정기 모임. AI 기술을 주제로 한 단편·장편 영화 상영 후 관객 토론. 영화 애호가와 AI 관심자 모두 환영. 20달러.",
+    "city": "Vancouver",
+    "district": "Kitsilano",
+    "address": "1275 W 6th Ave, Vancouver, BC V6H 1A6",
+    "coordinates": {
+      "lat": 49.2662,
+      "lng": -123.1341
+    },
+    "imageURL": "/mockup/images/event_luma_014.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "indoor",
+      "learning-heavy",
+      "ticket-required",
+      "casual"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-11T18:30",
+      "endDateTime": "2026-06-11T21:30"
     },
     "dimensionScores": {
       "atmosphere": 3,
       "size": 2,
-      "learning_value": 1
+      "learning_value": 4
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.4,
-    "freshnessScore": 0.61,
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.62,
+    "freshnessScore": 0.59,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "social",
-      "hostName": "Vancouver Newcomers Circle",
-      "attendanceEstimate": 30
-    }
+      "eventSubtype": "arts_culture",
+      "hostName": "BC + AI Events",
+      "attendanceEstimate": 50,
+      "lumaUrl": "https://lu.ma/films",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_014.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "indoor",
+      "learning-heavy",
+      "ticket-required",
+      "casual",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.61,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 74,
+    "save_count": 15
   },
   {
-    "id": "event_004",
+    "id": "event_luma_015",
     "type": "event",
     "category": "events",
-    "subcategoryContent": "career",
-    "subcategoryDisplayKr": "커리어",
-    "nameEn": "Vancouver Tech Summit 2026",
-    "nameKr": "밴쿠버 테크 서밋 2026",
-    "description": "Vancouver Convention Centre에서 열리는 BC 최대 규모 테크 컨퍼런스. AI·핀테크·SaaS 트렌드 발표와 1,500+ 참가자 네트워킹 세션. 키노트는 글로벌 테크 기업 임원진.",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Yo, Let's Link! V2.0 - Filmmakers Event",
+    "nameKr": "연결하자! V2.0 - 밴쿠버 영화인 소셜",
+    "description": "밴쿠버 영화 씬의 감독·작가·프로듀서·배우가 모이는 비정기 네트워킹 소셜. 캐주얼한 분위기에서 자연스럽게 협업 파트너를 만나는 자리. 모든 경력 단계 환영.",
+    "city": "Vancouver",
+    "district": "Strathcona",
+    "address": "1 E Hastings St, Vancouver, BC V6A 1M9",
+    "coordinates": {
+      "lat": 49.2816,
+      "lng": -123.0991
+    },
+    "imageURL": "/mockup/images/event_luma_015.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "networking-heavy",
+      "casual",
+      "after-work",
+      "alcohol-served"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-20T19:00",
+      "endDateTime": "2026-06-20T22:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 2,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.52,
+    "freshnessScore": 0.54,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 60,
+      "lumaUrl": "https://lu.ma/tb8om33e",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_015.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "networking-heavy",
+      "casual",
+      "after-work",
+      "alcohol-served",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.527,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 62,
+    "save_count": 12
+  },
+  {
+    "id": "event_luma_016",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "AI Film Club: 07/09",
+    "nameKr": "AI 필름 클럽: 7월 9일",
+    "description": "BC + AI Events 여름 AI 영화 클럽 정기 모임. AI를 주제로 한 영화 상영 및 관객 토론 세션. 테크·AI에 관심 있는 시네필을 위한 지식 교류의 장.",
+    "city": "Vancouver",
+    "district": "Kitsilano",
+    "address": "1275 W 6th Ave, Vancouver, BC V6H 1A6",
+    "coordinates": {
+      "lat": 49.2662,
+      "lng": -123.1341
+    },
+    "imageURL": "/mockup/images/event_luma_016.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "indoor",
+      "learning-heavy",
+      "ticket-required",
+      "casual"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-07-09T18:30",
+      "endDateTime": "2026-07-09T21:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 2,
+      "learning_value": 4
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.6,
+    "freshnessScore": 0.46,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "arts_culture",
+      "hostName": "BC + AI Events",
+      "attendanceEstimate": 50,
+      "lumaUrl": "https://lu.ma/summertime",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_016.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "indoor",
+      "learning-heavy",
+      "ticket-required",
+      "casual",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.551,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 72,
+    "save_count": 14
+  },
+  {
+    "id": "event_luma_017",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "arts_culture",
+    "subcategoryDisplayKr": "아트&컬쳐",
+    "nameEn": "2nd Annual BC + AI Film Festival",
+    "nameKr": "제2회 BC + AI 영화제",
+    "description": "BC + AI Events 주최 연간 AI 영화제. AI 기술로 제작되거나 AI를 주제로 한 단편·장편 작품들을 스크린으로 만나는 자리. 감독과의 Q&A 세션 포함. 125달러 티켓.",
     "city": "Vancouver",
     "district": "Downtown",
-    "address": "1055 Canada Pl, Vancouver, BC V6C 0C3",
+    "address": "900 Burrard St, Vancouver, BC V6Z 3G5",
     "coordinates": {
-      "lat": 49.2891,
-      "lng": -123.1167
+      "lat": 49.2808,
+      "lng": -123.1201
     },
-    "imageURL": "/mockup/images/event_004.jpg",
+    "imageURL": "/mockup/images/event_luma_017.jpg",
     "priceTier": "$$$$",
     "priceLevel": 4,
     "vibeTags": [
       "formal",
-      "networking-heavy",
-      "learning-heavy",
-      "ticket-required"
-    ],
-    "koreanRelevanceTags": [
-      "career-useful",
-      "curated-for-vancouver-koreans"
+      "ticket-required",
+      "indoor",
+      "learning-heavy"
     ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-06-15T09:00",
-      "endDateTime": "2026-06-16T18:00"
+      "startDateTime": "2026-10-30T19:00",
+      "endDateTime": "2026-10-30T22:30"
     },
     "dimensionScores": {
-      "atmosphere": 2.5,
-      "size": 5,
+      "atmosphere": 3.5,
+      "size": 3.5,
       "learning_value": 4.5
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.83,
-    "freshnessScore": 0.57,
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.75,
+    "freshnessScore": 0.1,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "career",
-      "hostName": "BC Tech Association",
-      "attendanceEstimate": 1500
-    }
+      "eventSubtype": "arts_culture",
+      "hostName": "BC + AI Events",
+      "attendanceEstimate": 300,
+      "lumaUrl": "https://lu.ma/film",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "arts_culture"
+    ],
+    "image_url": "/mockup/images/event_luma_017.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "arts_culture",
+      "formal",
+      "ticket-required",
+      "indoor",
+      "learning-heavy",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.523,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 90,
+    "save_count": 18
   },
   {
-    "id": "event_005",
+    "id": "event_luma_018",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Big Cedar & Kennedy Falls: The North Shore Deep-Dive",
+    "nameKr": "빅 시더 & 케네디 폭포 노스쇼어 탐험",
+    "description": "North Shore의 원시림 속 빅 시더 고목과 케네디 폭포를 탐험하는 소그룹 하이킹 소셜. 자연 가이드와 함께 비공개 등산로 탐험. SOLD OUT.",
+    "city": "North Vancouver",
+    "district": "North Vancouver",
+    "address": "Seymour River Rd, North Vancouver, BC V7H 2H2",
+    "coordinates": {
+      "lat": 49.4102,
+      "lng": -123.0125
+    },
+    "imageURL": "/mockup/images/event_luma_018.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "outdoor",
+      "active",
+      "nature-immersive",
+      "group-required"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-18T08:30",
+      "endDateTime": "2026-05-18T15:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "size": 1,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.68,
+    "freshnessScore": 1,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 12,
+      "lumaUrl": "https://lu.ma/p2bi7l4e",
+      "isSoldOut": true,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_018.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "social",
+      "outdoor",
+      "active",
+      "nature-immersive",
+      "group-required",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.792,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 82,
+    "save_count": 16
+  },
+  {
+    "id": "event_luma_019",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Messy Buns & Boxing Gloves | Mamas + Friends 🥊",
+    "nameKr": "메시 번 & 복싱 글로브 | 엄마 + 친구들",
+    "description": "엄마들과 친구들을 위한 복싱 피트니스 소셜. 신나게 땀 흘린 뒤 수다까지 이어지는 활기찬 모임. 26달러 참가비. 요가매트 지참 권장.",
+    "city": "Vancouver",
+    "district": "East Vancouver",
+    "address": "1925 E Broadway, Vancouver, BC V5N 1W9",
+    "coordinates": {
+      "lat": 49.2629,
+      "lng": -123.0673
+    },
+    "imageURL": "/mockup/images/event_luma_019.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "active",
+      "casual",
+      "newcomer-friendly",
+      "indoor"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-23T15:30",
+      "endDateTime": "2026-05-23T17:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 1.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.82,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Montage Events",
+      "attendanceEstimate": 25,
+      "lumaUrl": "https://lu.ma/9o5tb6gp",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_019.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "social",
+      "active",
+      "casual",
+      "newcomer-friendly",
+      "indoor",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.645,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 66,
+    "save_count": 13
+  },
+  {
+    "id": "event_luma_020",
     "type": "event",
     "category": "events",
     "subcategoryContent": "career",
     "subcategoryDisplayKr": "커리어",
-    "nameEn": "Data Career Workshop for Newcomers",
-    "nameKr": "이민자 대상 데이터 커리어 워크숍",
-    "description": "Vancouver Public Library에서 열리는 무료 워크숍. 캐나다 데이터 직군 취업 가이드, 이력서 리뷰, 1:1 멘토링 세션 포함. 신규 이민자와 유학생 대상으로 한국·중국·인도 출신 멘토 다수 참여.",
+    "nameEn": "🚀 YVR Entrepreneurs: Walk, Talk & Dogs #1 🐶🏔️",
+    "nameKr": "YVR 창업가 워크 & 토크 🐶",
+    "description": "Stanley Park 산책로를 걸으며 창업자·기업인들이 비즈니스와 아이디어를 자연스럽게 나누는 아웃도어 네트워킹. 강아지 동반 환영. 무료 오픈 소셜.",
     "city": "Vancouver",
-    "district": "Downtown",
-    "address": "350 W Georgia St, Vancouver, BC V6B 6B1",
+    "district": "Stanley Park",
+    "address": "Stanley Park Seawall, Coal Harbour, Vancouver, BC V6G 3E2",
     "coordinates": {
-      "lat": 49.279,
-      "lng": -123.1158
+      "lat": 49.3016,
+      "lng": -123.1483
     },
-    "imageURL": "/mockup/images/event_005.jpg",
+    "imageURL": "/mockup/images/event_luma_020.jpg",
     "priceTier": "free",
     "priceLevel": 0,
     "vibeTags": [
-      "learning-heavy",
-      "newcomer-friendly",
-      "free-entry",
-      "career-focused"
-    ],
-    "koreanRelevanceTags": [
-      "korean-community",
-      "korean-friendly",
-      "newcomer-friendly",
-      "career-useful",
-      "student-friendly",
-      "curated-for-vancouver-koreans"
+      "outdoor",
+      "casual",
+      "networking-heavy",
+      "free-entry"
     ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-05-30T13:00",
-      "endDateTime": "2026-05-30T17:00"
+      "startDateTime": "2026-05-24T09:30",
+      "endDateTime": "2026-05-24T11:30"
     },
     "dimensionScores": {
-      "atmosphere": 2,
-      "size": 3,
-      "learning_value": 5
+      "atmosphere": 4.5,
+      "size": 2,
+      "learning_value": 2.5
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.81,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 30,
+      "lumaUrl": "https://lu.ma/c15un07p",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "career"
+    ],
+    "image_url": "/mockup/images/event_luma_020.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "career",
+      "outdoor",
+      "casual",
+      "networking-heavy",
+      "free-entry",
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "quality_score": 0.66,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 70,
+    "save_count": 14
+  },
+  {
+    "id": "event_luma_021",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "ALO Oakridge Park: ALO Runners Club",
+    "nameKr": "ALO 오크리지 러너스 클럽",
+    "description": "ALO 오크리지 파크 스토어에서 시작하는 커뮤니티 런닝 클럽. 러닝 후 스트레칭과 간단한 소셜 타임 포함. 초보~중급 러너 누구나 참여 가능. 무료 오픈 런.",
+    "city": "Vancouver",
+    "district": "Oakridge",
+    "address": "650 W 41st Ave, Vancouver, BC V5Z 2M9",
+    "coordinates": {
+      "lat": 49.2362,
+      "lng": -123.1168
+    },
+    "imageURL": "/mockup/images/event_luma_021.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "active",
+      "outdoor",
+      "newcomer-friendly",
+      "free-entry"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T10:00",
+      "endDateTime": "2026-05-30T11:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 2,
+      "learning_value": 1.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.55,
+    "freshnessScore": 0.73,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "ALO",
+      "attendanceEstimate": 30,
+      "lumaUrl": "https://lu.ma/3fr1ovpm",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_021.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "active",
+      "outdoor",
+      "newcomer-friendly",
+      "free-entry",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.613,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 66,
+    "save_count": 13
+  },
+  {
+    "id": "event_luma_022",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Stanley Park Biking Adventure",
+    "nameKr": "스탠리 파크 바이킹 어드벤처",
+    "description": "Vancity Connect 주최 스탠리 파크 자전거 투어 소셜. 시즈널 코스를 함께 달리며 새로운 사람들과 자연스럽게 친해지는 아웃도어 모임. 자전거 대여 안내 포함. SOLD OUT.",
+    "city": "Vancouver",
+    "district": "Stanley Park",
+    "address": "480 Broughton St, Vancouver, BC V6G 3K5",
+    "coordinates": {
+      "lat": 49.2954,
+      "lng": -123.1247
+    },
+    "imageURL": "/mockup/images/event_luma_022.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "active",
+      "outdoor",
+      "group-friendly",
+      "casual"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-30T17:00",
+      "endDateTime": "2026-05-30T20:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "size": 2,
+      "learning_value": 1.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
     "popularityScore": 0.6,
     "freshnessScore": 0.73,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "career",
-      "hostName": "Vancouver Data Professionals Network",
-      "attendanceEstimate": 80
-    }
-  },
-  {
-    "id": "event_006",
-    "type": "event",
-    "category": "events",
-    "subcategoryContent": "career",
-    "subcategoryDisplayKr": "커리어",
-    "nameEn": "Startup Founders After-Work Drinks",
-    "nameKr": "스타트업 파운더 애프터워크 드링크",
-    "description": "Yaletown 루프탑 바에서 매달 진행되는 스타트업 창업자·투자자 네트워킹 모임. 격식 없는 분위기에서 비즈니스 카드 교환과 자연스러운 대화. 초대 기반이지만 LinkedIn 신청 가능.",
-    "city": "Vancouver",
-    "district": "Yaletown",
-    "address": "1112 Hamilton St (Rooftop), Vancouver, BC",
-    "coordinates": {
-      "lat": 49.2756,
-      "lng": -123.1219
+      "eventSubtype": "social",
+      "hostName": "Vancity Connect",
+      "attendanceEstimate": 25,
+      "lumaUrl": "https://lu.ma/bsocrogv",
+      "isSoldOut": true,
+      "requiresApproval": false
     },
-    "imageURL": "/mockup/images/event_006.jpg",
-    "priceTier": "$$",
-    "priceLevel": 2,
-    "vibeTags": [
-      "networking-heavy",
-      "after-work",
-      "casual",
-      "alcohol-served"
+    "subcategories": [
+      "social"
     ],
-    "koreanRelevanceTags": [
-      "career-useful",
+    "image_url": "/mockup/images/event_luma_022.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "social",
+      "active",
+      "outdoor",
+      "group-friendly",
+      "casual",
       "curated-for-vancouver-koreans"
     ],
-    "schedule": {
-      "type": "one_time",
-      "openingHours": null,
-      "startDateTime": "2026-05-29T18:30",
-      "endDateTime": "2026-05-29T21:30"
-    },
-    "dimensionScores": {
-      "atmosphere": 3.5,
-      "size": 2.5,
-      "learning_value": 3
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.54,
-    "freshnessScore": 0.74,
-    "isActive": true,
-    "rating": null,
-    "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "eventSubtype": "career",
-      "hostName": "BC Founders Circle",
-      "attendanceEstimate": 50
-    }
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.645,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 72,
+    "save_count": 14
   },
   {
-    "id": "event_007",
+    "id": "event_luma_023",
     "type": "event",
     "category": "events",
-    "subcategoryContent": "career",
-    "subcategoryDisplayKr": "커리어",
-    "nameEn": "BC Tech Job Fair Spring 2026",
-    "nameKr": "BC 테크 잡 페어 스프링 2026",
-    "description": "SFU Burnaby 캠퍼스에서 진행되는 봄철 잡 페어. 60+ BC 테크 기업 부스 운영, 현장 면접 가능. 신입·주니어 포지션 위주이며, 워크 비자·LMIA 지원 가능 기업이 별도 표시됨.",
-    "city": "Burnaby",
-    "district": "Burnaby",
-    "address": "8888 University Dr, Burnaby, BC V5A 1S6",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "WLW Tennis Workshop + Social (2.0+ NTRP, 2 Hours)",
+    "nameKr": "WLW 테니스 워크숍 + 소셜 (NTRP 2.0+)",
+    "description": "퀴어 여성 및 논바이너리 테니스 커뮤니티를 위한 워크숍 + 소셜. NTRP 2.0+ 수준 대상. 2시간 코트 연습 및 미니 레슨. 따뜻한 커뮤니티 분위기.",
+    "city": "Vancouver",
+    "district": "Riley Park",
+    "address": "Queen Elizabeth Park Tennis Courts, Vancouver, BC V5Y 2M9",
     "coordinates": {
-      "lat": 49.2781,
-      "lng": -122.9199
+      "lat": 49.2437,
+      "lng": -123.1117
     },
-    "imageURL": "/mockup/images/event_007.jpg",
+    "imageURL": "/mockup/images/event_luma_023.jpg",
     "priceTier": "free",
     "priceLevel": 0,
     "vibeTags": [
-      "formal",
-      "career-focused",
+      "active",
+      "outdoor",
       "newcomer-friendly",
       "free-entry"
     ],
-    "koreanRelevanceTags": [
-      "newcomer-friendly",
-      "career-useful",
-      "student-friendly",
-      "curated-for-vancouver-koreans"
-    ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-05-17T10:00",
-      "endDateTime": "2026-05-17T16:00"
+      "startDateTime": "2026-06-06T12:00",
+      "endDateTime": "2026-06-06T14:00"
     },
     "dimensionScores": {
-      "atmosphere": 2,
-      "size": 4.5,
-      "learning_value": 4
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.74,
-    "freshnessScore": 1.0,
-    "isActive": true,
-    "rating": null,
-    "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "eventSubtype": "career",
-      "hostName": "BC Tech Association",
-      "attendanceEstimate": 800
-    }
-  },
-  {
-    "id": "event_008",
-    "type": "event",
-    "category": "events",
-    "subcategoryContent": "arts_culture",
-    "subcategoryDisplayKr": "아트&컬쳐",
-    "nameEn": "DOXA Documentary Film Festival",
-    "nameKr": "DOXA 다큐멘터리 영화제",
-    "description": "Vancouver의 대표 다큐멘터리 영화제. 매년 5월 SFU Goldcorp Centre, Vancity Theatre 등 여러 극장에서 진행. 글로벌 다큐 80+편 상영, 감독과의 Q&A 세션 다수.",
-    "city": "Vancouver",
-    "district": "Downtown",
-    "address": "149 W Hastings St, Vancouver, BC V6B 1H4",
-    "coordinates": {
-      "lat": 49.2823,
-      "lng": -123.1085
-    },
-    "imageURL": "/mockup/images/event_008.jpg",
-    "priceTier": "$$",
-    "priceLevel": 2,
-    "vibeTags": [
-      "formal",
-      "ticket-required",
-      "learning-heavy",
-      "indoor"
-    ],
-    "koreanRelevanceTags": [
-      "student-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "schedule": {
-      "type": "one_time",
-      "openingHours": null,
-      "startDateTime": "2026-05-08T18:00",
-      "endDateTime": "2026-05-18T22:00"
-    },
-    "dimensionScores": {
-      "atmosphere": 2.5,
-      "size": 4,
-      "learning_value": 4
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.83,
-    "freshnessScore": 0.1,
-    "isActive": true,
-    "rating": null,
-    "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "eventSubtype": "arts_culture",
-      "hostName": "DOXA Documentary Film Festival Society",
-      "attendanceEstimate": 5000
-    }
-  },
-  {
-    "id": "event_009",
-    "type": "event",
-    "category": "events",
-    "subcategoryContent": "arts_culture",
-    "subcategoryDisplayKr": "아트&컬쳐",
-    "nameEn": "Emerging Artists Gallery Opening",
-    "nameKr": "신진 작가 갤러리 오프닝",
-    "description": "Granville Island의 작은 갤러리에서 열리는 신진 캐나다 작가 단체전 오프닝 리셉션. 작가 본인이 직접 작품 설명, 와인 서비스 제공. 미술 컬렉터와 학생 모두 환영하는 따뜻한 분위기.",
-    "city": "Vancouver",
-    "district": "Granville Island",
-    "address": "1551 Johnston St, Vancouver, BC V6H 3R9",
-    "coordinates": {
-      "lat": 49.2715,
-      "lng": -123.1349
-    },
-    "imageURL": "/mockup/images/event_009.jpg",
-    "priceTier": "free",
-    "priceLevel": 0,
-    "vibeTags": [
-      "formal",
-      "free-entry",
-      "alcohol-served",
-      "indoor"
-    ],
-    "koreanRelevanceTags": [
-      "student-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "schedule": {
-      "type": "one_time",
-      "openingHours": null,
-      "startDateTime": "2026-05-23T18:00",
-      "endDateTime": "2026-05-23T21:00"
-    },
-    "dimensionScores": {
-      "atmosphere": 2,
+      "atmosphere": 4,
       "size": 1.5,
       "learning_value": 3
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.46,
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.52,
+    "freshnessScore": 0.64,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 16,
+      "lumaUrl": "https://lu.ma/9kmiew1c",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_023.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "active",
+      "outdoor",
+      "newcomer-friendly",
+      "free-entry",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.562,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 62,
+    "save_count": 12
+  },
+  {
+    "id": "event_luma_024",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Glow & Flow: A Morning of Movement, Breath & Skincare",
+    "nameKr": "글로우 & 플로우: 무브먼트·호흡·스킨케어 모닝",
+    "description": "요가·호흡 운동과 스킨케어 루틴을 함께 나누는 웰니스 모닝 소셜. 95달러 참가비에 세럼·마스크팩 체험키트 포함. 몸과 피부 모두 빛나는 힐링 모임.",
+    "city": "Vancouver",
+    "district": "Kitsilano",
+    "address": "2168 W 4th Ave, Vancouver, BC V6K 1N6",
+    "coordinates": {
+      "lat": 49.2694,
+      "lng": -123.1533
+    },
+    "imageURL": "/mockup/images/event_luma_024.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "casual",
+      "indoor",
+      "newcomer-friendly",
+      "ticket-required"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-14T11:00",
+      "endDateTime": "2026-06-14T14:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 2
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.52,
+    "freshnessScore": 0.57,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 20,
+      "lumaUrl": "https://lu.ma/id9b7wpw",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_024.jpg",
+    "budget_level": "high",
+    "activity_tags": [
+      "events",
+      "social",
+      "casual",
+      "indoor",
+      "newcomer-friendly",
+      "ticket-required",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.537,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 62,
+    "save_count": 12
+  },
+  {
+    "id": "event_luma_025",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "2026 NVBC Golf Tournament and Social",
+    "nameKr": "2026 NVBC 골프 토너먼트 & 소셜",
+    "description": "New Ventures BC 주최 연례 골프 토너먼트 겸 창업 커뮤니티 네트워킹. 밴쿠버 기업인·투자자·스타트업 창업가가 함께하는 라운딩 + 포스트 소셜.",
+    "city": "Vancouver",
+    "district": "South Vancouver",
+    "address": "Fraserview Golf Course, 7800 Victoria Dr, Vancouver, BC V5P 3Y8",
+    "coordinates": {
+      "lat": 49.2189,
+      "lng": -123.0588
+    },
+    "imageURL": "/mockup/images/event_luma_025.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "casual",
+      "outdoor",
+      "networking-heavy",
+      "free-entry"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-07-06T13:30",
+      "endDateTime": "2026-07-06T18:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 2.5,
+      "learning_value": 2.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.62,
+    "freshnessScore": 0.43,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "New Ventures BC",
+      "attendanceEstimate": 80,
+      "lumaUrl": "https://lu.ma/oao3bzu8",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "career"
+    ],
+    "image_url": "/mockup/images/event_luma_025.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "career",
+      "casual",
+      "outdoor",
+      "networking-heavy",
+      "free-entry",
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "quality_score": 0.553,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 74,
+    "save_count": 15
+  },
+  {
+    "id": "event_luma_026",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Bestday Booze Free Bar",
+    "nameKr": "베스트데이 무알코올 바",
+    "description": "알코올 없이도 즐거운 밤을 보내는 소버 소셜 이벤트. 크래프트 목테일과 함께 새로운 사람들과 편안하게 어울리는 자리. 술 안 마셔도 아무 설명 필요 없는 분위기.",
+    "city": "Vancouver",
+    "district": "Gastown",
+    "address": "25 W Cordova St, Vancouver, BC V6B 1C5",
+    "coordinates": {
+      "lat": 49.2836,
+      "lng": -123.1069
+    },
+    "imageURL": "/mockup/images/event_luma_026.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "casual",
+      "newcomer-friendly",
+      "free-entry",
+      "indoor"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-23T14:00",
+      "endDateTime": "2026-05-23T17:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "size": 2,
+      "learning_value": 1
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.48,
     "freshnessScore": 0.82,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "arts_culture",
-      "hostName": "Granville Island Art Collective",
-      "attendanceEstimate": 60
-    }
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 40,
+      "lumaUrl": "https://lu.ma/fjj8qdvq",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_026.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "casual",
+      "newcomer-friendly",
+      "free-entry",
+      "indoor",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.599,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 58,
+    "save_count": 12
   },
   {
-    "id": "event_010",
+    "id": "event_luma_027",
     "type": "event",
     "category": "events",
-    "subcategoryContent": "arts_culture",
-    "subcategoryDisplayKr": "아트&컬쳐",
-    "nameEn": "Korean Indie Band Showcase",
-    "nameKr": "한국 인디 밴드 쇼케이스",
-    "description": "Fortune Sound Club에서 진행되는 한국 인디 밴드 4팀의 캐나다 투어 쇼케이스. 록·신스팝·인디 포크 장르 다양. 한국 음악 팬과 현지 인디 씬 마니아가 함께 모이는 자리.",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Cookbook Club #10",
+    "nameKr": "쿡북 클럽 #10",
+    "description": "매월 한 권의 요리책을 함께 요리하고 나눠먹는 소셜 클럽 10번째 모임. 각자 책에서 레시피 하나씩 만들어 와서 함께 먹고 이야기 나누는 푸드러버 모임.",
     "city": "Vancouver",
-    "district": "Chinatown",
-    "address": "147 E Pender St, Vancouver, BC V6A 1T5",
+    "district": "Kitsilano",
+    "address": "2142 W 1st Ave, Vancouver, BC V6K 3E1",
     "coordinates": {
-      "lat": 49.281,
-      "lng": -123.1015
+      "lat": 49.2721,
+      "lng": -123.1625
     },
-    "imageURL": "/mockup/images/event_010.jpg",
+    "imageURL": "/mockup/images/event_luma_027.jpg",
     "priceTier": "$$",
     "priceLevel": 2,
     "vibeTags": [
-      "lively",
-      "korean-community",
-      "ticket-required",
-      "alcohol-served"
-    ],
-    "koreanRelevanceTags": [
-      "korean-community",
-      "korean-friendly",
-      "curated-for-vancouver-koreans"
+      "casual",
+      "indoor",
+      "group-friendly",
+      "newcomer-friendly"
     ],
     "schedule": {
       "type": "one_time",
       "openingHours": null,
-      "startDateTime": "2026-06-21T20:00",
-      "endDateTime": "2026-06-21T23:30"
+      "startDateTime": "2026-05-30T12:00",
+      "endDateTime": "2026-05-30T15:00"
     },
     "dimensionScores": {
-      "atmosphere": 4.5,
-      "size": 2.5,
-      "learning_value": 1.5
+      "atmosphere": 4,
+      "size": 1.5,
+      "learning_value": 2
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.59,
-    "freshnessScore": 0.55,
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.73,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
     "metadata": {
-      "eventSubtype": "arts_culture",
-      "hostName": "Fortune Sound Club",
-      "attendanceEstimate": 200
-    }
+      "eventSubtype": "social",
+      "hostName": "Independent Organizer",
+      "attendanceEstimate": 20,
+      "lumaUrl": "https://lu.ma/orfh0xnr",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_027.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "social",
+      "casual",
+      "indoor",
+      "group-friendly",
+      "newcomer-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.581,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 60,
+    "save_count": 12
+  },
+  {
+    "id": "event_luma_028",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "social",
+    "subcategoryDisplayKr": "일반소셜",
+    "nameEn": "Festival Bon Appétit",
+    "nameKr": "페스티벌 봉 아페티",
+    "description": "La francophonie en mouvement 주최 프랑코폰 음식 축제. 프랑스·퀘벡·북아프리카 등 다양한 요리와 문화 공연을 만끽하는 무료 야외 페스티벌.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "Robson Square, 800 Robson St, Vancouver, BC V6Z 3B7",
+    "coordinates": {
+      "lat": 49.282,
+      "lng": -123.1212
+    },
+    "imageURL": "/mockup/images/event_luma_028.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "vibeTags": [
+      "outdoor",
+      "lively",
+      "free-entry",
+      "family-friendly"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-06-13T10:00",
+      "endDateTime": "2026-06-13T18:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "size": 3,
+      "learning_value": 2
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.65,
+    "freshnessScore": 0.58,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "social",
+      "hostName": "La francophonie en mouvement",
+      "attendanceEstimate": 400,
+      "lumaUrl": "https://lu.ma/0cwn3mle",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "social"
+    ],
+    "image_url": "/mockup/images/event_luma_028.jpg",
+    "budget_level": "low",
+    "activity_tags": [
+      "events",
+      "social",
+      "outdoor",
+      "lively",
+      "free-entry",
+      "family-friendly",
+      "curated-for-vancouver-koreans"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans"
+    ],
+    "quality_score": 0.626,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 78,
+    "save_count": 16
+  },
+  {
+    "id": "event_luma_029",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "Founder Coffee with Laurie Schultz (Founder/CEO of Galvanize)",
+    "nameKr": "파운더 커피 with 로리 슐츠 (Galvanize CEO)",
+    "description": "North House 주최 창업자 커피 토크 시리즈. Galvanize 창업자·CEO 로리 슐츠와 함께하는 소규모 대화 세션. 창업 여정·투자 유치·리더십 경험을 직접 듣는 자리.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "435 W Georgia St, Vancouver, BC V6B 4R1",
+    "coordinates": {
+      "lat": 49.2829,
+      "lng": -123.1154
+    },
+    "imageURL": "/mockup/images/event_luma_029.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "casual",
+      "networking-heavy",
+      "learning-heavy",
+      "career-focused"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-20T12:30",
+      "endDateTime": "2026-05-20T14:30"
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "size": 1.5,
+      "learning_value": 4.5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.62,
+    "freshnessScore": 0.85,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "North House",
+      "attendanceEstimate": 30,
+      "lumaUrl": "https://lu.ma/cmbrp464",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "career"
+    ],
+    "image_url": "/mockup/images/event_luma_029.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "career",
+      "casual",
+      "networking-heavy",
+      "learning-heavy",
+      "career-focused",
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "quality_score": 0.701,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 74,
+    "save_count": 15
+  },
+  {
+    "id": "event_luma_030",
+    "type": "event",
+    "category": "events",
+    "subcategoryContent": "career",
+    "subcategoryDisplayKr": "커리어",
+    "nameEn": "Althra x ZeroToOne Masterclass - Non-Dilutive Strategy",
+    "nameKr": "Althra x 제로투원 마스터클래스 - 비희석 자금 전략",
+    "description": "Althra Incubator × ZeroToOne 공동 주최 마스터클래스. 스타트업을 위한 비희석(Non-Dilutive) 자금 조달 전략 — 보조금·정부 지원금·크라우드펀딩 활용법 집중 강의.",
+    "city": "Vancouver",
+    "district": "False Creek Flats",
+    "address": "887 Great Northern Way, Vancouver, BC V5T 4T5",
+    "coordinates": {
+      "lat": 49.2698,
+      "lng": -123.0987
+    },
+    "imageURL": "/mockup/images/event_luma_030.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "learning-heavy",
+      "career-focused",
+      "newcomer-friendly",
+      "indoor"
+    ],
+    "schedule": {
+      "type": "one_time",
+      "openingHours": null,
+      "startDateTime": "2026-05-20T16:00",
+      "endDateTime": "2026-05-20T19:00"
+    },
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "size": 2,
+      "learning_value": 5
+    },
+    "sourceType": "luma",
+    "dataQuality": "enriched",
+    "popularityScore": 0.65,
+    "freshnessScore": 0.85,
+    "isActive": true,
+    "rating": null,
+    "reviewCount": null,
+    "createdAt": "2026-05-18T00:00:00Z",
+    "updatedAt": "2026-05-18T00:00:00Z",
+    "metadata": {
+      "eventSubtype": "career",
+      "hostName": "Althra",
+      "attendanceEstimate": 60,
+      "lumaUrl": "https://lu.ma/r6i4l11k",
+      "isSoldOut": false,
+      "requiresApproval": false
+    },
+    "subcategories": [
+      "career"
+    ],
+    "image_url": "/mockup/images/event_luma_030.jpg",
+    "budget_level": "medium",
+    "activity_tags": [
+      "events",
+      "career",
+      "learning-heavy",
+      "career-focused",
+      "newcomer-friendly",
+      "indoor",
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "korean_relevance_tags": [
+      "curated-for-vancouver-koreans",
+      "career-useful"
+    ],
+    "quality_score": 0.72,
+    "korean_community_fit": 0.62,
+    "is_approved": true,
+    "view_count": 78,
+    "save_count": 16
   }
 ]

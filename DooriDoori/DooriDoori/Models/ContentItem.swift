@@ -9,8 +9,21 @@ enum ContentType: String, Codable, Hashable {
 enum SourceType: String, Codable, Hashable {
     case curated
     case manual
-    case google
+    case googlePlaces = "google_places"
+    case fsq
+    case fsqOS = "fsq_os"
     case meetup
+    case eventbrite
+    case luma
+    case cityOpenData = "city_open_data"
+    case cityVan = "city_van"
+    case unknown
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = SourceType(rawValue: rawValue) ?? .unknown
+    }
 }
 
 struct ContentSchedule: Codable, Hashable {
@@ -130,6 +143,7 @@ struct ContentItem: Identifiable, Codable, Hashable {
         case koreanRelevanceTags = "korean_relevance_tags"
         case schedule
         case dimensionScores = "dimension_scores"
+        case dimensionScoresCamel = "dimensionScores"
         case sourceType = "source_type"
         case popularityScore = "popularity_score"
         case freshnessScore = "freshness_score"
@@ -278,6 +292,7 @@ struct ContentItem: Identifiable, Codable, Hashable {
         schedule = try container.decodeIfPresent(ContentSchedule.self, forKey: .schedule)
             ?? ContentSchedule(type: .alwaysOpen, openingHours: nil, startDateTime: nil, endDateTime: nil)
         dimensionScores = try container.decodeIfPresent([String: Double].self, forKey: .dimensionScores)
+            ?? container.decodeIfPresent([String: Double].self, forKey: .dimensionScoresCamel)
             ?? Dictionary(uniqueKeysWithValues: decodedActivityTags.map { ($0, 1.0) })
         sourceType = try container.decodeIfPresent(SourceType.self, forKey: .sourceType) ?? .curated
 

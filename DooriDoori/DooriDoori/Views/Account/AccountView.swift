@@ -2,105 +2,278 @@ import SwiftUI
 
 struct AccountView: View {
     @ObservedObject var viewModel: RecommendationViewModel
-    @State private var aiPreferencesEnabled = true
+    let onEditProfile: () -> Void
+    let onResetAIPreferences: () -> Void
+    let onShowRecentlyViewed: () -> Void
+    let onShowSavedPlaces: () -> Void
+
+    private var nickname: String {
+        "김"
+    }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 28) {
-                profile
+            VStack(alignment: .leading, spacing: 0) {
+                header
+                    .padding(.bottom, 45)
 
-                SectionHeader(title: "Recently viewed")
-                VStack(spacing: 12) {
-                    ForEach(viewModel.recentlyViewed) { item in
-                        RecentlyViewedCard(item: item)
-                    }
-                }
+                profileHeader
+                    .padding(.bottom, 42)
 
-                if !viewModel.savedItems.isEmpty {
-                    SectionHeader(title: "Saved")
-                    VStack(spacing: 12) {
-                        ForEach(viewModel.savedItems.prefix(4)) { item in
-                            RecentlyViewedCard(item: item)
-                        }
-                    }
-                }
+                ProfileMenuRow(
+                    title: "AI 취향 재설정",
+                    iconName: "sparkle",
+                    style: .primary,
+                    trailingText: nil,
+                    action: onResetAIPreferences
+                )
+                .padding(.bottom, 30)
 
-                SectionHeader(title: "AI Preference")
-                VStack(spacing: 0) {
-                    Toggle(isOn: $aiPreferencesEnabled) {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("Personalized picks")
-                                .font(.system(size: 18, weight: .heavy))
-                                .foregroundStyle(DooriStyle.ink)
-                            Text("Use your saved taste profile")
-                                .font(.system(size: 13, weight: .semibold))
-                                .foregroundStyle(DooriStyle.muted)
-                        }
-                    }
-                    .tint(DooriStyle.accent)
-                    .padding(18)
+                recentPlacesCard
+                    .padding(.bottom, 13)
 
-                    Divider().padding(.leading, 18)
-
-                    Button {} label: {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text("Edit preferences")
-                                    .font(.system(size: 18, weight: .heavy))
-                                    .foregroundStyle(DooriStyle.ink)
-                                Text(viewModel.preference.selectedCategories.joined(separator: ", "))
-                                    .font(.system(size: 13, weight: .semibold))
-                                    .foregroundStyle(DooriStyle.muted)
-                            }
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundStyle(DooriStyle.muted)
-                        }
-                        .padding(18)
-                    }
-                    .buttonStyle(.plain)
-                }
-                .background(.white, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 28, style: .continuous)
-                        .stroke(DooriStyle.line, lineWidth: 1)
+                ProfileMenuRow(
+                    title: "저장한 장소",
+                    iconName: "bookmark",
+                    style: .normal,
+                    trailingText: "\(viewModel.savedItems.count)",
+                    action: onShowSavedPlaces
                 )
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 26)
-            .padding(.bottom, 24)
+            .padding(.horizontal, 16)
+            .padding(.top, 24)
+            .padding(.bottom, 120)
         }
-        .background(Color.white)
+        .background(DooriStyle.canvas)
     }
 
-    private var profile: some View {
-        HStack(spacing: 16) {
-            Circle()
-                .fill(DooriStyle.warm)
-                .frame(width: 82, height: 82)
-                .overlay {
-                    Text("지")
-                        .font(.system(size: 30, weight: .heavy))
-                        .foregroundStyle(DooriStyle.accent)
-                }
+    private var header: some View {
+        HStack {
+            Text("Profile")
+                .dooriText(.subheading, english: true)
+                .foregroundStyle(DooriStyle.ink)
 
-            VStack(alignment: .leading, spacing: 7) {
-                Text("지은")
-                    .font(.system(size: 34, weight: .heavy))
-                    .foregroundStyle(DooriStyle.ink)
-                Button {} label: {
-                    Text("Edit")
-                        .font(.system(size: 14, weight: .bold, design: .monospaced))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 18)
-                        .frame(height: 34)
-                        .background(DooriStyle.accent, in: Capsule())
+            Spacer()
+
+            Image(systemName: "gearshape")
+                .font(.system(size: 24, weight: .semibold))
+                .foregroundStyle(DooriStyle.ink)
+        }
+    }
+
+    private var profileHeader: some View {
+        VStack(spacing: 14) {
+            ProfileAvatarView(initial: String(nickname.prefix(1)))
+
+            Button(action: onEditProfile) {
+                HStack(spacing: 9) {
+                    Text(nickname)
+                        .dooriText(.subheading)
+                        .foregroundStyle(DooriStyle.ink)
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(DooriStyle.ink)
                 }
-                .buttonStyle(.plain)
+            }
+            .buttonStyle(.plain)
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    private var recentPlacesCard: some View {
+        Button(action: onShowRecentlyViewed) {
+            VStack(spacing: 18) {
+                ProfileMenuRowContent(
+                    title: "최근 본 장소",
+                    iconName: "clock.arrow.circlepath",
+                    style: .normal,
+                    trailingText: nil
+                )
+
+                HStack(spacing: 16) {
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .frame(height: 132)
+
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .frame(height: 132)
+                }
+                .padding(.horizontal, 15)
+            }
+            .padding(.top, 16)
+            .padding(.bottom, 22)
+            .profileCardBorder(color: Color.black.opacity(0.09))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+struct ProfileAvatarView: View {
+    let initial: String
+
+    var body: some View {
+        Circle()
+            .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
+            .frame(width: 123, height: 123)
+            .overlay {
+                Circle()
+                    .stroke(Color.white, lineWidth: 3)
+            }
+            .overlay {
+                Text(initial)
+                    .dooriText(.h1)
+                    .foregroundStyle(DooriStyle.accent)
+            }
+            .clipShape(Circle())
+    }
+}
+
+struct ProfileMenuRow: View {
+    let title: String
+    let iconName: String
+    let style: ProfileMenuRowStyle
+    let trailingText: String?
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            ProfileMenuRowContent(
+                title: title,
+                iconName: iconName,
+                style: style,
+                trailingText: trailingText
+            )
+            .frame(height: 63)
+            .profileCardBorder(color: style.borderColor)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+struct ProfileMenuRowContent: View {
+    let title: String
+    let iconName: String
+    let style: ProfileMenuRowStyle
+    let trailingText: String?
+
+    var body: some View {
+        HStack {
+            HStack(spacing: style == .primary ? 22 : 21) {
+                Image(systemName: iconName)
+                    .font(.system(size: style.iconSize, weight: .medium))
+                    .frame(width: 24, height: 24)
+                    .foregroundStyle(style.tint)
+
+                Text(title)
+                    .dooriText(.caption)
+                    .foregroundStyle(style.titleColor)
             }
 
             Spacer()
+
+            if let trailingText {
+                Text(trailingText)
+                    .dooriText(.captionSmall)
+                    .foregroundStyle(DooriStyle.secondaryText)
+            }
+
+            Image(systemName: "chevron.right")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundStyle(DooriStyle.ink)
         }
+        .padding(.horizontal, 16)
+    }
+}
+
+enum ProfileMenuRowStyle {
+    case primary
+    case normal
+
+    var tint: Color {
+        switch self {
+        case .primary: return DooriStyle.secondaryText
+        case .normal: return DooriStyle.muted
+        }
+    }
+
+    var titleColor: Color {
+        switch self {
+        case .primary: return DooriStyle.secondaryText
+        case .normal: return DooriStyle.ink
+        }
+    }
+
+    var borderColor: Color {
+        switch self {
+        case .primary: return DooriStyle.accent
+        case .normal: return Color.black.opacity(0.12)
+        }
+    }
+
+    var iconSize: CGFloat {
+        switch self {
+        case .primary: return 19
+        case .normal: return 23
+        }
+    }
+}
+
+private extension View {
+    func profileCardBorder(color: Color) -> some View {
+        background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(color, lineWidth: 1)
+            )
+    }
+}
+
+struct ProfilePlaceholderScreen: View {
+    let title: String
+
+    var body: some View {
+        VStack {
+            Spacer()
+
+            Text(title)
+                .dooriText(.subheading)
+                .foregroundStyle(DooriStyle.ink)
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(DooriStyle.canvas)
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct ProfileEditPlaceholderView: View {
+    var body: some View {
+        // TODO: Add nickname and profile image editing when the profile edit design is finalized.
+        ProfilePlaceholderScreen(title: "프로필 변경")
+    }
+}
+
+struct AIPreferenceResetPlaceholderView: View {
+    var body: some View {
+        // TODO: Add onboarding preference editing when the AI preference reset design is finalized.
+        ProfilePlaceholderScreen(title: "AI 취향 재설정")
+    }
+}
+
+struct RecentlyViewedPlacesPlaceholderView: View {
+    var body: some View {
+        // TODO: Show recently viewed places when the recent-history design and data flow are finalized.
+        ProfilePlaceholderScreen(title: "최근 본 장소")
+    }
+}
+
+struct SavedPlacesPlaceholderView: View {
+    var body: some View {
+        // TODO: Show saved places when the saved-place list design is finalized.
+        ProfilePlaceholderScreen(title: "저장한 장소")
     }
 }

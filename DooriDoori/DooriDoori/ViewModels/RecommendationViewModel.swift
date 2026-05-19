@@ -16,6 +16,7 @@ final class RecommendationViewModel: ObservableObject {
     @Published private(set) var rankedRecommendations: [RankedContentItem] = []
     @Published private(set) var loadState: LoadState = .loading
     @Published private(set) var needsOnboarding = false
+    @Published private(set) var feedbackByContentID: [String: RecommendationFeedback] = [:]
 
     let preferenceStore: PreferenceStore
     let savedItemStore: SavedItemStore
@@ -24,6 +25,7 @@ final class RecommendationViewModel: ObservableObject {
     private let recommendationService: RecommendationService
     private let preferenceService: PreferenceService
     private let saveService: SaveService
+    private let interactionService: InteractionService
     private var cancellables: Set<AnyCancellable> = []
 
     init(
@@ -32,7 +34,8 @@ final class RecommendationViewModel: ObservableObject {
         savedItemStore: SavedItemStore = SavedItemStore(),
         recommendationService: RecommendationService = RecommendationService(),
         preferenceService: PreferenceService = PreferenceService(),
-        saveService: SaveService = SaveService()
+        saveService: SaveService = SaveService(),
+        interactionService: InteractionService = InteractionService()
     ) {
         self.seedContentService = seedContentService
         self.preferenceStore = preferenceStore
@@ -40,6 +43,7 @@ final class RecommendationViewModel: ObservableObject {
         self.recommendationService = recommendationService
         self.preferenceService = preferenceService
         self.saveService = saveService
+        self.interactionService = interactionService
 
         bindStores()
         load()
@@ -118,6 +122,28 @@ final class RecommendationViewModel: ObservableObject {
 
     func reason(for item: ContentItem) -> String {
         recommendationService.reason(item: item, preference: preference)
+    }
+
+    func feedback(for item: ContentItem) -> RecommendationFeedback? {
+        feedbackByContentID[item.id]
+    }
+
+    func setFeedback(_ feedback: RecommendationFeedback, for item: ContentItem) {
+        let nextValue: RecommendationFeedback? = feedbackByContentID[item.id] == feedback ? nil : feedback
+        feedbackByContentID[item.id] = nextValue
+
+        guard let nextValue else { return }
+
+        Task {
+            do {
+                try await interactionService.record(contentId: item.id, interactionType: nextValue.interactionType)
+            } catch {
+                // TODO: Persist recommendation feedback through a dedicated backend API once the MVP contract is finalized.
+                #if DEBUG
+                print("Failed to persist recommendation feedback:", error)
+                #endif
+            }
+        }
     }
 
     private func bindStores() {
@@ -212,5 +238,17 @@ final class RecommendationViewModel: ObservableObject {
 
         let message = String(data: data, encoding: .utf8) ?? ""
         return message.contains("User preferences not found")
+    }
+}
+
+enum RecommendationFeedback: String, Hashable {
+    case like
+    case dislike
+
+    var interactionType: String {
+        switch self {
+        case .like: return "like"
+        case .dislike: return "dislike"
+        }
     }
 }

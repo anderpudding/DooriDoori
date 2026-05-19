@@ -19,6 +19,13 @@ enum MainTab: String, CaseIterable, Identifiable {
 enum MainRoute: Hashable {
     case detail(ContentItem)
     case nearYou
+    case allPicks
+    case notifications
+    case writeReview(ContentItem, initialRating: Int?)
+    case editProfile
+    case resetAIPreferences
+    case recentlyViewedPlaces
+    case savedPlaces
 }
 
 struct MainTabView: View {
@@ -32,15 +39,38 @@ struct MainTabView: View {
                 ZStack {
                     switch appState.selectedTab {
                     case .all:
-                        AllView(viewModel: recommendations) {
-                            path.append(.nearYou)
-                        }
-                    case .forYou:
-                        ForYouView(viewModel: recommendations) { item in
+                        AllView(viewModel: recommendations, onSelectItem: { item in
                             path.append(.detail(item))
-                        }
+                        })
+                    case .forYou:
+                        ForYouView(
+                            viewModel: recommendations,
+                            onSelectItem: { item in
+                                path.append(.detail(item))
+                            },
+                            onShowAllPicks: {
+                                path.append(.allPicks)
+                            },
+                            onShowNotifications: {
+                                path.append(.notifications)
+                            }
+                        )
                     case .account:
-                        AccountView(viewModel: recommendations)
+                        AccountView(
+                            viewModel: recommendations,
+                            onEditProfile: {
+                                path.append(.editProfile)
+                            },
+                            onResetAIPreferences: {
+                                path.append(.resetAIPreferences)
+                            },
+                            onShowRecentlyViewed: {
+                                path.append(.recentlyViewedPlaces)
+                            },
+                            onShowSavedPlaces: {
+                                path.append(.savedPlaces)
+                            }
+                        )
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,11 +84,28 @@ struct MainTabView: View {
                     FeedDetailView(
                         item: item,
                         reason: recommendations.reason(for: item),
-                        savedItemStore: recommendations.savedItemStore,
-                        onToggleSaved: recommendations.toggleSaved
+                        onWriteReview: { selectedItem, initialRating in
+                            path.append(.writeReview(selectedItem, initialRating: initialRating))
+                        }
                     )
                 case .nearYou:
                     NearYouView(items: recommendations.items)
+                case .allPicks:
+                    AllPicksView(viewModel: recommendations) { item in
+                        path.append(.detail(item))
+                    }
+                case .notifications:
+                    NotificationView()
+                case .writeReview(let item, let initialRating):
+                    ReviewWriteView(item: item, initialRating: initialRating)
+                case .editProfile:
+                    ProfileEditPlaceholderView()
+                case .resetAIPreferences:
+                    AIPreferenceResetPlaceholderView()
+                case .recentlyViewedPlaces:
+                    RecentlyViewedPlacesPlaceholderView()
+                case .savedPlaces:
+                    SavedPlacesPlaceholderView()
                 }
             }
         }

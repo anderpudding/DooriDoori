@@ -2,11 +2,16 @@ import Foundation
 import Testing
 @testable import DooriDoori
 
+@Suite(.serialized)
 struct DooriDooriTests {
+    enum TestDataError: Error {
+        case missingReviewedSeedData(URL)
+    }
+
     @Test func reviewedSeedDataDecodesAndUsesNormalizedCategories() throws {
         let items = try reviewedItems()
 
-        #expect(items.count == 30)
+        #expect(items.count == 64)
         #expect(Set(items.map(\.category.rawValue)) == ["food", "events", "lifestyle"])
         #expect(items.filter { $0.type == .event }.allSatisfy { $0.category.rawValue != "event" })
         let allItemsAreActive = items.allSatisfy { $0.isActive }
@@ -118,6 +123,66 @@ struct DooriDooriTests {
         #expect(response.metadata?.phase == "gemini_reranking")
     }
 
+    @Test func sourceTypeDecodesBackendSourceValuesAndUnknowns() throws {
+        let decoder = JSONDecoder()
+        let cases: [(String, SourceType)] = [
+            ("curated", .curated),
+            ("manual", .manual),
+            ("google_places", .googlePlaces),
+            ("fsq", .fsq),
+            ("meetup", .meetup),
+            ("eventbrite", .eventbrite),
+            ("luma", .luma),
+            ("city_open_data", .cityOpenData),
+            ("future_source", .unknown)
+        ]
+
+        for (rawValue, expected) in cases {
+            let data = Data("\"\(rawValue)\"".utf8)
+            #expect(try decoder.decode(SourceType.self, from: data) == expected)
+        }
+    }
+
+    @Test func googlePlaceDisplayDataDecodesWithoutReviewText() throws {
+        let json = """
+        {
+          "placeId": "ChIJ123",
+          "displayName": "Sample Cafe",
+          "formattedAddress": "123 Main St, Vancouver, BC",
+          "latitude": 49.25,
+          "longitude": -123.1,
+          "rating": 4.5,
+          "userRatingCount": 120,
+          "regularOpeningHours": {
+            "openNow": true,
+            "weekdayDescriptions": ["Monday: 9:00 AM – 5:00 PM"]
+          },
+          "currentOpeningHours": null,
+          "googleMapsUri": "https://maps.google.com/?cid=123",
+          "websiteUri": "https://example.com",
+          "nationalPhoneNumber": "(604) 555-0100",
+          "businessStatus": "OPERATIONAL",
+          "photos": [
+            {
+              "name": "places/ChIJ123/photos/photo-resource",
+              "widthPx": 1200,
+              "heightPx": 800,
+              "authorAttributions": []
+            }
+          ]
+        }
+        """
+
+        let details = try JSONDecoder().decode(GooglePlaceDisplayData.self, from: Data(json.utf8))
+
+        #expect(details.placeId == "ChIJ123")
+        #expect(details.displayName == "Sample Cafe")
+        #expect(details.rating == 4.5)
+        #expect(details.userRatingCount == 120)
+        #expect(details.regularOpeningHours?.weekdayDescriptions?.first == "Monday: 9:00 AM – 5:00 PM")
+        #expect(details.photos.first?.name == "places/ChIJ123/photos/photo-resource")
+    }
+
     @Test func userPreferencesPayloadUsesBackendSnakeCaseValues() throws {
         let preference = UserPreference(
             selectedCategories: ["food", "events"],
@@ -169,7 +234,7 @@ struct DooriDooriTests {
             languagePreference: .both,
             updatedAt: Date()
         )
-        #expect(service.rankedItems(for: eventsPreference, items: items).first?.item.id == "event_005")
+        #expect(service.rankedItems(for: eventsPreference, items: items).first?.item.id == "event_luma_029")
 
         let lifestylePreference = UserPreference(
             selectedCategories: ["lifestyle"],
@@ -180,7 +245,7 @@ struct DooriDooriTests {
             languagePreference: .both,
             updatedAt: Date()
         )
-        #expect(service.rankedItems(for: lifestylePreference, items: items).first?.item.id == "lifestyle_009")
+        #expect(service.rankedItems(for: lifestylePreference, items: items).first?.item.id == "lifestyle_001")
     }
 
     @Test func categoryFilteringAndInactiveExclusionWork() {
@@ -241,7 +306,9 @@ struct DooriDooriTests {
             .appendingPathComponent("DooriDoori")
             .appendingPathComponent("dooridoori_reviewed_mock_data")
             .appendingPathComponent("dooridoori_mvp_content_items.json")
-        #expect(FileManager.default.fileExists(atPath: url.path))
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            throw TestDataError.missingReviewedSeedData(url)
+        }
         return url
     }
 

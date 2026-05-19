@@ -13,13 +13,19 @@ struct RecentlyViewedCard: View {
                     .font(.system(size: 18, weight: .heavy))
                     .foregroundStyle(DooriStyle.ink)
                     .lineLimit(1)
+                    .truncationMode(.tail)
                 Text(item.category.titleKr)
                     .font(.system(size: 12, weight: .bold, design: .monospaced))
                     .foregroundStyle(DooriStyle.accent)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
                 Text(item.city)
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(DooriStyle.muted)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
             Spacer()
         }

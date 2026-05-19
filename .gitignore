@@ -81,6 +81,12 @@ supabase/.env.*
 supabase/functions/.env
 supabase/functions/.env.*
 
+# Large/raw FSQ exports. Keep tiny samples only.
+supabase/seed_data/*
+!supabase/seed_data/
+!supabase/seed_data/fsq_places_sample.json
+!supabase/seed_data/fsq_places_sample.csv
+
 # Logs
 *.log
 

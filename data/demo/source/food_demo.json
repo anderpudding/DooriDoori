@@ -1,0 +1,521 @@
+[
+  {
+    "id": "food_001",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Hanok Sarang",
+    "nameKr": "한옥사랑",
+    "description": "Coquitlam 한인타운에 위치한 정통 한식당. 갈비찜과 김치찌개로 유명하며, 가족 단위 손님과 향수병 달래러 오는 유학생들이 많이 찾는다. 한국에서 직수입한 식재료를 사용해 본토의 맛을 재현.",
+    "city": "Coquitlam",
+    "district": "Coquitlam",
+    "address": "1163 Pinetree Way, Coquitlam, BC V3B 8A9",
+    "coordinates": {
+      "lat": 49.2812,
+      "lng": -122.8047
+    },
+    "imageURL": "/mockup/images/food_001.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "traditional",
+      "family-friendly",
+      "cozy",
+      "authentic"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 11:00-22:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "taste": 4.5,
+      "service": 4,
+      "value_for_money": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.83,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.3,
+    "reviewCount": 312,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": "Korean",
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_002",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "nameEn": "Slow Morning",
+    "nameKr": "슬로우 모닝",
+    "description": "Mount Pleasant에 위치한 스페셜티 커피 로스터리. 직접 로스팅한 싱글 오리진 원두와 핸드드립이 시그니처. 노트북 작업하기 좋은 차분한 분위기로 프리랜서와 작가들이 단골.",
+    "city": "Vancouver",
+    "district": "Mount Pleasant",
+    "address": "2588 Main St, Vancouver, BC V5T 3E2",
+    "coordinates": {
+      "lat": 49.2647,
+      "lng": -123.1018
+    },
+    "imageURL": "/mockup/images/food_002.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "minimalist",
+      "study-friendly",
+      "third-wave",
+      "trendy"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 8:00-19:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 1.5,
+      "taste": 4.5,
+      "service": 3.5,
+      "value_for_money": 4.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.73,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.6,
+    "reviewCount": 847,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": null,
+      "soloFriendly": true,
+      "groupFriendly": false
+    }
+  },
+  {
+    "id": "food_003",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Maison Lumière",
+    "nameKr": "메종 루미에르",
+    "description": "Yaletown에 자리한 모던 프렌치 비스트로. 로컬 재료로 만든 시즌 메뉴와 와인 페어링이 강점. 데이트나 기념일에 많이 찾으며, 셰프의 오픈 키친에서 진행되는 코스 디너가 시그니처.",
+    "city": "Vancouver",
+    "district": "Yaletown",
+    "address": "1180 Hamilton St, Vancouver, BC V6B 2S2",
+    "coordinates": {
+      "lat": 49.2756,
+      "lng": -123.1219
+    },
+    "imageURL": "/mockup/images/food_003.jpg",
+    "priceTier": "$$$$",
+    "priceLevel": 4,
+    "vibeTags": [
+      "upscale",
+      "date-night",
+      "instagrammable",
+      "modern"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Tue-Sun 17:30-22:30, Closed Mon",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "taste": 4.5,
+      "service": 5,
+      "value_for_money": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.88,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.5,
+    "reviewCount": 234,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": "Western",
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_004",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Sakura Izakaya",
+    "nameKr": "사쿠라 이자카야",
+    "description": "Robson Street의 활기찬 일본식 이자카야. 직장인 퇴근 모임과 친구 모임으로 시끌벅적한 분위기. 야키토리와 사케 페어링 메뉴가 인기. 합석 테이블에서 처음 보는 사람과 친해지는 일도 흔하다.",
+    "city": "Vancouver",
+    "district": "West End",
+    "address": "1789 Robson St, Vancouver, BC V6G 1E5",
+    "coordinates": {
+      "lat": 49.2842,
+      "lng": -123.1267
+    },
+    "imageURL": "/mockup/images/food_004.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "lively",
+      "after-work",
+      "group-friendly",
+      "casual"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 17:00-24:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "taste": 4,
+      "service": 3.5,
+      "value_for_money": 3.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.83,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.2,
+    "reviewCount": 589,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": "Japanese",
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_005",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Golden Wok",
+    "nameKr": "골든 워크",
+    "description": "Richmond의 정통 광동식 딤섬 레스토랑. 주말 점심시간에는 30분 이상 대기가 기본. 카트 서비스로 즉석에서 골라 먹는 전통 방식 유지. 가족 단위와 중국계 커뮤니티가 주 고객.",
+    "city": "Richmond",
+    "district": "Richmond",
+    "address": "8060 Westminster Hwy, Richmond, BC V6X 1A7",
+    "coordinates": {
+      "lat": 49.1666,
+      "lng": -123.1336
+    },
+    "imageURL": "/mockup/images/food_005.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "authentic",
+      "family-friendly",
+      "traditional",
+      "lively"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 9:30-15:00, 17:00-22:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "taste": 4.5,
+      "service": 3,
+      "value_for_money": 4.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.83,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.4,
+    "reviewCount": 1203,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": "Chinese",
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_006",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Egg & Stone",
+    "nameKr": "에그 앤 스톤",
+    "description": "Kitsilano의 인기 브런치 스팟. 주말이면 1시간 대기는 기본인 동네 명소. 트러플 에그 베네딕트와 리코타 팬케이크가 시그니처. 인스타에 자주 올라오는 비주얼과 자연광 가득한 인테리어.",
+    "city": "Vancouver",
+    "district": "Kitsilano",
+    "address": "2095 W 4th Ave, Vancouver, BC V6J 1N3",
+    "coordinates": {
+      "lat": 49.2706,
+      "lng": -123.1539
+    },
+    "imageURL": "/mockup/images/food_006.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "instagrammable",
+      "brunch-spot",
+      "trendy",
+      "bright"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 8:00-15:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 3,
+      "taste": 4,
+      "service": 3.5,
+      "value_for_money": 3.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.78,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.3,
+    "reviewCount": 756,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": "Brunch",
+      "soloFriendly": true,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_007",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "nameEn": "Vintage House",
+    "nameKr": "빈티지 하우스",
+    "description": "Gastown 좁은 골목에 숨어 있는 빈티지 컨셉 카페. 1970년대 LP와 골동품 가구로 채워진 공간. 시그니처 메뉴는 흑임자 라떼와 호두 파이. 천천히 책 읽기 좋은 곳.",
+    "city": "Vancouver",
+    "district": "Gastown",
+    "address": "210 Carrall St, Vancouver, BC V6B 2J1",
+    "coordinates": {
+      "lat": 49.2839,
+      "lng": -123.1067
+    },
+    "imageURL": "/mockup/images/food_007.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "vintage",
+      "hidden-gem",
+      "cozy",
+      "instagrammable"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Wed-Sun 10:00-19:00, Closed Mon-Tue",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 2,
+      "taste": 3.5,
+      "service": 4,
+      "value_for_money": 3.5
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.68,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.1,
+    "reviewCount": 198,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": null,
+      "soloFriendly": true,
+      "groupFriendly": false
+    }
+  },
+  {
+    "id": "food_008",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "nameEn": "Daily Grind",
+    "nameKr": "데일리 그라인드",
+    "description": "Downtown 비즈니스 지구의 캐주얼 체인 카페. 출근길 직장인들의 빠른 커피 픽업 장소. 가격 대비 양 많은 시그니처 라떼와 베이글 콤보가 강점. 자리는 좁지만 회전율 빠름.",
+    "city": "Vancouver",
+    "district": "Downtown",
+    "address": "888 Burrard St, Vancouver, BC V6Z 1X9",
+    "coordinates": {
+      "lat": 49.2848,
+      "lng": -123.1145
+    },
+    "imageURL": "/mockup/images/food_008.jpg",
+    "priceTier": "$",
+    "priceLevel": 1,
+    "vibeTags": [
+      "casual",
+      "grab-and-go",
+      "modern"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:30-18:00, Sat-Sun 8:00-17:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "taste": 2.5,
+      "service": 3,
+      "value_for_money": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.63,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 3.8,
+    "reviewCount": 421,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": null,
+      "soloFriendly": true,
+      "groupFriendly": false
+    }
+  },
+  {
+    "id": "food_009",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "bar",
+    "subcategoryDisplayKr": "바",
+    "nameEn": "The Velvet Lounge",
+    "nameKr": "벨벳 라운지",
+    "description": "Yaletown 지하에 위치한 시그니처 칵테일 바. 헤드 바텐더가 직접 만드는 시즌 칵테일과 어둑한 조명, 라이브 재즈가 주말마다 진행. 데이트 코스나 친구 모임의 마무리 장소로 인기.",
+    "city": "Vancouver",
+    "district": "Yaletown",
+    "address": "1132 Hamilton St, Vancouver, BC V6B 2S2",
+    "coordinates": {
+      "lat": 49.2734,
+      "lng": -123.1208
+    },
+    "imageURL": "/mockup/images/food_009.jpg",
+    "priceTier": "$$$",
+    "priceLevel": 3,
+    "vibeTags": [
+      "upscale",
+      "date-night",
+      "late-night",
+      "intimate"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Tue-Sat 18:00-02:00, Closed Sun-Mon",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 4,
+      "taste": 4.5,
+      "service": 4.5,
+      "value_for_money": 3
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.85,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.5,
+    "reviewCount": 317,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": null,
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  },
+  {
+    "id": "food_010",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "bar",
+    "subcategoryDisplayKr": "바",
+    "nameEn": "Sunset Brewing Co.",
+    "nameKr": "선셋 브루잉",
+    "description": "Mount Pleasant의 크래프트 비어 브루어리 탭룸. 매주 새로운 시즌 IPA 출시. 야외 패티오에서 강아지 동반 가능하며, 트럭 푸드 트럭이 주말마다 다른 메뉴로 등장. 캐주얼하고 시끌벅적한 분위기.",
+    "city": "Vancouver",
+    "district": "Mount Pleasant",
+    "address": "2125 Main St, Vancouver, BC V5T 3C5",
+    "coordinates": {
+      "lat": 49.2658,
+      "lng": -123.1011
+    },
+    "imageURL": "/mockup/images/food_010.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "vibeTags": [
+      "lively",
+      "casual",
+      "group-friendly",
+      "outdoor"
+    ],
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 15:00-23:00",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "taste": 4,
+      "service": 3.5,
+      "value_for_money": 4
+    },
+    "sourceType": "manual",
+    "dataQuality": "mock",
+    "popularityScore": 0.85,
+    "freshnessScore": 0.65,
+    "isActive": true,
+    "rating": 4.4,
+    "reviewCount": 693,
+    "createdAt": "2026-05-10T00:00:00Z",
+    "updatedAt": "2026-05-10T00:00:00Z",
+    "metadata": {
+      "cuisineType": null,
+      "soloFriendly": false,
+      "groupFriendly": true
+    }
+  }
+]

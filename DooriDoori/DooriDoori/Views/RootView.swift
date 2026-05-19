@@ -10,9 +10,7 @@ struct RootView: View {
     var body: some View {
         Group {
             if isCheckingSession {
-                ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(DooriStyle.canvas)
+                InitialLoadingView()
             } else if hasCompletedOnboarding {
                 MainTabView()
             } else {

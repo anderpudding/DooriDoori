@@ -1,0 +1,57 @@
+[
+  {
+    "fsq_place_id": "fsq_sample_restaurant_001",
+    "name": "Sample Korean Restaurant",
+    "fsq_category_labels": ["Dining and Drinking > Restaurant > Korean Restaurant"],
+    "fsq_category_ids": ["13099"],
+    "address": "123 Sample St",
+    "locality": "Coquitlam",
+    "region": "BC",
+    "country": "CA",
+    "latitude": 49.281,
+    "longitude": -122.793,
+    "tel": "+1-604-555-0101",
+    "website": "https://example.com/sample-korean",
+    "instagram": "samplekorean",
+    "placemaker_url": "https://foursquare.com/placemakers/example",
+    "date_refreshed": "2026-05-01",
+    "unresolved_flags": []
+  },
+  {
+    "fsq_place_id": "fsq_sample_park_001",
+    "name": "Sample Riverside Park",
+    "fsq_category_labels": ["Landmarks and Outdoors > Park"],
+    "fsq_category_ids": ["16032"],
+    "address": "456 River Rd",
+    "locality": "Burnaby",
+    "region": "BC",
+    "country": "CA",
+    "latitude": 49.248,
+    "longitude": -122.98,
+    "date_refreshed": "2026-05-01",
+    "unresolved_flags": []
+  },
+  {
+    "fsq_place_id": "fsq_sample_unmapped_001",
+    "name": "Sample Office",
+    "fsq_category_labels": ["Business and Professional Services > Office"],
+    "locality": "Vancouver",
+    "latitude": 49.282,
+    "longitude": -123.12
+  },
+  {
+    "fsq_place_id": "fsq_sample_missing_geo_001",
+    "name": "Sample Cafe Without Coordinates",
+    "fsq_category_labels": ["Dining and Drinking > Cafe"],
+    "locality": "Richmond"
+  },
+  {
+    "fsq_place_id": "fsq_sample_bad_flag_001",
+    "name": "Sample Deleted Place",
+    "fsq_category_labels": ["Dining and Drinking > Restaurant"],
+    "locality": "Vancouver",
+    "latitude": 49.28,
+    "longitude": -123.11,
+    "unresolved_flags": ["delete"]
+  }
+]
