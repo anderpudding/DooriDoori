@@ -40,10 +40,10 @@
       "urban-oasis"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 3.5,
-      "production": 3,
-      "energy": 3
+      "production": 3.0,
+      "energy": 3.0
     },
     "metadata": {
       "lifestyleSubtype": "nature",
@@ -52,31 +52,60 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Park",
-    "subcategories": [
-      "nature"
+    "_fsq_category_label": "Landmarks and Outdoors > Park"
+  },
+  {
+    "id": "lifestyle_002",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_venue",
+    "subcategoryDisplayKr": "스포츠 장소",
+    "nameEn": "She's FIT!",
+    "nameKr": "쉬즈 핏!",
+    "description": "A women-focused fitness gym in North Vancouver at 935 Marine Dr. The location is currently permanently closed according to Google Maps.",
+    "city": "North Vancouver",
+    "district": "North Vancouver",
+    "address": "#68 - 935 Marine Dr.",
+    "coordinates": {
+      "lat": 49.322053002925166,
+      "lng": -123.09946898224023
+    },
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQrXdChDaobP_iQQGBvyfH-9armEBLZRFwZYzQJeGDV68vlZ0EApcpXTpY74-v1Ws60cnU9zw_HKmRIOUsp5d-4ZnrrHRHPkllEa3IdEp9JgmR-X5OApvjzeuw4k57EGoXSUTh4A=w426-h240-k-no",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": false,
+    "sourceType": "fsq_os",
+    "dataQuality": "partial",
+    "rating": 1.0,
+    "reviewCount": 1,
+    "popularityScore": 0.66,
+    "freshnessScore": 0.8,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:00 AM – 10:00 PM, Sat-Sun 7:00 AM – 9:00 PM",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "vibeTags": [
+      "high-energy",
+      "welcoming",
+      "community",
+      "group-classes"
     ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFkuqtDbYR4zg_VswvXaYVKD4r81_srC9IcHbw1Ir7Oirsjwvb9y0y3YFOwy7YABWd01k88ObeoVHulcixf1fFzBA4g79AfZbYUyzcWr1sb3GKz3v3NQqCNo4eXEYy1E_BenRnqqw=w426-h240-k-no",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "scenic",
-      "peaceful",
-      "family-friendly",
-      "dog-friendly",
-      "outdoor",
-      "urban-oasis",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.622,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "engagement": 3.0,
+      "production": 2.5,
+      "energy": 3.5
+    },
+    "metadata": {
+      "lifestyleSubtype": "sport_venue",
+      "isRecurring": true,
+      "requiresMembership": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T12:00:00.000Z",
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio"
   },
   {
     "id": "lifestyle_003",
@@ -120,8 +149,8 @@
     ],
     "dimensionScores": {
       "atmosphere": 4.5,
-      "engagement": 3,
-      "production": 2,
+      "engagement": 3.0,
+      "production": 2.0,
       "energy": 2.5
     },
     "metadata": {
@@ -131,31 +160,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Hiking Trail",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwVmTQXjqpuSCWFe_sN9O0pk9S44y9yTtnzoqr0-5SYZiPiPrgJcFc9oXc5K0Wcc1MSWh811fH0NRbLcB8Tby7fwssvu1LnESD8fFSXaN-4Ogz-NTuZKlAuEPqEm5UPTXDOQtdkg=w408-h306-k-no",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "scenic",
-      "peaceful",
-      "trail",
-      "outdoor",
-      "family-friendly",
-      "dog-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.796,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 89,
-    "save_count": 18
+    "_fsq_category_label": "Landmarks and Outdoors > Hiking Trail"
   },
   {
     "id": "lifestyle_004",
@@ -195,10 +200,10 @@
       "local-art"
     ],
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "engagement": 2.5,
-      "production": 3,
-      "energy": 2
+      "production": 3.0,
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -207,28 +212,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Movie Theater",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "/mockup/images/lifestyle_g004.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "creative",
-      "intimate",
-      "local-art",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.57,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    "_fsq_category_label": "Arts and Entertainment > Movie Theater"
   },
   {
     "id": "lifestyle_005",
@@ -252,7 +236,7 @@
     "isActive": true,
     "sourceType": "fsq_os",
     "dataQuality": "partial",
-    "rating": 5,
+    "rating": 5.0,
     "reviewCount": 3,
     "popularityScore": 0.58,
     "freshnessScore": 0.8,
@@ -270,10 +254,10 @@
       "community"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 3.5,
-      "production": 3,
-      "energy": 2
+      "production": 3.0,
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -282,30 +266,59 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
+  },
+  {
+    "id": "lifestyle_006",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "nature",
+    "subcategoryDisplayKr": "자연",
+    "nameEn": "Rosedale Gardens",
+    "nameKr": "로즈데일 가든스",
+    "description": "A garden space associated with the Rosedale area near 888 Hamilton St in Vancouver. The venue appears to be permanently closed on Google Maps.",
+    "city": "Vancouver",
+    "district": "Vancouver",
+    "address": "888 Hamilton St",
+    "coordinates": {
+      "lat": 49.27804252927039,
+      "lng": -123.1165723862724
+    },
+    "imageURL": "/mockup/images/lifestyle_g006.jpg",
+    "priceTier": "free",
+    "priceLevel": 0,
+    "isActive": false,
+    "sourceType": "fsq_os",
+    "dataQuality": "partial",
+    "rating": 4.0,
+    "reviewCount": 28,
+    "popularityScore": 0.66,
+    "freshnessScore": 0.9,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sun 7:00 AM – 9:00 PM",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "vibeTags": [
+      "garden",
+      "peaceful",
+      "urban-oasis"
     ],
-    "image_url": "/mockup/images/lifestyle_g005.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "creative",
-      "contemporary",
-      "intimate",
-      "local-art",
-      "community",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.657,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "engagement": 2.0,
+      "production": 2.0,
+      "energy": 1.5
+    },
+    "metadata": {
+      "lifestyleSubtype": "nature",
+      "isRecurring": true,
+      "requiresMembership": false
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T12:00:00.000Z",
+    "_fsq_category_label": "Landmarks and Outdoors > Garden"
   },
   {
     "id": "lifestyle_007",
@@ -349,7 +362,7 @@
     "dimensionScores": {
       "atmosphere": 3.5,
       "engagement": 2.5,
-      "production": 4,
+      "production": 4.0,
       "energy": 1.5
     },
     "metadata": {
@@ -359,30 +372,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "/mockup/images/lifestyle_g007.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "thought-provoking",
-      "contemporary",
-      "creative",
-      "local-art",
-      "outdoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.691,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 89,
-    "save_count": 18
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_008",
@@ -423,9 +413,9 @@
       "welcoming"
     ],
     "dimensionScores": {
-      "atmosphere": 3,
-      "engagement": 4,
-      "production": 3,
+      "atmosphere": 3.0,
+      "engagement": 4.0,
+      "production": 3.0,
       "energy": 4.5
     },
     "metadata": {
@@ -435,29 +425,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Gym and Studio > Gym",
-    "subcategories": [
-      "sport_venue"
-    ],
-    "image_url": "/mockup/images/lifestyle_g008.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "sport_venue",
-      "high-energy",
-      "motivating",
-      "community",
-      "welcoming",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.605,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio > Gym"
   },
   {
     "id": "lifestyle_009",
@@ -500,9 +468,9 @@
     ],
     "dimensionScores": {
       "atmosphere": 3.5,
-      "engagement": 4,
-      "production": 3,
-      "energy": 4
+      "engagement": 4.0,
+      "production": 3.0,
+      "energy": 4.0
     },
     "metadata": {
       "lifestyleSubtype": "nature",
@@ -511,30 +479,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Skating > Skate Park",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPfV0nbqgj-4veAM-PwsAsbiCreYrG9auBML9ryoj05Ekjb9INlLBtUxdhEzE-r2oBNZHz-rL9klxLeyN2DOfeH8sYh_WjT6OI32pMAZIhZkjMQUzYpKKCSTwyahXA3in0rH3e=w408-h306-k-no",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "high-energy",
-      "community",
-      "family-friendly",
-      "urban-oasis",
-      "beginner-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.639,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 79,
-    "save_count": 16
+    "_fsq_category_label": "Sports and Recreation > Skating > Skate Park"
   },
   {
     "id": "lifestyle_010",
@@ -575,10 +520,10 @@
       "beginner-friendly"
     ],
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "engagement": 3.5,
-      "production": 3,
-      "energy": 3
+      "production": 3.0,
+      "energy": 3.0
     },
     "metadata": {
       "lifestyleSubtype": "sport_venue",
@@ -587,29 +532,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Water Sports > Swimming > Swimming Pool",
-    "subcategories": [
-      "sport_venue"
-    ],
-    "image_url": "/mockup/images/lifestyle_g010.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "sport_venue",
-      "welcoming",
-      "community",
-      "family-friendly",
-      "beginner-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.813,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 98,
-    "save_count": 20
+    "_fsq_category_label": "Sports and Recreation > Water Sports > Swimming > Swimming Pool"
   },
   {
     "id": "lifestyle_011",
@@ -633,7 +556,7 @@
     "isActive": true,
     "sourceType": "fsq_os",
     "dataQuality": "partial",
-    "rating": 4,
+    "rating": 4.0,
     "reviewCount": 18,
     "popularityScore": 0.5,
     "freshnessScore": 0.9,
@@ -651,7 +574,7 @@
     ],
     "dimensionScores": {
       "atmosphere": 3.5,
-      "engagement": 3,
+      "engagement": 3.0,
       "production": 2.5,
       "energy": 2.5
     },
@@ -662,29 +585,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Park > Playground",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "/mockup/images/lifestyle_g011.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "family-friendly",
-      "scenic",
-      "urban-oasis",
-      "peaceful",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.64,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    "_fsq_category_label": "Landmarks and Outdoors > Park > Playground"
   },
   {
     "id": "lifestyle_012",
@@ -726,10 +627,10 @@
       "local-art"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 3.5,
       "production": 3.5,
-      "energy": 2
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -738,30 +639,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "/mockup/images/lifestyle_g012.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "creative",
-      "contemporary",
-      "thought-provoking",
-      "intimate",
-      "local-art",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.587,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_013",
@@ -791,7 +669,15 @@
     "freshnessScore": 0.7,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Fri 12:00 PM - 5:00 PM; Sat 12:00 PM - 5:00 PM; Sun 12:00 PM - 5:00 PM",
+      "openingHours": {
+        "monday": null,
+        "tuesday": null,
+        "wednesday": null,
+        "thursday": null,
+        "friday": "12:00 PM - 5:00 PM",
+        "saturday": "12:00 PM - 5:00 PM",
+        "sunday": "12:00 PM - 5:00 PM"
+      },
       "startDateTime": "2026-05-18T12:00:00.000Z",
       "endDateTime": "2026-05-18T17:00:00.000Z"
     },
@@ -803,10 +689,10 @@
       "quiet"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 3.5,
-      "production": 4,
-      "energy": 2
+      "production": 4.0,
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -818,30 +704,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGgl6ntZSTbMJE5qfikS9HDgaGRh6X4L3YpF6AppXBd8Ko-q5aOVCcaDEChyFfV_LrcCIK00nhKXKjqgfWtzekCwpDNh2Xifsvya6C7vONG2jEupjtSBXRVEaY7efFXaV9kRc6g=w408-h272-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "contemporary",
-      "gallery",
-      "thoughtful",
-      "curated",
-      "quiet",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.674,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 79,
-    "save_count": 16
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_014",
@@ -871,7 +734,15 @@
     "freshnessScore": 0.8,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon 4:00 PM - 12:00 AM; Tue 4:00 PM - 12:00 AM; Wed 4:00 PM - 12:00 AM; Thu 4:00 PM - 12:00 AM; Fri 4:00 PM - 12:00 AM; Sat 6:00 AM - 11:00 PM; Sun 6:00 AM - 11:00 PM",
+      "openingHours": {
+        "monday": "4:00 PM - 12:00 AM",
+        "tuesday": "4:00 PM - 12:00 AM",
+        "wednesday": "4:00 PM - 12:00 AM",
+        "thursday": "4:00 PM - 12:00 AM",
+        "friday": "4:00 PM - 12:00 AM",
+        "saturday": "6:00 AM - 11:00 PM",
+        "sunday": "6:00 AM - 11:00 PM"
+      },
       "startDateTime": "2026-05-18T16:00:00.000Z",
       "endDateTime": "2026-05-19T00:00:00.000Z"
     },
@@ -884,8 +755,8 @@
     ],
     "dimensionScores": {
       "atmosphere": 3.5,
-      "engagement": 4,
-      "production": 2,
+      "engagement": 4.0,
+      "production": 2.0,
       "energy": 3.5
     },
     "metadata": {
@@ -897,29 +768,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Disc Golf",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG47UCw5pGLbIVfa3OkLTyGhkRU67qn-HBGWnfVYcJ6JvRcn8Fpn5zK_2VxKRlWDaHPdmrgmqx8Q092Pcv9G0BXF0M8d0gAAO8nwXuffMJebspYqLxtntczs05KxUXP9iVAyZWB=w408-h306-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "outdoor",
-      "active",
-      "casual",
-      "community",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.761,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 89,
-    "save_count": 18
+    "_fsq_category_label": "Arts and Entertainment > Disc Golf"
   },
   {
     "id": "lifestyle_015",
@@ -960,9 +809,9 @@
       "community"
     ],
     "dimensionScores": {
-      "atmosphere": 3,
-      "engagement": 4,
-      "production": 3,
+      "atmosphere": 3.0,
+      "engagement": 4.0,
+      "production": 3.0,
       "energy": 4.5
     },
     "metadata": {
@@ -972,29 +821,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Gym and Studio",
-    "subcategories": [
-      "sport_venue"
-    ],
-    "image_url": "/mockup/images/lifestyle_g015.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "sport_venue",
-      "strength",
-      "focused",
-      "athletic",
-      "community",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.848,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 98,
-    "save_count": 20
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio"
   },
   {
     "id": "lifestyle_016",
@@ -1024,7 +851,15 @@
     "freshnessScore": 0.7,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Tue 11:00 AM - 5:00 PM; Wed 11:00 AM - 5:00 PM; Thu 11:00 AM - 5:00 PM; Fri 11:00 AM - 5:00 PM; Sat 11:00 AM - 5:00 PM",
+      "openingHours": {
+        "monday": null,
+        "tuesday": "11:00 AM - 5:00 PM",
+        "wednesday": "11:00 AM - 5:00 PM",
+        "thursday": "11:00 AM - 5:00 PM",
+        "friday": "11:00 AM - 5:00 PM",
+        "saturday": "11:00 AM - 5:00 PM",
+        "sunday": null
+      },
       "startDateTime": "2026-05-18T11:00:00.000Z",
       "endDateTime": "2026-05-18T17:00:00.000Z"
     },
@@ -1036,9 +871,9 @@
       "creative"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
-      "engagement": 3,
-      "production": 4,
+      "atmosphere": 4.0,
+      "engagement": 3.0,
+      "production": 4.0,
       "energy": 1.5
     },
     "metadata": {
@@ -1049,30 +884,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAETzzrd4nWfQLOWAzT6z_b-LcEBXOIjx3CEu24w18gdVu_BfXRnJlXt_ME57rL479dXbchpEEhh_DE939Ngrz6I9hWQvWa4Aw9H-vLt_mWHtD3PfpTiPAZqK1dOO1qmig3VhrozSg=w408-h306-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "artistic",
-      "local",
-      "curated",
-      "welcoming",
-      "creative",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.622,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_017",
@@ -1113,10 +925,10 @@
       "urban"
     ],
     "dimensionScores": {
-      "atmosphere": 3,
-      "engagement": 4,
+      "atmosphere": 3.0,
+      "engagement": 4.0,
       "production": 2.5,
-      "energy": 4
+      "energy": 4.0
     },
     "metadata": {
       "lifestyleSubtype": "sport_venue",
@@ -1125,29 +937,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Gym and Studio",
-    "subcategories": [
-      "sport_venue"
-    ],
-    "image_url": "/mockup/images/lifestyle_g017.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "sport_venue",
-      "fitness",
-      "flexible",
-      "personal-training",
-      "urban",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.709,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 79,
-    "save_count": 16
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio"
   },
   {
     "id": "lifestyle_018",
@@ -1171,7 +961,7 @@
     "isActive": true,
     "sourceType": "fsq_os",
     "dataQuality": "partial",
-    "rating": 4,
+    "rating": 4.0,
     "reviewCount": 22,
     "popularityScore": 0.74,
     "freshnessScore": 0.9,
@@ -1189,10 +979,10 @@
       "nature"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 2.5,
-      "production": 3,
-      "energy": 1
+      "production": 3.0,
+      "energy": 1.0
     },
     "metadata": {
       "lifestyleSubtype": "nature",
@@ -1201,29 +991,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Sculpture Garden",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "/mockup/images/lifestyle_g018.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "sculpture",
-      "outdoor",
-      "tranquil",
-      "artistic",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.796,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 89,
-    "save_count": 18
+    "_fsq_category_label": "Landmarks and Outdoors > Sculpture Garden"
   },
   {
     "id": "lifestyle_019",
@@ -1253,7 +1021,15 @@
     "freshnessScore": 0.6,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon 12:00 AM - 11:59 PM; Tue 12:00 AM - 11:59 PM; Wed 12:00 AM - 11:59 PM; Thu 12:00 AM - 11:59 PM; Fri 12:00 AM - 11:59 PM; Sat 12:00 AM - 11:59 PM; Sun 12:00 AM - 11:59 PM",
+      "openingHours": {
+        "monday": "12:00 AM - 11:59 PM",
+        "tuesday": "12:00 AM - 11:59 PM",
+        "wednesday": "12:00 AM - 11:59 PM",
+        "thursday": "12:00 AM - 11:59 PM",
+        "friday": "12:00 AM - 11:59 PM",
+        "saturday": "12:00 AM - 11:59 PM",
+        "sunday": "12:00 AM - 11:59 PM"
+      },
       "startDateTime": "2026-05-18T00:00:00.000Z",
       "endDateTime": "2026-05-18T23:59:59.000Z"
     },
@@ -1266,9 +1042,9 @@
     ],
     "dimensionScores": {
       "atmosphere": 4.5,
-      "engagement": 3,
+      "engagement": 3.0,
       "production": 1.5,
-      "energy": 2
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "nature",
@@ -1279,30 +1055,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Waterfront",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbM7pnpBh1DZJukkjtVMAs4Tx-WxeJUzKMfFfD2bNcL4LpKs1SBMg05WS_9-kZ4kfXhbNWpYd2FOlfjrZHJDxA1-Kszvv6M0bLaQojSEyQlpe8lwBcsW7Ahwmz2jR8SdR-uug=w408-h306-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "scenic",
-      "waterfront",
-      "peaceful",
-      "open-air",
-      "photogenic",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.743,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 98,
-    "save_count": 20
+    "_fsq_category_label": "Landmarks and Outdoors > Waterfront"
   },
   {
     "id": "lifestyle_020",
@@ -1344,9 +1097,9 @@
     ],
     "dimensionScores": {
       "atmosphere": 3.5,
-      "engagement": 4,
-      "production": 3,
-      "energy": 4
+      "engagement": 4.0,
+      "production": 3.0,
+      "energy": 4.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -1355,29 +1108,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Performing Arts Venue > Music Venue",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "/mockup/images/lifestyle_g020.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "creative",
-      "indie",
-      "underground",
-      "local-music",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.57,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    "_fsq_category_label": "Arts and Entertainment > Performing Arts Venue > Music Venue"
   },
   {
     "id": "lifestyle_021",
@@ -1401,13 +1132,21 @@
     "isActive": true,
     "sourceType": "fsq_os",
     "dataQuality": "enriched",
-    "rating": 4,
+    "rating": 4.0,
     "reviewCount": 2,
     "popularityScore": 0.58,
     "freshnessScore": 0.8,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon 12:00 AM - 11:59 PM; Tue 12:00 AM - 11:59 PM; Wed 12:00 AM - 11:59 PM; Thu 12:00 AM - 11:59 PM; Fri 12:00 AM - 11:59 PM; Sat 12:00 AM - 11:59 PM; Sun 12:00 AM - 11:59 PM",
+      "openingHours": {
+        "monday": "12:00 AM - 11:59 PM",
+        "tuesday": "12:00 AM - 11:59 PM",
+        "wednesday": "12:00 AM - 11:59 PM",
+        "thursday": "12:00 AM - 11:59 PM",
+        "friday": "12:00 AM - 11:59 PM",
+        "saturday": "12:00 AM - 11:59 PM",
+        "sunday": "12:00 AM - 11:59 PM"
+      },
       "startDateTime": "2026-05-18T00:00:00.000Z",
       "endDateTime": "2026-05-18T23:59:59.000Z"
     },
@@ -1419,9 +1158,9 @@
       "green"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
-      "engagement": 2,
-      "production": 1,
+      "atmosphere": 4.0,
+      "engagement": 2.0,
+      "production": 1.0,
       "energy": 1.5
     },
     "metadata": {
@@ -1434,30 +1173,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Park",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNxgAsAFUZlcQNC8V5njD9WR9tOnvytXnUbh9b6Pvf4IGzr6I66Dn6DStOKAL5YPKtogrBDm_7H2TLqhcg5e8KSLGs0o-M5Ar3jaPoiYpJ4o8GX1mreEZYLd5s1UuXc6VRCBLphw=w408-h544-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "peaceful",
-      "scenic",
-      "residential",
-      "quiet",
-      "green",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.657,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    "_fsq_category_label": "Landmarks and Outdoors > Park"
   },
   {
     "id": "lifestyle_022",
@@ -1487,7 +1203,15 @@
     "freshnessScore": 0.9,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Thu 8:00 PM - 12:00 AM; Fri 8:00 PM - 12:00 AM; Sat 8:00 PM - 12:00 AM; Sun 7:00 PM - 10:00 PM",
+      "openingHours": {
+        "monday": null,
+        "tuesday": null,
+        "wednesday": null,
+        "thursday": "8:00 PM - 12:00 AM",
+        "friday": "8:00 PM - 12:00 AM",
+        "saturday": "8:00 PM - 12:00 AM",
+        "sunday": "7:00 PM - 10:00 PM"
+      },
       "startDateTime": "2026-05-18T20:00:00.000Z",
       "endDateTime": "2026-05-19T00:00:00.000Z"
     },
@@ -1499,10 +1223,10 @@
       "community"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
-      "engagement": 4,
+      "atmosphere": 4.0,
+      "engagement": 4.0,
       "production": 3.5,
-      "energy": 4
+      "energy": 4.0
     },
     "metadata": {
       "lifestyleSubtype": "culture",
@@ -1514,30 +1238,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSEMvbZsfrjSJbE1_ThuQ6bQTOMHvYrxv5aM-XBWLqvBYRXysA_0ANVW702IlUY5A1K_DnYOmQ4fkf-zow81L8c4HvqDs7ocz4aj57qwvwecd57a6dX0gQ8wBTaXYyx-dMcP2M=w426-h240-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "creative",
-      "indie",
-      "underground",
-      "artistic",
-      "community",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.744,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 79,
-    "save_count": 16
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_023",
@@ -1567,7 +1268,15 @@
     "freshnessScore": 0.6,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon 8:15 AM - 5:00 PM; Tue 8:15 AM - 5:00 PM; Wed 8:15 AM - 5:00 PM; Thu 8:15 AM - 5:00 PM; Fri 8:15 AM - 5:00 PM",
+      "openingHours": {
+        "monday": "8:15 AM - 5:00 PM",
+        "tuesday": "8:15 AM - 5:00 PM",
+        "wednesday": "8:15 AM - 5:00 PM",
+        "thursday": "8:15 AM - 5:00 PM",
+        "friday": "8:15 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      },
       "startDateTime": "2026-05-18T08:15:00.000Z",
       "endDateTime": "2026-05-18T17:00:00.000Z"
     },
@@ -1580,9 +1289,9 @@
     ],
     "dimensionScores": {
       "atmosphere": 3.5,
-      "engagement": 3,
-      "production": 2,
-      "energy": 2
+      "engagement": 3.0,
+      "production": 2.0,
+      "energy": 2.0
     },
     "metadata": {
       "lifestyleSubtype": "nature",
@@ -1595,31 +1304,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Park",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEVd-uRd43sPY-sS3IaLM7BqBVZ-u1qXVB56l0jQX0zUGvothBW0_UqBcMwJtysnNsBbqtrU4RLbhZa4pLjzWHa_rBPptwppGYUF6eXj5cIgj7IxtEJ0fDwz6JS3PpYO5qz4BT=w408-h544-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "family-friendly",
-      "dog-friendly",
-      "peaceful",
-      "community",
-      "green",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "family-friendly"
-    ],
-    "quality_score": 0.691,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 89,
-    "save_count": 18
+    "_fsq_category_label": "Landmarks and Outdoors > Park"
   },
   {
     "id": "lifestyle_024",
@@ -1660,9 +1345,9 @@
       "contemporary"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 3.5,
-      "production": 3,
+      "production": 3.0,
       "energy": 2.5
     },
     "metadata": {
@@ -1672,29 +1357,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Arts and Entertainment > Art Gallery",
-    "subcategories": [
-      "culture"
-    ],
-    "image_url": "/mockup/images/lifestyle_g024.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "lifestyle",
-      "culture",
-      "artistic",
-      "indie",
-      "intimate",
-      "contemporary",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.778,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 98,
-    "save_count": 20
+    "_fsq_category_label": "Arts and Entertainment > Art Gallery"
   },
   {
     "id": "lifestyle_025",
@@ -1724,7 +1387,15 @@
     "freshnessScore": 0.8,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon 8:00 AM - 11:00 PM; Tue 8:00 AM - 11:00 PM; Wed 8:00 AM - 11:00 PM; Thu 8:00 AM - 11:00 PM; Fri 8:00 AM - 11:00 PM; Sat 8:00 AM - 11:00 PM; Sun 8:00 AM - 11:00 PM",
+      "openingHours": {
+        "monday": "8:00 AM - 11:00 PM",
+        "tuesday": "8:00 AM - 11:00 PM",
+        "wednesday": "8:00 AM - 11:00 PM",
+        "thursday": "8:00 AM - 11:00 PM",
+        "friday": "8:00 AM - 11:00 PM",
+        "saturday": "8:00 AM - 11:00 PM",
+        "sunday": "8:00 AM - 11:00 PM"
+      },
       "startDateTime": "2026-05-18T08:00:00.000Z",
       "endDateTime": "2026-05-18T23:00:00.000Z"
     },
@@ -1749,30 +1420,7 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Landmarks and Outdoors > Park",
-    "subcategories": [
-      "nature"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLxunYDmrogUupACFMLr-Cg5_LUgVSEplEELLOZv1DaHFGf-8GPqHvFVIpaioovrkI9h9_OW-BWDp6ip3JhstcyQiI00BdUstJaihzVuIyCHnYNJqHwqrNH-YIe1-TG8Nd3V1uCA=w408-h306-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "nature",
-      "scenic",
-      "outdoor",
-      "dog-friendly",
-      "family-friendly",
-      "peaceful",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.605,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    "_fsq_category_label": "Landmarks and Outdoors > Park"
   },
   {
     "id": "lifestyle_026",
@@ -1796,7 +1444,7 @@
     "isActive": true,
     "sourceType": "fsq_os",
     "dataQuality": "partial",
-    "rating": 5,
+    "rating": 5.0,
     "reviewCount": 20,
     "popularityScore": 0.66,
     "freshnessScore": 0.6,
@@ -1814,10 +1462,10 @@
       "dance"
     ],
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "engagement": 4.5,
-      "production": 4,
-      "energy": 5
+      "production": 4.0,
+      "energy": 5.0
     },
     "metadata": {
       "lifestyleSubtype": "sport_venue",
@@ -1828,29 +1476,170 @@
     },
     "createdAt": "2026-05-18T00:00:00.000Z",
     "updatedAt": "2026-05-18T12:00:00.000Z",
-    "_fsq_category_label": "Sports and Recreation > Gym and Studio",
-    "subcategories": [
-      "sport_venue"
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio"
+  },
+  {
+    "id": "lifestyle_027",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "nature",
+    "subcategoryDisplayKr": "자연",
+    "nameEn": "Rock House Indoor Climbing Ctr",
+    "nameKr": "록 하우스 실내 클라이밍 센터",
+    "description": "A former indoor rock climbing centre located at 3771 Jacombs Rd #520 in Richmond. The facility is no longer listed on Google Maps and appears to be permanently closed.",
+    "city": "Richmond",
+    "district": "Richmond",
+    "address": "3771 Jacombs Rd #520, Richmond, BC V6V 2L9",
+    "coordinates": {
+      "lat": 49.18715841315604,
+      "lng": -123.08063475547802
+    },
+    "imageURL": "/mockup/images/lifestyle_g027.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": false,
+    "sourceType": "fsq_os",
+    "dataQuality": "partial",
+    "rating": 4.2,
+    "reviewCount": 93,
+    "popularityScore": 0.74,
+    "freshnessScore": 0.7,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:00 AM – 11:00 PM, Sat-Sun 8:00 AM – 9:00 PM",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "vibeTags": [
+      "adventurous",
+      "active",
+      "challenging",
+      "indoor"
     ],
-    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3RB0pHFLtlN-AKMm7B15maVUsqV-n0Rg60GutUVLGIu9UL7FIO9Tle1cXTv9eyejK0u549L_cJ8MGGQmqHL7PmGlgcN2wL1I9bXt7zdHOF2SP_-JSbjtbEzAPTfQ4xTwNo9ak=w408-h306-k-no",
-    "budget_level": "medium",
-    "activity_tags": [
-      "lifestyle",
-      "sport_venue",
-      "high-energy",
-      "motivating",
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "engagement": 4.5,
+      "production": 4.0,
+      "energy": 4.0
+    },
+    "metadata": {
+      "lifestyleSubtype": "nature",
+      "isRecurring": true,
+      "requiresMembership": true,
+      "permanentlyClosed": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T12:00:00.000Z",
+    "_fsq_category_label": "Landmarks and Outdoors > Rock Climbing Spot"
+  },
+  {
+    "id": "lifestyle_028",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_venue",
+    "subcategoryDisplayKr": "스포츠 장소",
+    "nameEn": "Bodies by London",
+    "nameKr": "바디스 바이 런던",
+    "description": "A former yoga studio previously located at 2625 Clarke St in Port Moody. The business is no longer listed on Google Maps and the address now houses a different establishment.",
+    "city": "Port Moody",
+    "district": "Port Moody",
+    "address": "2625 Clarke St, Port Moody, BC V3H 1Z4",
+    "coordinates": {
+      "lat": 49.277611414805406,
+      "lng": -122.85100782697124
+    },
+    "imageURL": "/mockup/images/lifestyle_g028.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": false,
+    "sourceType": "fsq_os",
+    "dataQuality": "partial",
+    "rating": 4.5,
+    "reviewCount": 76,
+    "popularityScore": 0.82,
+    "freshnessScore": 0.8,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:30 AM – 9:30 PM, Sat-Sun 8:00 AM – 6:00 PM",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "vibeTags": [
+      "mindful",
+      "calming",
       "welcoming",
+      "restorative"
+    ],
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "engagement": 4.0,
+      "production": 4.0,
+      "energy": 2.5
+    },
+    "metadata": {
+      "lifestyleSubtype": "sport_venue",
+      "isRecurring": true,
+      "requiresMembership": true,
+      "permanentlyClosed": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T12:00:00.000Z",
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio > Yoga Studio"
+  },
+  {
+    "id": "lifestyle_029",
+    "type": "place",
+    "category": "lifestyle",
+    "subcategoryContent": "sport_venue",
+    "subcategoryDisplayKr": "스포츠 장소",
+    "nameEn": "Yogacara Studios - Mt. Pleasant",
+    "nameKr": "요가카라 스튜디오 - 마운트 플레전트",
+    "description": "A former yoga studio in the Mount Pleasant neighbourhood of Vancouver. Previously located at 3381 Fraser St, the studio is now permanently closed.",
+    "city": "Vancouver",
+    "district": "Vancouver",
+    "address": "3381 Fraser St, Vancouver, BC V5V 4C2",
+    "coordinates": {
+      "lat": 49.2547918,
+      "lng": -123.0901694
+    },
+    "imageURL": "/mockup/images/lifestyle_g029.jpg",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": false,
+    "sourceType": "fsq_os",
+    "dataQuality": "partial",
+    "rating": 4.3,
+    "reviewCount": 58,
+    "popularityScore": 0.5,
+    "freshnessScore": 0.9,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Fri 6:00 AM – 9:00 PM, Sat-Sun 8:00 AM – 7:00 PM",
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "vibeTags": [
+      "mindful",
+      "calming",
       "community",
-      "dance",
-      "curated-for-vancouver-koreans"
+      "restorative"
     ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.639,
-    "korean_community_fit": 0.5,
-    "is_approved": true,
-    "view_count": 79,
-    "save_count": 16
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "engagement": 4.0,
+      "production": 4.0,
+      "energy": 2.5
+    },
+    "metadata": {
+      "lifestyleSubtype": "sport_venue",
+      "isRecurring": true,
+      "requiresMembership": true,
+      "permanentlyClosed": true,
+      "phone": "(604) 568-3334",
+      "googleMapsName": "Yogacara Studios | Mount Pleasant Yoga"
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T12:00:00.000Z",
+    "_fsq_category_label": "Sports and Recreation > Gym and Studio > Yoga Studio"
   }
 ]

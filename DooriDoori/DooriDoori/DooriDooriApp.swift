@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct DooriDooriApp: App {
+    init() {
+        #if DEBUG
+        AppFont.validateRegisteredFonts()
+        #endif
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()

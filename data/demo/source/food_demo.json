@@ -49,36 +49,7 @@
       "cuisineType": "Korean",
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "restaurant"
-    ],
-    "image_url": "/mockup/images/food_001.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "food",
-      "restaurant",
-      "traditional",
-      "family-friendly",
-      "cozy",
-      "authentic",
-      "curated-for-vancouver-koreans",
-      "korean-community",
-      "korean-friendly",
-      "student-friendly"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "korean-community",
-      "korean-friendly",
-      "family-friendly",
-      "student-friendly"
-    ],
-    "quality_score": 0.767,
-    "korean_community_fit": 1,
-    "is_approved": true,
-    "view_count": 100,
-    "save_count": 20
+    }
   },
   {
     "id": "food_002",
@@ -130,29 +101,7 @@
       "cuisineType": null,
       "soloFriendly": true,
       "groupFriendly": false
-    },
-    "subcategories": [
-      "cafe"
-    ],
-    "image_url": "/mockup/images/food_002.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "food",
-      "cafe",
-      "minimalist",
-      "study-friendly",
-      "third-wave",
-      "trendy",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.702,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 88,
-    "save_count": 18
+    }
   },
   {
     "id": "food_003",
@@ -204,29 +153,7 @@
       "cuisineType": "Western",
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "restaurant"
-    ],
-    "image_url": "/mockup/images/food_003.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "food",
-      "restaurant",
-      "upscale",
-      "date-night",
-      "instagrammable",
-      "modern",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.8,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 106,
-    "save_count": 21
+    }
   },
   {
     "id": "food_004",
@@ -278,29 +205,7 @@
       "cuisineType": "Japanese",
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "restaurant"
-    ],
-    "image_url": "/mockup/images/food_004.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "food",
-      "restaurant",
-      "lively",
-      "after-work",
-      "group-friendly",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.767,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 100,
-    "save_count": 20
+    }
   },
   {
     "id": "food_005",
@@ -352,30 +257,7 @@
       "cuisineType": "Chinese",
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "restaurant"
-    ],
-    "image_url": "/mockup/images/food_005.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "food",
-      "restaurant",
-      "authentic",
-      "family-friendly",
-      "traditional",
-      "lively",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "family-friendly"
-    ],
-    "quality_score": 0.767,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 100,
-    "save_count": 20
+    }
   },
   {
     "id": "food_006",
@@ -427,29 +309,7 @@
       "cuisineType": "Brunch",
       "soloFriendly": true,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "restaurant"
-    ],
-    "image_url": "/mockup/images/food_006.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "food",
-      "restaurant",
-      "instagrammable",
-      "brunch-spot",
-      "trendy",
-      "bright",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.734,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 94,
-    "save_count": 19
+    }
   },
   {
     "id": "food_007",
@@ -501,29 +361,7 @@
       "cuisineType": null,
       "soloFriendly": true,
       "groupFriendly": false
-    },
-    "subcategories": [
-      "cafe"
-    ],
-    "image_url": "/mockup/images/food_007.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "food",
-      "cafe",
-      "vintage",
-      "hidden-gem",
-      "cozy",
-      "instagrammable",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.669,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 82,
-    "save_count": 16
+    }
   },
   {
     "id": "food_008",
@@ -574,28 +412,7 @@
       "cuisineType": null,
       "soloFriendly": true,
       "groupFriendly": false
-    },
-    "subcategories": [
-      "cafe"
-    ],
-    "image_url": "/mockup/images/food_008.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "food",
-      "cafe",
-      "casual",
-      "grab-and-go",
-      "modern",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.637,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 76,
-    "save_count": 15
+    }
   },
   {
     "id": "food_009",
@@ -647,29 +464,7 @@
       "cuisineType": null,
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "bar"
-    ],
-    "image_url": "/mockup/images/food_009.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "food",
-      "bar",
-      "upscale",
-      "date-night",
-      "late-night",
-      "intimate",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.78,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 102,
-    "save_count": 20
+    }
   },
   {
     "id": "food_010",
@@ -721,28 +516,6 @@
       "cuisineType": null,
       "soloFriendly": false,
       "groupFriendly": true
-    },
-    "subcategories": [
-      "bar"
-    ],
-    "image_url": "/mockup/images/food_010.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "food",
-      "bar",
-      "lively",
-      "casual",
-      "group-friendly",
-      "outdoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.78,
-    "korean_community_fit": 0.6,
-    "is_approved": true,
-    "view_count": 102,
-    "save_count": 20
+    }
   }
 ]

@@ -51,29 +51,7 @@
       "lumaUrl": "https://lu.ma/m7kaisfp",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_001.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "formal",
-      "indoor",
-      "arts-culture",
-      "ticket-required",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.635,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 62,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_002",
@@ -109,7 +87,7 @@
     "dimensionScores": {
       "atmosphere": 3.5,
       "size": 1.5,
-      "learning_value": 4
+      "learning_value": 4.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -127,29 +105,7 @@
       "lumaUrl": "https://lu.ma/dy3xb2ez",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_002.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "workshop",
-      "outdoor",
-      "beginner-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.652,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 73,
-    "save_count": 15
+    }
   },
   {
     "id": "event_luma_003",
@@ -183,7 +139,7 @@
       "endDateTime": "2026-05-30T13:00"
     },
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "size": 1.5,
       "learning_value": 4.5
     },
@@ -203,29 +159,7 @@
       "lumaUrl": "https://lu.ma/xeybw5zd",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_003.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "workshop",
-      "indoor",
-      "learning-heavy",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.678,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 78,
-    "save_count": 16
+    }
   },
   {
     "id": "event_luma_004",
@@ -260,7 +194,7 @@
     },
     "dimensionScores": {
       "atmosphere": 2.5,
-      "size": 2,
+      "size": 2.0,
       "learning_value": 4.5
     },
     "sourceType": "luma",
@@ -279,31 +213,7 @@
       "lumaUrl": "https://lu.ma/g3izk916",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "career"
-    ],
-    "image_url": "/mockup/images/event_luma_004.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "career",
-      "learning-heavy",
-      "career-focused",
-      "workshop",
-      "free-entry",
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "quality_score": 0.633,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_005",
@@ -337,7 +247,7 @@
       "endDateTime": "2026-05-30T14:00"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
       "learning_value": 3.5
     },
@@ -357,29 +267,7 @@
       "lumaUrl": "https://lu.ma/rlsl5sx4",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_005.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "outdoor",
-      "beginner-friendly",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.633,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_006",
@@ -413,7 +301,7 @@
       "endDateTime": "2026-05-30T14:30"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
       "learning_value": 2.5
     },
@@ -433,29 +321,7 @@
       "lumaUrl": "https://lu.ma/po933e4h",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_006.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "casual",
-      "creative",
-      "newcomer-friendly",
-      "indoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.613,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 66,
-    "save_count": 13
+    }
   },
   {
     "id": "event_luma_007",
@@ -489,9 +355,9 @@
       "endDateTime": "2026-05-30T16:30"
     },
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "size": 1.5,
-      "learning_value": 4
+      "learning_value": 4.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -509,29 +375,7 @@
       "lumaUrl": "https://lu.ma/d12f7t0t",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_007.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "learning-heavy",
-      "indoor",
-      "beginner-friendly",
-      "creative",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.613,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 66,
-    "save_count": 13
+    }
   },
   {
     "id": "event_luma_008",
@@ -585,29 +429,7 @@
       "lumaUrl": "https://lu.ma/wt48c5xh",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_008.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "learning-heavy",
-      "indoor",
-      "creative",
-      "ticket-required",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.698,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 82,
-    "save_count": 16
+    }
   },
   {
     "id": "event_luma_009",
@@ -640,9 +462,9 @@
       "endDateTime": "2026-05-30T17:30"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
-      "learning_value": 4
+      "learning_value": 4.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -660,28 +482,7 @@
       "lumaUrl": "https://lu.ma/xzas926a",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_009.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "outdoor",
-      "learning-heavy",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.659,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 74,
-    "save_count": 15
+    }
   },
   {
     "id": "event_luma_010",
@@ -735,29 +536,7 @@
       "lumaUrl": "https://lu.ma/79m2xc25",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_010.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "outdoor",
-      "casual",
-      "beginner-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.642,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 72,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_011",
@@ -791,7 +570,7 @@
       "endDateTime": "2026-05-31T12:30"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
       "learning_value": 3.5
     },
@@ -811,29 +590,7 @@
       "lumaUrl": "https://lu.ma/11veqgbx",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_011.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "creative",
-      "outdoor",
-      "beginner-friendly",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.61,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 66,
-    "save_count": 13
+    }
   },
   {
     "id": "event_luma_012",
@@ -887,29 +644,7 @@
       "lumaUrl": "https://lu.ma/nc32nchd",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_012.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "casual",
-      "creative",
-      "newcomer-friendly",
-      "indoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.564,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 58,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_013",
@@ -943,7 +678,7 @@
       "endDateTime": "2026-06-05T21:00"
     },
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "size": 1.5,
       "learning_value": 2.5
     },
@@ -963,29 +698,7 @@
       "lumaUrl": "https://lu.ma/lj6c02vn",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_013.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "casual",
-      "free-entry",
-      "alcohol-served",
-      "indoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.523,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 55,
-    "save_count": 11
+    }
   },
   {
     "id": "event_luma_014",
@@ -1019,9 +732,9 @@
       "endDateTime": "2026-06-11T21:30"
     },
     "dimensionScores": {
-      "atmosphere": 3,
-      "size": 2,
-      "learning_value": 4
+      "atmosphere": 3.0,
+      "size": 2.0,
+      "learning_value": 4.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -1039,29 +752,7 @@
       "lumaUrl": "https://lu.ma/films",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_014.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "indoor",
-      "learning-heavy",
-      "ticket-required",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.61,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 74,
-    "save_count": 15
+    }
   },
   {
     "id": "event_luma_015",
@@ -1096,7 +787,7 @@
     },
     "dimensionScores": {
       "atmosphere": 3.5,
-      "size": 2,
+      "size": 2.0,
       "learning_value": 2.5
     },
     "sourceType": "luma",
@@ -1115,29 +806,7 @@
       "lumaUrl": "https://lu.ma/tb8om33e",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_015.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "networking-heavy",
-      "casual",
-      "after-work",
-      "alcohol-served",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.527,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 62,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_016",
@@ -1171,9 +840,9 @@
       "endDateTime": "2026-07-09T21:30"
     },
     "dimensionScores": {
-      "atmosphere": 3,
-      "size": 2,
-      "learning_value": 4
+      "atmosphere": 3.0,
+      "size": 2.0,
+      "learning_value": 4.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -1191,29 +860,7 @@
       "lumaUrl": "https://lu.ma/summertime",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_016.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "indoor",
-      "learning-heavy",
-      "ticket-required",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.551,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 72,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_017",
@@ -1267,29 +914,7 @@
       "lumaUrl": "https://lu.ma/film",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "arts_culture"
-    ],
-    "image_url": "/mockup/images/event_luma_017.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "arts_culture",
-      "formal",
-      "ticket-required",
-      "indoor",
-      "learning-heavy",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.523,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 90,
-    "save_count": 18
+    }
   },
   {
     "id": "event_luma_018",
@@ -1324,13 +949,13 @@
     },
     "dimensionScores": {
       "atmosphere": 4.5,
-      "size": 1,
+      "size": 1.0,
       "learning_value": 2.5
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
     "popularityScore": 0.68,
-    "freshnessScore": 1,
+    "freshnessScore": 1.0,
     "isActive": true,
     "rating": null,
     "reviewCount": null,
@@ -1343,29 +968,7 @@
       "lumaUrl": "https://lu.ma/p2bi7l4e",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_018.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "social",
-      "outdoor",
-      "active",
-      "nature-immersive",
-      "group-required",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.792,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 82,
-    "save_count": 16
+    }
   },
   {
     "id": "event_luma_019",
@@ -1399,7 +1002,7 @@
       "endDateTime": "2026-05-23T17:30"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
       "learning_value": 1.5
     },
@@ -1419,29 +1022,7 @@
       "lumaUrl": "https://lu.ma/9o5tb6gp",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_019.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "social",
-      "active",
-      "casual",
-      "newcomer-friendly",
-      "indoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.645,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 66,
-    "save_count": 13
+    }
   },
   {
     "id": "event_luma_020",
@@ -1476,7 +1057,7 @@
     },
     "dimensionScores": {
       "atmosphere": 4.5,
-      "size": 2,
+      "size": 2.0,
       "learning_value": 2.5
     },
     "sourceType": "luma",
@@ -1495,31 +1076,7 @@
       "lumaUrl": "https://lu.ma/c15un07p",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "career"
-    ],
-    "image_url": "/mockup/images/event_luma_020.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "career",
-      "outdoor",
-      "casual",
-      "networking-heavy",
-      "free-entry",
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "quality_score": 0.66,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 70,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_021",
@@ -1554,7 +1111,7 @@
     },
     "dimensionScores": {
       "atmosphere": 3.5,
-      "size": 2,
+      "size": 2.0,
       "learning_value": 1.5
     },
     "sourceType": "luma",
@@ -1573,29 +1130,7 @@
       "lumaUrl": "https://lu.ma/3fr1ovpm",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_021.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "active",
-      "outdoor",
-      "newcomer-friendly",
-      "free-entry",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.613,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 66,
-    "save_count": 13
+    }
   },
   {
     "id": "event_luma_022",
@@ -1630,7 +1165,7 @@
     },
     "dimensionScores": {
       "atmosphere": 4.5,
-      "size": 2,
+      "size": 2.0,
       "learning_value": 1.5
     },
     "sourceType": "luma",
@@ -1649,29 +1184,7 @@
       "lumaUrl": "https://lu.ma/bsocrogv",
       "isSoldOut": true,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_022.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "social",
-      "active",
-      "outdoor",
-      "group-friendly",
-      "casual",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.645,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 72,
-    "save_count": 14
+    }
   },
   {
     "id": "event_luma_023",
@@ -1705,9 +1218,9 @@
       "endDateTime": "2026-06-06T14:00"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
-      "learning_value": 3
+      "learning_value": 3.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -1725,29 +1238,7 @@
       "lumaUrl": "https://lu.ma/9kmiew1c",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_023.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "active",
-      "outdoor",
-      "newcomer-friendly",
-      "free-entry",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.562,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 62,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_024",
@@ -1781,9 +1272,9 @@
       "endDateTime": "2026-06-14T14:00"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
-      "learning_value": 2
+      "learning_value": 2.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -1801,29 +1292,7 @@
       "lumaUrl": "https://lu.ma/id9b7wpw",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_024.jpg",
-    "budget_level": "high",
-    "activity_tags": [
-      "events",
-      "social",
-      "casual",
-      "indoor",
-      "newcomer-friendly",
-      "ticket-required",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.537,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 62,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_025",
@@ -1857,7 +1326,7 @@
       "endDateTime": "2026-07-06T18:30"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 2.5,
       "learning_value": 2.5
     },
@@ -1877,31 +1346,7 @@
       "lumaUrl": "https://lu.ma/oao3bzu8",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "career"
-    ],
-    "image_url": "/mockup/images/event_luma_025.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "career",
-      "casual",
-      "outdoor",
-      "networking-heavy",
-      "free-entry",
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "quality_score": 0.553,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 74,
-    "save_count": 15
+    }
   },
   {
     "id": "event_luma_026",
@@ -1936,8 +1381,8 @@
     },
     "dimensionScores": {
       "atmosphere": 3.5,
-      "size": 2,
-      "learning_value": 1
+      "size": 2.0,
+      "learning_value": 1.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -1955,29 +1400,7 @@
       "lumaUrl": "https://lu.ma/fjj8qdvq",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_026.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "casual",
-      "newcomer-friendly",
-      "free-entry",
-      "indoor",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.599,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 58,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_027",
@@ -2011,9 +1434,9 @@
       "endDateTime": "2026-05-30T15:00"
     },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.0,
       "size": 1.5,
-      "learning_value": 2
+      "learning_value": 2.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -2031,29 +1454,7 @@
       "lumaUrl": "https://lu.ma/orfh0xnr",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_027.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "social",
-      "casual",
-      "indoor",
-      "group-friendly",
-      "newcomer-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.581,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 60,
-    "save_count": 12
+    }
   },
   {
     "id": "event_luma_028",
@@ -2087,9 +1488,9 @@
       "endDateTime": "2026-06-13T18:00"
     },
     "dimensionScores": {
-      "atmosphere": 4,
-      "size": 3,
-      "learning_value": 2
+      "atmosphere": 4.0,
+      "size": 3.0,
+      "learning_value": 2.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -2107,29 +1508,7 @@
       "lumaUrl": "https://lu.ma/0cwn3mle",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "social"
-    ],
-    "image_url": "/mockup/images/event_luma_028.jpg",
-    "budget_level": "low",
-    "activity_tags": [
-      "events",
-      "social",
-      "outdoor",
-      "lively",
-      "free-entry",
-      "family-friendly",
-      "curated-for-vancouver-koreans"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans"
-    ],
-    "quality_score": 0.626,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 78,
-    "save_count": 16
+    }
   },
   {
     "id": "event_luma_029",
@@ -2163,7 +1542,7 @@
       "endDateTime": "2026-05-20T14:30"
     },
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 3.0,
       "size": 1.5,
       "learning_value": 4.5
     },
@@ -2183,31 +1562,7 @@
       "lumaUrl": "https://lu.ma/cmbrp464",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "career"
-    ],
-    "image_url": "/mockup/images/event_luma_029.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "career",
-      "casual",
-      "networking-heavy",
-      "learning-heavy",
-      "career-focused",
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "quality_score": 0.701,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 74,
-    "save_count": 15
+    }
   },
   {
     "id": "event_luma_030",
@@ -2242,8 +1597,8 @@
     },
     "dimensionScores": {
       "atmosphere": 2.5,
-      "size": 2,
-      "learning_value": 5
+      "size": 2.0,
+      "learning_value": 5.0
     },
     "sourceType": "luma",
     "dataQuality": "enriched",
@@ -2261,30 +1616,6 @@
       "lumaUrl": "https://lu.ma/r6i4l11k",
       "isSoldOut": false,
       "requiresApproval": false
-    },
-    "subcategories": [
-      "career"
-    ],
-    "image_url": "/mockup/images/event_luma_030.jpg",
-    "budget_level": "medium",
-    "activity_tags": [
-      "events",
-      "career",
-      "learning-heavy",
-      "career-focused",
-      "newcomer-friendly",
-      "indoor",
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "korean_relevance_tags": [
-      "curated-for-vancouver-koreans",
-      "career-useful"
-    ],
-    "quality_score": 0.72,
-    "korean_community_fit": 0.62,
-    "is_approved": true,
-    "view_count": 78,
-    "save_count": 16
+    }
   }
 ]
