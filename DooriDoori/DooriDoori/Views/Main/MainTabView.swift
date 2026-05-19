@@ -21,7 +21,7 @@ enum MainRoute: Hashable {
     case nearYou
     case allPicks
     case notifications
-    case writeReview(ContentItem)
+    case writeReview(ContentItem, initialRating: Int?)
     case editProfile
     case resetAIPreferences
     case recentlyViewedPlaces
@@ -84,8 +84,8 @@ struct MainTabView: View {
                     FeedDetailView(
                         item: item,
                         reason: recommendations.reason(for: item),
-                        onWriteReview: { selectedItem in
-                            path.append(.writeReview(selectedItem))
+                        onWriteReview: { selectedItem, initialRating in
+                            path.append(.writeReview(selectedItem, initialRating: initialRating))
                         }
                     )
                 case .nearYou:
@@ -96,8 +96,8 @@ struct MainTabView: View {
                     }
                 case .notifications:
                     NotificationView()
-                case .writeReview(let item):
-                    ReviewWriteView(item: item)
+                case .writeReview(let item, let initialRating):
+                    ReviewWriteView(item: item, initialRating: initialRating)
                 case .editProfile:
                     ProfileEditPlaceholderView()
                 case .resetAIPreferences:

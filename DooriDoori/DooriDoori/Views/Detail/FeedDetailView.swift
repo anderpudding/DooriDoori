@@ -5,12 +5,13 @@ struct FeedDetailView: View {
 
     let item: ContentItem
     let reason: String
-    let onWriteReview: (ContentItem) -> Void
+    let onWriteReview: (ContentItem, Int?) -> Void
 
     @State private var reviews: [Review] = []
     @State private var reviewLoadFailed = false
     @State private var googlePlaceDetails: GooglePlaceDisplayData?
     @State private var googlePhotoURL: URL?
+    @State private var reviewEntryRating = 0
 
     private let interactionService = InteractionService()
     private let reviewService = ReviewService()
@@ -84,6 +85,9 @@ struct FeedDetailView: View {
         .background(DooriStyle.canvas)
         .navigationBarBackButtonHidden()
         .ignoresSafeArea(edges: .top)
+        .onAppear {
+            reviewEntryRating = 0
+        }
         .task {
             try? await interactionService.record(contentId: item.id, interactionType: "view")
             async let reviewsTask: Void = loadReviews()
@@ -209,12 +213,14 @@ struct FeedDetailView: View {
                     .fill(DooriStyle.softGray)
                     .frame(width: 34, height: 34)
 
-                RatingStars(rating: Int(item.rating?.rounded() ?? 0), size: 29, spacing: 6)
+                InteractiveReviewRatingRow(selectedRating: $reviewEntryRating) { rating in
+                    onWriteReview(item, rating)
+                }
 
                 Spacer()
 
                 Button("리뷰 쓰기") {
-                    onWriteReview(item)
+                    onWriteReview(item, nil)
                 }
                 .dooriText(.bodySmall)
                 .foregroundStyle(DooriStyle.ink)
@@ -225,43 +231,30 @@ struct FeedDetailView: View {
                     .dooriText(.captionSmall)
                     .foregroundStyle(DooriStyle.muted)
             } else if reviews.isEmpty {
-                mockReviewList
+                ReviewEmptyState()
             } else {
                 ForEach(reviews.prefix(2)) { review in
                     ReviewCard(review: review)
                 }
             }
 
-            Button {
-            } label: {
-                HStack(spacing: 5) {
-                    Text("리뷰 더보기")
-                        .dooriText(.bodySmall)
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 14, weight: .semibold))
+            if !reviews.isEmpty {
+                Button {
+                } label: {
+                    HStack(spacing: 5) {
+                        Text("리뷰 더보기")
+                            .dooriText(.bodySmall)
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .semibold))
+                    }
+                    .foregroundStyle(DooriStyle.ink)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 1))
                 }
-                .foregroundStyle(DooriStyle.ink)
-                .frame(maxWidth: .infinity)
-                .frame(height: 48)
-                .background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 1))
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
-        }
-    }
-
-    private var mockReviewList: some View {
-        VStack(spacing: 17) {
-            ReviewPlaceholderCard(
-                rating: 4,
-                date: "3일전",
-                comment: "분위기도 좋고 직원들도 친절했어요. 전체적으로 만족스러운 식사였고 다시 방문할 의향 있어요."
-            )
-            ReviewPlaceholderCard(
-                rating: 3,
-                date: "2026.03.20",
-                comment: "Nice atmosphere and friendly staff, but the food was average and a bit over... Service slowed down when it got busy and..."
-            )
         }
     }
 
@@ -321,6 +314,11 @@ struct ReviewWriteView: View {
     let item: ContentItem
     @State private var rating = 0
     @State private var comment = ""
+
+    init(item: ContentItem, initialRating: Int? = nil) {
+        self.item = item
+        _rating = State(initialValue: initialRating ?? 0)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -433,22 +431,31 @@ private struct RatingStars: View {
     }
 }
 
-private struct ReviewCard: View {
-    let review: Review
+private struct InteractiveReviewRatingRow: View {
+    @Binding var selectedRating: Int
+    let onSelect: (Int) -> Void
 
     var body: some View {
-        ReviewPlaceholderCard(
-            rating: review.rating,
-            date: review.createdAt ?? "",
-            comment: review.comment ?? ""
-        )
+        HStack(spacing: 6) {
+            ForEach(1...5, id: \.self) { value in
+                Button {
+                    selectedRating = value
+                    onSelect(value)
+                } label: {
+                    Image(systemName: value <= selectedRating ? "star.fill" : "star")
+                        .font(.system(size: 29, weight: .regular))
+                        .foregroundStyle(value <= selectedRating ? DooriStyle.accent : DooriStyle.muted)
+                        .frame(width: 30, height: 34)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("\(value)점 리뷰 쓰기")
+            }
+        }
     }
 }
 
-private struct ReviewPlaceholderCard: View {
-    let rating: Int
-    let date: String
-    let comment: String
+private struct ReviewCard: View {
+    let review: Review
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -458,26 +465,30 @@ private struct ReviewPlaceholderCard: View {
                     .frame(width: 34, height: 34)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("username")
-                        .dooriText(.bodySmall, english: true)
+                    Text("익명")
+                        .dooriText(.bodySmall)
                         .foregroundStyle(DooriStyle.ink)
 
                     HStack(spacing: 4) {
-                        RatingStars(rating: rating, size: 14, spacing: 2)
-                        Text("\(Double(rating), specifier: "%.1f")")
-                        Text("|")
-                        Text(date)
+                        RatingStars(rating: review.rating, size: 14, spacing: 2)
+                        Text("\(Double(review.rating), specifier: "%.1f")")
+                        if let createdAt = review.createdAt, !createdAt.isEmpty {
+                            Text("|")
+                            Text(createdAt)
+                        }
                     }
                     .dooriText(.navBar, english: true)
                     .foregroundStyle(DooriStyle.muted)
                 }
             }
 
-            Text(comment)
-                .dooriText(.body, english: !comment.containsKoreanText)
-                .foregroundStyle(DooriStyle.longText)
-                .lineSpacing(5)
-                .lineLimit(3)
+            if let comment = review.comment, !comment.isEmpty {
+                Text(comment)
+                    .dooriText(.body, english: !comment.containsKoreanText)
+                    .foregroundStyle(DooriStyle.longText)
+                    .lineSpacing(5)
+                    .lineLimit(3)
+            }
 
             HStack {
                 Spacer()
@@ -486,6 +497,23 @@ private struct ReviewPlaceholderCard: View {
                     .foregroundStyle(DooriStyle.ink)
                     .padding(.trailing, 24)
             }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.black, lineWidth: 1))
+    }
+}
+
+private struct ReviewEmptyState: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("아직 작성된 리뷰가 없어요.")
+                .dooriText(.bodySmall)
+                .foregroundStyle(DooriStyle.ink)
+            Text("첫 리뷰를 남겨보세요.")
+                .dooriText(.captionSmall)
+                .foregroundStyle(DooriStyle.muted)
         }
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
