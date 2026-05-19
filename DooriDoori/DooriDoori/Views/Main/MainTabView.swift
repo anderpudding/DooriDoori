@@ -101,7 +101,7 @@ struct MainTabView: View {
                 case .editProfile:
                     ProfileEditPlaceholderView()
                 case .resetAIPreferences:
-                    AIPreferenceResetPlaceholderView()
+                    AIPreferenceResetView(viewModel: recommendations)
                 case .recentlyViewedPlaces:
                     RecentlyViewedPlacesPlaceholderView()
                 case .savedPlaces:

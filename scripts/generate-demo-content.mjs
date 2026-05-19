@@ -99,6 +99,11 @@ function sqlNumber(value, fallback = 0) {
   return Number.isFinite(number) ? String(number) : String(fallback);
 }
 
+function sqlNullableNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? String(number) : "null";
+}
+
 function toTimestamp(value) {
   if (!value) return null;
   const text = String(value);
@@ -130,17 +135,20 @@ function formatOpeningHours(openingHours) {
 
 function scheduleForApp(item) {
   const schedule = item.schedule ?? {};
+  const openingHours = schedule.openingHours ?? item.openingHours ??
+    item.operatingHours ?? item.todayOpeningHours ?? null;
   return {
     type: allowed.scheduleType.has(schedule.type) ? schedule.type : "recurring",
-    openingHours: formatOpeningHours(schedule.openingHours),
-    startDateTime: schedule.startDateTime ?? null,
-    endDateTime: schedule.endDateTime ?? null,
+    openingHours: formatOpeningHours(openingHours),
+    startDateTime: schedule.startDateTime ?? item.startDateTime ?? null,
+    endDateTime: schedule.endDateTime ?? item.endDateTime ?? null,
   };
 }
 
 function derivedKoreanTags(item) {
   const haystack = [
     item.nameEn,
+    item.name,
     item.nameKr,
     item.description,
     item.metadata?.cuisineType,
@@ -201,8 +209,6 @@ function validateSourceItem(item, fileName) {
     "category",
     "nameEn",
     "description",
-    "district",
-    "coordinates",
     "sourceType",
     "isActive",
   ].filter((key) => item[key] === undefined || item[key] === null);
@@ -217,16 +223,47 @@ function validateSourceItem(item, fileName) {
   if (!allowed.sourceType.has(item.sourceType)) {
     throw new Error(`${item.id} invalid sourceType ${item.sourceType}`);
   }
-  if (!Number.isFinite(Number(item.coordinates.lat)) || !Number.isFinite(Number(item.coordinates.lng))) {
+  if (
+    item.coordinates &&
+    (!Number.isFinite(Number(item.coordinates.lat)) ||
+      !Number.isFinite(Number(item.coordinates.lng)))
+  ) {
     throw new Error(`${item.id} invalid coordinates`);
   }
+}
+
+function normalizeSourceItem(item, fileName) {
+  const normalized = {
+    ...item,
+    type: item.type ?? "place",
+    category: item.category ?? "food",
+    sourceType: item.sourceType ?? "fsq_os",
+    nameEn: item.nameEn ?? item.name,
+    description: item.description ??
+      `${item.nameEn ?? item.name} is a ${item.subcategoryContent ?? "food"} spot${item.address ? ` at ${item.address}` : ""}.`,
+    district: item.district ?? item.city ?? "",
+    imageURL: item.imageURL ?? item.imageUrl ?? item.imageUrls?.[0] ?? null,
+    isActive: item.isActive ?? true,
+    subcategoryDisplayKr: item.subcategoryDisplayKr ??
+      (item.subcategoryContent === "cafe" ? "카페" : item.subcategoryContent === "bar" ? "바" : "식당"),
+    createdAt: item.createdAt ?? item.updatedAt ?? null,
+  };
+
+  if (!normalized.coordinates && (item.lat !== undefined || item.lng !== undefined)) {
+    normalized.coordinates = { lat: item.lat, lng: item.lng };
+  }
+
+  validateSourceItem(normalized, fileName);
+  return normalized;
 }
 
 function appItem(item) {
   const koreanTags = derivedKoreanTags(item);
   const schedule = scheduleForApp(item);
+  const coordinates = item.coordinates ?? { lat: 0, lng: 0 };
   return {
     ...item,
+    coordinates,
     subcategories: [item.subcategoryContent].filter(Boolean),
     image_url: item.imageURL ?? null,
     budget_level: budgetLevel(item),
@@ -258,13 +295,24 @@ function dbRow(item) {
     schedule: {
       ...(item.schedule ?? {}),
       openingHours: normalized.schedule.openingHours,
-      originalOpeningHours: item.schedule?.openingHours ?? null,
+      originalOpeningHours: item.schedule?.openingHours ?? item.openingHours ??
+        item.operatingHours ?? item.todayOpeningHours ?? null,
     },
     dimension_scores: item.dimensionScores ?? {},
-    metadata: item.metadata ?? {},
+    metadata: {
+      ...(item.metadata ?? {}),
+      category_label: item.category_label ?? null,
+      price_range: item.priceRange ?? null,
+      service_options: item.serviceOptions ?? null,
+      about_attributes: item.aboutAttributes ?? null,
+      website: item.website ?? item.metadata?.website ?? null,
+      phone: item.phoneNumber ?? item.metadata?.phone ?? null,
+      google_maps_url: item.googleMapsUrl ?? item.metadata?.googleMapsUrl ?? null,
+      enrichment_note: item._enrichment_note ?? null,
+    },
     popularity_score: item.popularityScore ?? null,
     freshness_score: item.freshnessScore ?? null,
-    fsq_category_label: item._fsq_category_label ?? null,
+    fsq_category_label: item._fsq_category_label ?? item.category_label ?? null,
   };
 
   return {
@@ -276,8 +324,8 @@ function dbRow(item) {
     area: normalizeText(item.district),
     city: item.city ?? null,
     address: item.address ?? null,
-    lat: Number(item.coordinates.lat),
-    lng: Number(item.coordinates.lng),
+    lat: item.coordinates ? Number(item.coordinates.lat) : null,
+    lng: item.coordinates ? Number(item.coordinates.lng) : null,
     budget_level: normalized.budget_level,
     vibe_tags: Array.isArray(item.vibeTags) ? item.vibeTags : [],
     activity_tags: normalized.activity_tags,
@@ -294,8 +342,8 @@ function dbRow(item) {
     save_count: normalized.save_count,
     review_count: Number(item.reviewCount ?? 0),
     average_rating: Number(item.rating ?? 0),
-    start_at: item.type === "event" ? toTimestamp(item.schedule?.startDateTime) : null,
-    end_at: item.type === "event" ? toTimestamp(item.schedule?.endDateTime) : null,
+    start_at: item.type === "event" ? toTimestamp(normalized.schedule.startDateTime) : null,
+    end_at: item.type === "event" ? toTimestamp(normalized.schedule.endDateTime) : null,
     created_at: item.createdAt ?? null,
     updated_at: item.updatedAt ?? null,
   };
@@ -311,8 +359,8 @@ function sqlRow(row) {
   ${sqlString(row.area)},
   ${sqlString(row.city)},
   ${sqlString(row.address)},
-  ${sqlNumber(row.lat)},
-  ${sqlNumber(row.lng)},
+  ${sqlNullableNumber(row.lat)},
+  ${sqlNullableNumber(row.lng)},
   ${sqlString(row.budget_level)},
   ${sqlArray(row.vibe_tags)},
   ${sqlArray(row.activity_tags)},
@@ -337,8 +385,7 @@ function sqlRow(row) {
 }
 
 const sourceGroups = files.map(([sourceName, appName]) => {
-  const items = readJson(sourceName);
-  items.forEach((item) => validateSourceItem(item, sourceName));
+  const items = readJson(sourceName).map((item) => normalizeSourceItem(item, sourceName));
   const normalized = items.map(appItem);
   writeJson(appName, normalized.filter((item) => item.isActive));
   return { sourceName, appName, items, normalized };

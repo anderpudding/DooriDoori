@@ -12,10 +12,77 @@ struct OnboardingView: View {
     ]
     @State private var nickname = ""
     @State private var hasLocalProfilePhoto = false
+
+    var body: some View {
+        ZStack {
+            DooriStyle.canvas.ignoresSafeArea()
+
+            switch step {
+            case .splash:
+                OnboardingSplashView(
+                    onSignUp: { step = .permissions },
+                    onLogin: { step = .permissions }
+                )
+            case .permissions:
+                PermissionRequestView(
+                    states: $permissionStates,
+                    onBack: { step = .splash },
+                    onContinue: { step = .profileSetup }
+                )
+            case .profileSetup:
+                OnboardingProfileSetupView(
+                    nickname: $nickname,
+                    hasLocalProfilePhoto: $hasLocalProfilePhoto,
+                    onBack: { step = .permissions },
+                    onNext: { step = .status }
+                )
+            case .status:
+                PreferenceQuestionnaireView(
+                    mode: .onboarding,
+                    initialPreference: initialPreference,
+                    nickname: normalizedNickname,
+                    onBackFromFirstQuestion: { step = .profileSetup },
+                    onComplete: onComplete
+                )
+            }
+        }
+        .tint(DooriStyle.accent)
+    }
+
+    private var normalizedNickname: String {
+        let trimmed = nickname.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? "김지은" : trimmed
+    }
+
+}
+
+private enum OnboardingStep {
+    case splash
+    case permissions
+    case profileSetup
+    case status
+}
+
+enum PreferenceQuestionnaireMode {
+    case onboarding
+    case editProfile
+}
+
+struct PreferenceQuestionnaireView: View {
+    let mode: PreferenceQuestionnaireMode
+    let initialPreference: UserPreference
+    var nickname: String = "김지은"
+    var isSaving = false
+    var loadExistingSelection = false
+    let onBackFromFirstQuestion: () -> Void
+    let onComplete: (UserPreference) -> Void
+
+    @State private var step: QuestionnaireStep = .status
     @State private var selectedStatus: PreferenceOption?
     @State private var selectedDistrict: PreferenceOption?
     @State private var selectedVibe: PreferenceOption?
     @State private var selectedCategories: Set<PreferenceOption> = []
+    @State private var didLoadInitialSelection = false
 
     private let statusOptions = [
         PreferenceOption(title: "학생", value: "status:student"),
@@ -47,37 +114,17 @@ struct OnboardingView: View {
     ]
 
     var body: some View {
-        ZStack {
-            DooriStyle.canvas.ignoresSafeArea()
-
+        Group {
             switch step {
-            case .splash:
-                OnboardingSplashView(
-                    onSignUp: { step = .permissions },
-                    onLogin: { step = .permissions }
-                )
-            case .permissions:
-                PermissionRequestView(
-                    states: $permissionStates,
-                    onBack: { step = .splash },
-                    onContinue: { step = .profileSetup }
-                )
-            case .profileSetup:
-                OnboardingProfileSetupView(
-                    nickname: $nickname,
-                    hasLocalProfilePhoto: $hasLocalProfilePhoto,
-                    onBack: { step = .permissions },
-                    onNext: { step = .status }
-                )
             case .status:
                 PreferenceQuestionView(
-                    title: "캐나다 현재 신분",
-                    subtitle: "항목을 골라주세요",
+                    title: mode == .editProfile ? "AI 취향 재설정" : "캐나다 현재 신분",
+                    subtitle: "현재 신분을 골라주세요",
                     progress: 0.25,
                     options: statusOptions,
                     selectedOptions: singleSelectionSet(selectedStatus),
                     buttonTitle: "다음",
-                    onBack: { step = .profileSetup },
+                    onBack: onBackFromFirstQuestion,
                     onSelect: { selectedStatus = $0 },
                     onNext: { step = .district }
                 )
@@ -112,9 +159,10 @@ struct OnboardingView: View {
                     progress: 1,
                     options: categoryOptions,
                     selectedOptions: selectedCategories,
-                    buttonTitle: "완료",
+                    buttonTitle: isSaving ? "저장 중..." : (mode == .editProfile ? "저장" : "완료"),
                     rowHeight: 89,
                     rowSpacing: 22,
+                    isNextEnabled: !isSaving && !selectedCategories.isEmpty,
                     onBack: { step = .vibe },
                     onSelect: { option in
                         if selectedCategories.contains(option) {
@@ -123,23 +171,38 @@ struct OnboardingView: View {
                             selectedCategories.insert(option)
                         }
                     },
-                    onNext: { step = .finalLoading }
+                    onNext: {
+                        if mode == .onboarding {
+                            step = .finalLoading
+                        } else {
+                            onComplete(makePreference())
+                        }
+                    }
                 )
             case .finalLoading:
                 FinalOnboardingLoadingView(
-                    nickname: normalizedNickname,
+                    nickname: nickname,
                     onComplete: {
                         onComplete(makePreference())
                     }
                 )
             }
         }
-        .tint(DooriStyle.accent)
+        .onAppear(perform: loadInitialSelectionIfNeeded)
     }
 
-    private var normalizedNickname: String {
-        let trimmed = nickname.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? "김지은" : trimmed
+    private func loadInitialSelectionIfNeeded() {
+        guard loadExistingSelection, !didLoadInitialSelection else { return }
+        didLoadInitialSelection = true
+
+        selectedStatus = firstMatchingOption(in: statusOptions, values: initialPreference.infoNeeds)
+        selectedDistrict = firstMatchingOption(in: districtOptions, values: initialPreference.preferredDistricts)
+        selectedVibe = firstMatchingOption(in: vibeOptions, values: initialPreference.vibeTags)
+        selectedCategories = Set(categoryOptions.filter { initialPreference.selectedCategories.contains($0.value) })
+    }
+
+    private func firstMatchingOption(in options: [PreferenceOption], values: [String]) -> PreferenceOption? {
+        options.first { values.contains($0.value) }
     }
 
     private func singleSelectionSet(_ option: PreferenceOption?) -> Set<PreferenceOption> {
@@ -167,10 +230,7 @@ struct OnboardingView: View {
     }
 }
 
-private enum OnboardingStep {
-    case splash
-    case permissions
-    case profileSetup
+private enum QuestionnaireStep {
     case status
     case district
     case vibe
@@ -473,12 +533,13 @@ private struct PreferenceQuestionView: View {
     let buttonTitle: String
     var rowHeight: CGFloat = 68
     var rowSpacing: CGFloat = 24
+    var isNextEnabled: Bool?
     let onBack: () -> Void
     let onSelect: (PreferenceOption) -> Void
     let onNext: () -> Void
 
     private var canAdvance: Bool {
-        !selectedOptions.isEmpty
+        isNextEnabled ?? !selectedOptions.isEmpty
     }
 
     var body: some View {

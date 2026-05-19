@@ -11,7 +11,7 @@ struct DooriDooriTests {
     @Test func reviewedSeedDataDecodesAndUsesNormalizedCategories() throws {
         let items = try reviewedItems()
 
-        #expect(items.count == 64)
+        #expect(items.count == 77)
         #expect(Set(items.map(\.category.rawValue)) == ["food", "events", "lifestyle"])
         #expect(items.filter { $0.type == .event }.allSatisfy { $0.category.rawValue != "event" })
         let allItemsAreActive = items.allSatisfy { $0.isActive }

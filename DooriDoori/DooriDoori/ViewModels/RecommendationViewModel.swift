@@ -97,6 +97,24 @@ final class RecommendationViewModel: ObservableObject {
         }
     }
 
+    @MainActor
+    func loadCurrentPreferenceForEditing() async throws -> UserPreference {
+        if let remotePreference = try await preferenceService.fetchPreference() {
+            preferenceStore.save(remotePreference)
+            return remotePreference
+        }
+
+        return preferenceStore.preference
+    }
+
+    @MainActor
+    func saveEditedPreference(_ preference: UserPreference) async throws {
+        try await preferenceService.upsertPreference(preference)
+        preferenceStore.save(preference)
+        needsOnboarding = false
+        load()
+    }
+
     func isSaved(_ item: ContentItem) -> Bool {
         savedItemStore.isSaved(item)
     }
