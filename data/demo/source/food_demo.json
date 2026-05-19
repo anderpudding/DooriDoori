@@ -1,521 +1,1825 @@
 [
   {
     "id": "food_001",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "restaurant",
-    "subcategoryDisplayKr": "식당",
-    "nameEn": "Hanok Sarang",
-    "nameKr": "한옥사랑",
-    "description": "Coquitlam 한인타운에 위치한 정통 한식당. 갈비찜과 김치찌개로 유명하며, 가족 단위 손님과 향수병 달래러 오는 유학생들이 많이 찾는다. 한국에서 직수입한 식재료를 사용해 본토의 맛을 재현.",
-    "city": "Coquitlam",
-    "district": "Coquitlam",
-    "address": "1163 Pinetree Way, Coquitlam, BC V3B 8A9",
-    "coordinates": {
-      "lat": 49.2812,
-      "lng": -122.8047
-    },
-    "imageURL": "/mockup/images/food_001.jpg",
+    "name": "The Kitchen Homemade Korean Restaurant",
+    "nameKr": "더 키친 홈메이드 코리안 레스토랑",
+    "address": "2620 Sasamat St, Vancouver, BC V6R 4A8",
+    "city": "Vancouver",
     "priceTier": "$$",
     "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Asian Restaurant > Korean Restaurant",
+    "subcategoryContent": "restaurant",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.7,
+    "rating": 4.7,
+    "reviewCount": 528,
+    "priceRange": "$20–30",
+    "description": "A cozy neighborhood Korean restaurant on Sasamat Street known for comfort homestyle dishes like Korean fried chicken, bibimbap, and soft tofu soup. Friendly staff and a welcoming atmosphere make it a local favorite.",
     "vibeTags": [
-      "traditional",
-      "family-friendly",
       "cozy",
-      "authentic"
+      "homestyle",
+      "casual",
+      "family-friendly"
     ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Mon-Sun 11:00-22:00",
-      "startDateTime": null,
-      "endDateTime": null
+    "operatingHours": {
+      "monday": "4:00 PM – 10:30 PM",
+      "tuesday": "4:00 PM – 10:30 PM",
+      "wednesday": "11:30 AM – 10:30 PM",
+      "thursday": "11:30 AM – 11:00 PM",
+      "friday": "11:30 AM – 11:00 PM",
+      "saturday": "11:30 AM – 11:00 PM",
+      "sunday": "11:30 AM – 9:30 PM"
+    },
+    "startDateTime": "2026-05-18T16:00:00.000Z",
+    "endDateTime": "2026-05-18T22:30:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMadkk6_6jvNL5EYaRzg1zPE90oCq7QIgWsac5SDn64VyzHt9j2oxaa1ZNju057WC669V3YMLX-FI61pMPhtx2i_XIkpdQGx4mWqoahJp4vPJwxTtgn19qG69aGz2gZnFlF-43t-fBS6cR=w408-h306-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "cozy",
+        "clean"
+      ],
+      "crowd": [
+        "families",
+        "locals"
+      ],
+      "popularFor": [
+        "Korean fried chicken",
+        "bibimbap",
+        "soft tofu soup",
+        "corn cheese"
+      ],
+      "offerings": [
+        "comfort Korean food",
+        "homestyle dishes"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout",
+        "Delivery"
+      ]
     },
     "dimensionScores": {
-      "atmosphere": 3,
+      "atmosphere": 4.0,
       "taste": 4.5,
-      "service": 4,
-      "value_for_money": 4
+      "service": 4.5,
+      "value_for_money": 4.0
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.83,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.3,
-    "reviewCount": 312,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
       "cuisineType": "Korean",
       "soloFriendly": false,
-      "groupFriendly": true
-    }
+      "groupFriendly": true,
+      "website": "thekitchenc.menu11.com",
+      "phone": "(604) 261-5353",
+      "googleMapsUrl": "https://www.google.com/maps/place/The+Kitchen/@49.2634471,-123.2089758,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T17:00:00.000Z"
   },
   {
     "id": "food_002",
-    "type": "place",
-    "category": "food",
+    "name": "Melriches Coffee House",
+    "nameKr": "멜리치스 커피 하우스",
+    "address": "1244 Davie St, Vancouver, BC V6E 1N4",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Café",
     "subcategoryContent": "cafe",
-    "subcategoryDisplayKr": "카페",
-    "nameEn": "Slow Morning",
-    "nameKr": "슬로우 모닝",
-    "description": "Mount Pleasant에 위치한 스페셜티 커피 로스터리. 직접 로스팅한 싱글 오리진 원두와 핸드드립이 시그니처. 노트북 작업하기 좋은 차분한 분위기로 프리랜서와 작가들이 단골.",
-    "city": "Vancouver",
-    "district": "Mount Pleasant",
-    "address": "2588 Main St, Vancouver, BC V5T 3E2",
-    "coordinates": {
-      "lat": 49.2647,
-      "lng": -123.1018
-    },
-    "imageURL": "/mockup/images/food_002.jpg",
-    "priceTier": "$",
-    "priceLevel": 1,
+    "popularityScore": 0.66,
+    "freshnessScore": 0.8,
+    "rating": 4.4,
+    "reviewCount": 460,
+    "priceRange": "$10–20",
+    "description": "A charming independent coffeehouse on Davie Street with a cozy, homey vibe. Known for fresh-baked cinnamon buns, cheesecake, and brewed coffee. A popular local spot for people-watching and getting work done.",
     "vibeTags": [
-      "minimalist",
-      "study-friendly",
-      "third-wave",
-      "trendy"
+      "cozy",
+      "casual",
+      "hidden-gem",
+      "student-friendly"
     ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Mon-Sun 8:00-19:00",
-      "startDateTime": null,
-      "endDateTime": null
+    "operatingHours": {
+      "monday": "6:30 AM – 6:00 PM",
+      "tuesday": "6:30 AM – 6:00 PM",
+      "wednesday": "6:30 AM – 6:00 PM",
+      "thursday": "6:30 AM – 6:00 PM",
+      "friday": "6:30 AM – 6:00 PM",
+      "saturday": "7:00 AM – 6:00 PM",
+      "sunday": "7:00 AM – 6:00 PM"
+    },
+    "startDateTime": "2026-05-18T06:30:00.000Z",
+    "endDateTime": "2026-05-18T18:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHsrUA5efLOsd888hwQOjdZDx7dd9P7wc3u0_MNP_-dShw9X3TEqnkg3JNmd7G50CQLicRg9uBWj1_DEFCGZo_PFq9dubRLcVWKKd92__KpoFg3wera7yZi01HTxen1jCWJRcGbnUoLdwoT=w426-h240-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "cozy",
+        "homey",
+        "local art"
+      ],
+      "crowd": [
+        "locals",
+        "remote workers",
+        "students"
+      ],
+      "popularFor": [
+        "coffee",
+        "cinnamon bun",
+        "cheesecake",
+        "people watching"
+      ],
+      "offerings": [
+        "breakfast",
+        "lunch",
+        "baked goods",
+        "brewed coffee"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout",
+        "Delivery"
+      ]
     },
     "dimensionScores": {
-      "atmosphere": 1.5,
+      "atmosphere": 4.0,
       "taste": 4.5,
-      "service": 3.5,
-      "value_for_money": 4.5
+      "service": 4.0,
+      "value_for_money": 4.0
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.73,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.6,
-    "reviewCount": 847,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
-      "cuisineType": null,
+      "cuisineType": "Cafe",
       "soloFriendly": true,
-      "groupFriendly": false
-    }
-  },
-  {
-    "id": "food_003",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "restaurant",
-    "subcategoryDisplayKr": "식당",
-    "nameEn": "Maison Lumière",
-    "nameKr": "메종 루미에르",
-    "description": "Yaletown에 자리한 모던 프렌치 비스트로. 로컬 재료로 만든 시즌 메뉴와 와인 페어링이 강점. 데이트나 기념일에 많이 찾으며, 셰프의 오픈 키친에서 진행되는 코스 디너가 시그니처.",
-    "city": "Vancouver",
-    "district": "Yaletown",
-    "address": "1180 Hamilton St, Vancouver, BC V6B 2S2",
-    "coordinates": {
-      "lat": 49.2756,
-      "lng": -123.1219
+      "groupFriendly": true,
+      "website": "melriches.wordpress.com",
+      "phone": "(604) 689-5282",
+      "googleMapsUrl": "https://www.google.com/maps/place/Melriches+Coffeehouse/@49.2822647,-123.1343993,17z"
     },
-    "imageURL": "/mockup/images/food_003.jpg",
-    "priceTier": "$$$$",
-    "priceLevel": 4,
-    "vibeTags": [
-      "upscale",
-      "date-night",
-      "instagrammable",
-      "modern"
-    ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Tue-Sun 17:30-22:30, Closed Mon",
-      "startDateTime": null,
-      "endDateTime": null
-    },
-    "dimensionScores": {
-      "atmosphere": 4,
-      "taste": 4.5,
-      "service": 5,
-      "value_for_money": 3
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.88,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.5,
-    "reviewCount": 234,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "cuisineType": "Western",
-      "soloFriendly": false,
-      "groupFriendly": true
-    }
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T17:00:00.000Z"
   },
   {
     "id": "food_004",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "restaurant",
-    "subcategoryDisplayKr": "식당",
-    "nameEn": "Sakura Izakaya",
-    "nameKr": "사쿠라 이자카야",
-    "description": "Robson Street의 활기찬 일본식 이자카야. 직장인 퇴근 모임과 친구 모임으로 시끌벅적한 분위기. 야키토리와 사케 페어링 메뉴가 인기. 합석 테이블에서 처음 보는 사람과 친해지는 일도 흔하다.",
+    "name": "Taco Time",
+    "nameKr": "타코 타임",
+    "address": "655 Burrard",
     "city": "Vancouver",
-    "district": "West End",
-    "address": "1789 Robson St, Vancouver, BC V6G 1E5",
-    "coordinates": {
-      "lat": 49.2842,
-      "lng": -123.1267
-    },
-    "imageURL": "/mockup/images/food_004.jpg",
-    "priceTier": "$$$",
-    "priceLevel": 3,
-    "vibeTags": [
-      "lively",
-      "after-work",
-      "group-friendly",
-      "casual"
-    ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Mon-Sun 17:00-24:00",
-      "startDateTime": null,
-      "endDateTime": null
-    },
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Mexican Restaurant > Taco Restaurant",
+    "subcategoryContent": "restaurant",
+    "popularityScore": 0.82,
+    "freshnessScore": 0.6,
+    "rating": 3.7,
+    "reviewCount": 12,
+    "priceRange": "$",
+    "description": null,
+    "vibeTags": null,
+    "operatingHours": null,
+    "startDateTime": null,
+    "endDateTime": null,
+    "imageUrl": null,
+    "serviceOptions": null,
+    "aboutAttributes": null,
     "dimensionScores": {
-      "atmosphere": 4.5,
-      "taste": 4,
-      "service": 3.5,
+      "atmosphere": 2.0,
+      "taste": 3.0,
+      "service": 3.0,
       "value_for_money": 3.5
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.83,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.2,
-    "reviewCount": 589,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
-      "cuisineType": "Japanese",
-      "soloFriendly": false,
-      "groupFriendly": true
-    }
+      "cuisineType": "Mexican",
+      "soloFriendly": null,
+      "groupFriendly": null,
+      "website": null,
+      "phone": null,
+      "googleMapsUrl": null,
+      "note": "Taco Time at 655 Burrard is permanently closed on Google Maps. Last rating 3.7 with 12 reviews."
+    },
+    "dataQuality": "not_found",
+    "updatedAt": "2026-05-18T17:00:00.000Z"
   },
   {
     "id": "food_005",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "restaurant",
-    "subcategoryDisplayKr": "식당",
-    "nameEn": "Golden Wok",
-    "nameKr": "골든 워크",
-    "description": "Richmond의 정통 광동식 딤섬 레스토랑. 주말 점심시간에는 30분 이상 대기가 기본. 카트 서비스로 즉석에서 골라 먹는 전통 방식 유지. 가족 단위와 중국계 커뮤니티가 주 고객.",
-    "city": "Richmond",
-    "district": "Richmond",
-    "address": "8060 Westminster Hwy, Richmond, BC V6X 1A7",
-    "coordinates": {
-      "lat": 49.1666,
-      "lng": -123.1336
-    },
-    "imageURL": "/mockup/images/food_005.jpg",
+    "name": "Waves Coffee House",
+    "nameKr": "웨이브즈 커피 하우스",
+    "address": "1198 W Pender St.",
+    "city": "Vancouver",
     "priceTier": "$$",
     "priceLevel": 2,
+    "category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Coffee Shop",
+    "subcategoryContent": "cafe",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.7,
+    "rating": 4.0,
+    "reviewCount": 592,
+    "priceRange": "$1–10",
+    "description": "A spacious downtown Vancouver location of the popular Waves Coffee chain. Features meeting rooms, friendly baristas, and a wide selection of coffee, tea lattes, and pastries. A go-to spot for remote work and casual meetups.",
     "vibeTags": [
-      "authentic",
-      "family-friendly",
-      "traditional",
-      "lively"
+      "casual",
+      "student-friendly",
+      "quick-bite"
     ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Mon-Sun 9:30-15:00, 17:00-22:00",
-      "startDateTime": null,
-      "endDateTime": null
+    "operatingHours": {
+      "monday": "7:00 AM – 5:00 PM",
+      "tuesday": "7:00 AM – 5:00 PM",
+      "wednesday": "7:00 AM – 5:00 PM",
+      "thursday": "7:00 AM – 5:00 PM",
+      "friday": "7:00 AM – 5:00 PM",
+      "saturday": "7:00 AM – 5:00 PM",
+      "sunday": "7:00 AM – 5:00 PM"
+    },
+    "startDateTime": "2026-05-18T07:00:00.000Z",
+    "endDateTime": "2026-05-18T17:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjzFzhKHHwTom3Kj916alfQOH26aBofay1UMCUlEG2Ade_Qxe0Rl7nWc7NlX6SsSK7drIYrcxxNWUK4ZskizzlKvWR8e-69QHfW6fekKfrJ1Z-iULXBUsbqOVh29T4-V1cFeI=w426-h240-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "spacious",
+        "clean"
+      ],
+      "crowd": [
+        "remote workers",
+        "students",
+        "commuters"
+      ],
+      "popularFor": [
+        "coffee",
+        "tea latte",
+        "cappuccino",
+        "pastries",
+        "meeting rooms"
+      ],
+      "offerings": [
+        "coffee",
+        "tea",
+        "pastries",
+        "sandwiches",
+        "light food"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout",
+        "Delivery"
+      ]
     },
     "dimensionScores": {
       "atmosphere": 3.5,
-      "taste": 4.5,
-      "service": 3,
-      "value_for_money": 4.5
+      "taste": 4.0,
+      "service": 4.0,
+      "value_for_money": 4.0
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.83,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.4,
-    "reviewCount": 1203,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
-      "cuisineType": "Chinese",
-      "soloFriendly": false,
-      "groupFriendly": true
-    }
+      "cuisineType": "Coffee",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "website": "wavescoffee.ca",
+      "phone": "(604) 899-9283",
+      "googleMapsUrl": "https://www.google.com/maps/place/Waves+Coffee+House+-+Howe/@49.280592,-123.1225148,17z",
+      "note": "No Waves Coffee at exact address 1198 W Pender St. Matched to nearest location: Waves Coffee House - Howe at 900 Howe St #100."
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T17:00:00.000Z"
   },
   {
-    "id": "food_006",
+    "id": "food_008",
+    "name": "Bowltiful Chinese Cuisine",
+    "nameKr": "볼티풀 차이니즈 퀴진",
+    "address": "1820 Marine Dr, West Vancouver, BC V7V 4W4",
+    "city": "West Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Asian Restaurant > Chinese Restaurant",
+    "subcategoryContent": "restaurant",
+    "popularityScore": 0.74,
+    "freshnessScore": 0.6,
+    "rating": 4.7,
+    "reviewCount": 400,
+    "priceRange": "$20–30",
+    "description": "A highly-rated Mandarin-style Chinese restaurant in West Vancouver known for authentic Sichuan and Chongqing noodles, spicy boiled fish, and generous portions with free noodle refills. A casual, welcoming spot popular with families and solo diners alike.",
+    "vibeTags": [
+      "casual",
+      "authentic",
+      "family-friendly"
+    ],
+    "operatingHours": {
+      "monday": "Closed",
+      "tuesday": "11:00 AM – 9:00 PM",
+      "wednesday": "11:00 AM – 9:00 PM",
+      "thursday": "11:00 AM – 9:00 PM",
+      "friday": "11:00 AM – 9:00 PM",
+      "saturday": "11:00 AM – 9:00 PM",
+      "sunday": "11:00 AM – 9:00 PM"
+    },
+    "startDateTime": "2026-05-19T11:00:00.000Z",
+    "endDateTime": "2026-05-19T21:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjkr4JtxW30BS3d0fpBEyObjy6VjFb8X9uzaYEr1mW9AXVoLySCl8Hwp_j9gr3OlfvG4RCyPen0KlfbdDMBQgfUsTpIHktmDRw2HH81doWiPCnbkIb3aOcE7lSrYVAkuTU1MQ=w426-h240-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Curbside pickup",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "casual"
+      ],
+      "crowd": [
+        "groups",
+        "tourists"
+      ],
+      "popularFor": [
+        "lunch",
+        "dinner",
+        "solo dining",
+        "Chongqing noodles",
+        "Tomato Fish Hot Pot"
+      ],
+      "offerings": [
+        "quick bite",
+        "small plates"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Curbside pickup",
+        "Delivery",
+        "Takeout"
+      ],
+      "diningOptions": [
+        "brunch",
+        "lunch",
+        "dinner",
+        "dessert",
+        "seating",
+        "table service"
+      ],
+      "payments": [
+        "credit cards",
+        "debit cards",
+        "NFC mobile payments"
+      ],
+      "children": [
+        "good for kids",
+        "high chairs"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "taste": 4.5,
+      "service": 4.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Chinese",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "website": "bowltifulchinesekitchen.zomi.menu",
+      "phone": "(236) 323-2172",
+      "googleMapsUrl": "https://www.google.com/maps/place/Bowltiful+Chinese+Cuisine/@49.3284346,-123.1627506,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T21:30:00.000Z"
+  },
+  {
+    "id": "food_009",
+    "name": "Taf's Cafe",
+    "nameKr": "타프스 카페",
+    "address": "829 Granville St, Vancouver, BC V6Z 1K7",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Coffee Shop",
+    "subcategoryContent": "cafe",
+    "popularityScore": 0.82,
+    "freshnessScore": 0.7,
+    "rating": 3.2,
+    "reviewCount": 520,
+    "priceRange": "$10–20",
+    "description": "A funky, bohemian-style Mediterranean cafe on Granville Street with eclectic local art and a cozy, laid-back vibe. Known for affordable pasta, sangria, beer, and being a great people-watching spot in downtown Vancouver.",
+    "vibeTags": [
+      "casual",
+      "cozy",
+      "funky",
+      "bohemian",
+      "affordable"
+    ],
+    "operatingHours": {
+      "monday": "11:00 AM – 12:00 AM",
+      "tuesday": "11:00 AM – 12:00 AM",
+      "wednesday": "11:00 AM – 12:00 AM",
+      "thursday": "11:00 AM – 12:00 AM",
+      "friday": "11:00 AM – 12:00 AM",
+      "saturday": "11:00 AM – 12:00 AM",
+      "sunday": "11:00 AM – 12:00 AM"
+    },
+    "startDateTime": "2026-05-18T11:00:00.000Z",
+    "endDateTime": "2026-05-19T00:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoSMvdgsK_dJvhrLa8F-KYe4xNHucH98azc4xoiPL4BT_vBJM9OrWpQOLrdbI93BAi0nyGLdedoUWhLMfPU_KaQ9BH-8yu2Ri4LPxvPdzB5c2hVI6u1GzQ0uT6L_ddcN07ZipiRIERII7M=w408-h544-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "casual",
+        "cozy"
+      ],
+      "crowd": [
+        "tourists"
+      ],
+      "popularFor": [
+        "lunch",
+        "dinner",
+        "solo dining"
+      ],
+      "offerings": [
+        "alcohol",
+        "beer",
+        "cocktails",
+        "coffee",
+        "hard liquor",
+        "quick bite",
+        "wine"
+      ],
+      "serviceOptions": [
+        "Outdoor seating",
+        "Delivery",
+        "Onsite services",
+        "Takeout",
+        "Dine-in"
+      ],
+      "highlights": [
+        "great beer selection"
+      ],
+      "diningOptions": [
+        "lunch",
+        "dinner",
+        "dessert",
+        "seating"
+      ],
+      "amenities": [
+        "washroom",
+        "Wi-Fi",
+        "paid Wi-Fi"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "taste": 3.0,
+      "service": 3.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Mediterranean Cafe",
+      "soloFriendly": true,
+      "groupFriendly": false,
+      "website": "tafscafe.ca",
+      "phone": "(604) 684-8900",
+      "googleMapsUrl": "https://www.google.com/maps/place/Taf's+Cafe/@49.2811227,-123.1204692,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T21:30:00.000Z"
+  },
+  {
+    "id": "food_010",
+    "name": "Brazza Gelato & Coffee",
+    "nameKr": "브라자 젤라토 앤 커피",
+    "address": "1846 Lonsdale Ave, North Vancouver, BC V7M 2J9",
+    "city": "North Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Dessert Shop > Ice Cream Parlor",
+    "subcategoryContent": "cafe",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.8,
+    "rating": 4.2,
+    "reviewCount": 254,
+    "priceRange": "$1–10",
+    "description": "A cozy gelato and coffee cafe on Lonsdale Avenue in North Vancouver, known for its artisan gelato (including Persian-inspired flavors), quality espresso drinks, and a friendly neighborhood atmosphere. A great spot for working on a laptop or a casual afternoon treat.",
+    "vibeTags": [
+      "casual",
+      "cozy",
+      "family-friendly",
+      "laptop-friendly"
+    ],
+    "operatingHours": {
+      "monday": "8:00 AM – 5:00 PM",
+      "tuesday": "8:00 AM – 5:00 PM",
+      "wednesday": "8:00 AM – 5:00 PM",
+      "thursday": "8:00 AM – 5:00 PM",
+      "friday": "8:00 AM – 5:00 PM",
+      "saturday": "8:00 AM – 5:00 PM",
+      "sunday": "8:00 AM – 5:00 PM"
+    },
+    "startDateTime": "2026-05-18T08:00:00.000Z",
+    "endDateTime": "2026-05-18T17:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_vFR4Pu_e8PJuz-YWQ--6EfhuA1RDsRyYygp22KSMXub9XCxL0ZbBv73ECyTmvHv5GO0bP4k8H0oKyFUzwifrFsDNxWf7sZA85G39kAOO79nbeF0JR-4iPbEYBi1MxkzHu7fG=w426-h240-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "casual",
+        "cozy"
+      ],
+      "crowd": [
+        "family-friendly",
+        "groups"
+      ],
+      "popularFor": [
+        "lunch",
+        "solo dining",
+        "working on laptop"
+      ],
+      "offerings": [
+        "coffee",
+        "quick bite",
+        "gelato",
+        "sandwiches",
+        "strudel"
+      ],
+      "serviceOptions": [
+        "Outdoor seating",
+        "Onsite services",
+        "Takeout",
+        "Dine-in"
+      ],
+      "highlights": [
+        "great coffee",
+        "great tea selection"
+      ],
+      "diningOptions": [
+        "breakfast",
+        "lunch",
+        "catering",
+        "dessert",
+        "seating"
+      ],
+      "amenities": [
+        "washroom",
+        "Wi-Fi",
+        "free Wi-Fi"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "taste": 4.0,
+      "service": 4.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Gelato & Coffee",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "website": "sites.google.com",
+      "phone": "(604) 770-0767",
+      "googleMapsUrl": "https://www.google.com/maps/place/Brazza+Gelato+%26+Coffee/@49.3259145,-123.0720331,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T21:30:00.000Z"
+  },
+  {
+    "id": "food_011",
+    "name": "Donair Town",
+    "nameKr": "도네르 타운",
+    "address": "B1-5728 University Blvd, Vancouver, BC",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Falafel Restaurant",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.9,
+    "rating": 3.9,
+    "reviewCount": 88,
+    "priceRange": "$10–20",
+    "description": "A casual kebab and donair shop near UBC campus, offering healthy options, quick bites, and small plates. Popular for solo dining with friendly lunch and dinner service.",
+    "vibeTags": [
+      "casual",
+      "quick-bite",
+      "campus"
+    ],
+    "operatingHours": {
+      "monday": "11:00 AM – 8:00 PM",
+      "tuesday": "11:00 AM – 8:00 PM",
+      "wednesday": "11:00 AM – 8:00 PM",
+      "thursday": "11:00 AM – 8:00 PM",
+      "friday": "11:00 AM – 8:00 PM",
+      "saturday": "11:00 AM – 8:00 PM",
+      "sunday": "11:00 AM – 8:00 PM"
+    },
+    "startDateTime": "2026-05-18T11:00:00.000Z",
+    "endDateTime": "2026-05-18T20:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE34KPMJiAguhH0Pn3izdIBPDcln4VR0RuO96sp4AGtOqrCK21AYNqFemHd5y27nY-Io90d8-NAcvqq_zByKYWXZfz48YQNxWJCYTTaKW4J0CD8jPyMff4-IPqUbLRxJ2Nh2qvv=w426-h240-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "Delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [],
+      "crowd": [],
+      "popularFor": [
+        "Lunch",
+        "Dinner",
+        "Solo dining"
+      ],
+      "offerings": [
+        "Healthy options",
+        "Quick bite",
+        "Small plates"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout",
+        "Delivery"
+      ],
+      "accessibility": [
+        "Wheelchair-accessible washroom"
+      ],
+      "diningOptions": [
+        "Lunch",
+        "Dinner"
+      ],
+      "amenities": [
+        "Washroom"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 3.5,
+      "service": 3.5,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Middle Eastern",
+      "soloFriendly": true,
+      "groupFriendly": false,
+      "website": null,
+      "phone": null,
+      "googleMapsUrl": "https://www.google.com/maps/place/Donair+Town/@49.2665635,-123.2427695,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T09:30:00.000Z"
+  },
+  {
+    "id": "food_012",
+    "name": "Uva Wine & Cocktail Bar / Cibo Trattoria",
+    "nameKr": "우바 와인 앤 칵테일 바 / 치보 트라토리아",
+    "address": "900 Seymour St, Vancouver, BC V6B 3L9",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Italian Restaurant",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.66,
+    "freshnessScore": 0.6,
+    "rating": 4.2,
+    "reviewCount": 554,
+    "priceRange": "$10–60",
+    "description": "A stylish wine and cocktail bar in the Moda Hotel that transforms from a bright breakfast and lunch spot into a swanky lounge with handcrafted cocktails by night. Known for great cocktails, wine list, and live performances.",
+    "vibeTags": [
+      "casual",
+      "cozy",
+      "quiet",
+      "romantic",
+      "trendy",
+      "upscale"
+    ],
+    "operatingHours": {
+      "monday": "7:00 AM – 11:00 PM",
+      "tuesday": "7:00 AM – 11:00 PM",
+      "wednesday": "7:00 AM – 11:00 PM",
+      "thursday": "7:00 AM – 11:00 PM",
+      "friday": "7:00 AM – 11:00 PM",
+      "saturday": "7:00 AM – 11:00 PM",
+      "sunday": "7:00 AM – 11:00 PM"
+    },
+    "startDateTime": "2026-05-18T07:00:00.000Z",
+    "endDateTime": "2026-05-18T23:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF6eoDp5cWPIwX02cnV7rtDvKcJprkfFZUc5ldMAOde3_5XpswxZ-6oqlhUQsWNeBr87-ws8BCypUplvAOL1Qb2Z5sLWyaWyvadK3GlhS6khrHSfIpomRrRrW1rrsxOllAH9d4m=w408-h272-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "Casual",
+        "Cozy",
+        "Quiet",
+        "Romantic",
+        "Trendy",
+        "Upscale"
+      ],
+      "crowd": [
+        "Groups",
+        "Tourists"
+      ],
+      "popularFor": [
+        "Solo dining"
+      ],
+      "offerings": [
+        "Alcohol",
+        "Beer",
+        "Cocktails",
+        "Food",
+        "Food at bar",
+        "Hard liquor",
+        "Wine"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout"
+      ],
+      "highlights": [
+        "Great cocktails",
+        "Great wine list",
+        "Live performances"
+      ],
+      "diningOptions": [
+        "Table service"
+      ],
+      "accessibility": [
+        "Wheelchair-accessible entrance",
+        "Wheelchair-accessible washroom"
+      ],
+      "amenities": [
+        "Washroom"
+      ],
+      "payments": [
+        "Credit cards",
+        "Debit cards",
+        "NFC mobile payments"
+      ],
+      "planning": [
+        "Accepts reservations"
+      ],
+      "parking": [
+        "Paid street parking"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 4.5,
+      "taste": 4.0,
+      "service": 4.0,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": "Italian / Wine Bar",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "website": "uvavancouver.com",
+      "phone": null,
+      "googleMapsUrl": "https://www.google.com/maps/place/Uva+Wine+%26+Cocktail+Bar/@49.2793994,-123.1204307,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T09:30:00.000Z"
+  },
+  {
+    "id": "food_013",
+    "name": "Body Energy Club",
+    "nameKr": "바디 에너지 클럽",
+    "address": "1131 W Georgia St, Vancouver, BC V6E 4M3",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Juice Bar",
+    "subcategoryContent": "bar",
+    "subcategoryDisplayKr": "바",
+    "popularityScore": 0.74,
+    "freshnessScore": 0.7,
+    "rating": 4.7,
+    "reviewCount": 362,
+    "priceRange": "$10–20",
+    "description": "A popular juice and smoothie bar located inside Equinox fitness club on West Georgia Street. Known for fresh smoothies, acai bowls, and healthy supplements with friendly and knowledgeable staff.",
+    "vibeTags": [
+      "healthy",
+      "fitness",
+      "casual",
+      "quick-service"
+    ],
+    "operatingHours": {
+      "monday": "6:00 AM – 10:00 PM",
+      "tuesday": "6:00 AM – 10:00 PM",
+      "wednesday": "6:00 AM – 10:00 PM",
+      "thursday": "6:00 AM – 10:00 PM",
+      "friday": "6:00 AM – 9:00 PM",
+      "saturday": "7:00 AM – 7:00 PM",
+      "sunday": "7:00 AM – 7:00 PM"
+    },
+    "startDateTime": "2026-05-18T06:00:00.000Z",
+    "endDateTime": "2026-05-18T22:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGq0XFFNurmtWwRYucNtjJTm1-NXnaq0xjB_Y2UCidnX7A0PJq3mZQ5VX-17n3K295Q8trDAeFkHAyA2Ye0XE5KKOmxcZ7x2To3eSUkUuwbOHSpCk_-2lmPd1TVJIowxpuIqQdpM7-gaYYI=w408-h408-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout",
+      "No-contact delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [],
+      "crowd": [],
+      "popularFor": [
+        "Smoothies",
+        "Acai bowls",
+        "Supplements"
+      ],
+      "offerings": [
+        "Smoothies",
+        "Acai bowls",
+        "Supplements",
+        "Healthy food"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout",
+        "No-contact delivery"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 4.5,
+      "service": 4.5,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": "Juice Bar",
+      "soloFriendly": true,
+      "groupFriendly": false,
+      "website": "bodyenergyclub.com",
+      "phone": "(778) 650-9707",
+      "googleMapsUrl": "https://www.google.com/maps/place/Body+Energy+Club:+Vancouver+West+Georgia+@+Thurlow/@49.2862731,-123.1235959,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T09:30:00.000Z"
+  },
+  {
+    "id": "food_014",
+    "name": "Tim Hortons",
+    "nameKr": "팀 홀튼스",
+    "address": "5965 Student Union Blvd, Vancouver, BC V6T 1K2",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Coffee Shop",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "popularityScore": 0.82,
+    "freshnessScore": 0.8,
+    "rating": 2.6,
+    "reviewCount": 577,
+    "priceRange": "$1–10",
+    "description": "A Canadian chain coffee shop on UBC campus known for signature premium-blend coffee, light fare, pastries, and breakfast sandwiches. Popular with university students for quick coffee and study breaks.",
+    "vibeTags": [
+      "casual",
+      "campus",
+      "quick-service"
+    ],
+    "operatingHours": {
+      "monday": "7:00 AM – 7:00 PM",
+      "tuesday": "7:00 AM – 7:00 PM",
+      "wednesday": "7:00 AM – 7:00 PM",
+      "thursday": "7:00 AM – 7:00 PM",
+      "friday": "7:00 AM – 7:00 PM",
+      "saturday": "7:00 AM – 7:00 PM",
+      "sunday": "7:00 AM – 7:00 PM"
+    },
+    "startDateTime": "2026-05-18T07:00:00.000Z",
+    "endDateTime": "2026-05-18T19:00:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEASxpgnmQk0xLCU9vXIeWlfLpvfdBHBkr7qr4pX1L2IKPQfaJBrS-wK9MJYHdmNtQYpsuRWFChKILsIeY82gf7rJkQdAPGElcbezOZkWiGHtysVsriEGYH-PPs5-wSm-HJAk0=w408-h306-k-no",
+    "serviceOptions": [
+      "Dine-in",
+      "Takeout"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [
+        "Casual"
+      ],
+      "crowd": [
+        "Groups",
+        "Tourists",
+        "University students"
+      ],
+      "popularFor": [
+        "Breakfast",
+        "Lunch",
+        "Solo dining",
+        "Good for working on laptop"
+      ],
+      "offerings": [
+        "Coffee",
+        "Late-night food",
+        "Quick bite",
+        "Vegetarian options"
+      ],
+      "serviceOptions": [
+        "Dine-in",
+        "Takeout"
+      ],
+      "highlights": [
+        "Great coffee",
+        "Great tea selection"
+      ],
+      "diningOptions": [
+        "Breakfast",
+        "Brunch",
+        "Lunch",
+        "Dinner",
+        "Catering",
+        "Dessert",
+        "Seating",
+        "Table service"
+      ],
+      "accessibility": [
+        "Wheelchair accessible seating",
+        "Wheelchair-accessible entrance",
+        "Wheelchair-accessible parking lot",
+        "Wheelchair-accessible washroom"
+      ],
+      "amenities": [
+        "Washroom",
+        "Wi-Fi",
+        "Free Wi-Fi"
+      ],
+      "payments": [
+        "Credit cards",
+        "Debit cards",
+        "NFC mobile payments"
+      ],
+      "planning": [
+        "Usually a wait",
+        "Accepts reservations"
+      ],
+      "children": [
+        "High chairs",
+        "Kids' menu"
+      ],
+      "parking": [
+        "Paid parking lot",
+        "Paid street parking",
+        "Plenty of parking"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 2.0,
+      "taste": 3.0,
+      "service": 2.5,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Coffee Shop",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "website": "timhortons.ca",
+      "phone": "(604) 822-0682",
+      "googleMapsUrl": "https://www.google.com/maps/place/Tim+Hortons/@49.2687858,-123.2496818,17z"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T09:30:00.000Z"
+  },
+  {
+    "id": "food_015",
+    "name": "The Frying Pan",
+    "nameKr": "더 프라잉 팬",
+    "address": "60 West Cordova",
+    "city": "Vancouver",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Fried Chicken Joint",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.9,
+    "rating": 4.8,
+    "reviewCount": 325,
+    "priceRange": "$10–20",
+    "description": "A popular fried chicken food truck in downtown Vancouver known for crispy, juicy Korean-style fried chicken sandwiches, waffle fries, and spicy options. Friendly staff and quick service make it a lunchtime favorite.",
+    "vibeTags": [
+      "casual",
+      "street-food",
+      "quick-bite",
+      "spicy"
+    ],
+    "operatingHours": {
+      "monday": "Closed",
+      "tuesday": "11:00 AM – 2:30 PM",
+      "wednesday": "11:00 AM – 2:30 PM",
+      "thursday": "11:00 AM – 2:30 PM",
+      "friday": "11:00 AM – 2:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "startDateTime": "2026-05-18T11:00:00.000Z",
+    "endDateTime": "2026-05-18T14:30:00.000Z",
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGqdpU-HFOF1Od6s618ptxP4Zv71xcXMKc1ye_Xv3OI1DJ7wyMKOAMyWjnDvgFaxYOupLZAiiiybM9Vy_3klDT9iQx_zJwGSdpdI0DcdJ4F5hQN-JkNNUSrmpYb-XCUqT6z8Ab7=w408-h306-k-no",
+    "serviceOptions": [
+      "Takeout",
+      "No-contact delivery"
+    ],
+    "aboutAttributes": {
+      "atmosphere": [],
+      "crowd": [],
+      "popularFor": [
+        "Fried chicken sandwich",
+        "Waffle fries",
+        "Spicy chicken"
+      ],
+      "offerings": [
+        "Fried chicken",
+        "Korean-style chicken",
+        "Food truck fare"
+      ],
+      "serviceOptions": [
+        "Takeout",
+        "No-contact delivery"
+      ]
+    },
+    "dimensionScores": {
+      "atmosphere": 2.0,
+      "taste": 5.0,
+      "service": 4.5,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Fried Chicken",
+      "soloFriendly": true,
+      "groupFriendly": false,
+      "website": "instagram.com",
+      "phone": "(778) 927-1477",
+      "googleMapsUrl": "https://www.google.com/maps/place/Frying+Pan+food+truck/@49.2865291,-123.1180292,17z",
+      "note": "Listed as 'The Frying Pan' at 60 West Cordova, but matched to 'Frying Pan food truck' at 505 Burrard St. No exact match at the original address."
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T09:30:00.000Z"
+  },
+  {
+    "id": "food_016",
+    "name": "Queensboro Pizza",
+    "nameKr": "퀸즈보로 피자",
+    "address": "1132 Ewen Ave",
+    "city": "New Westminster",
+    "province": "BC",
+    "postalCode": "V3M 5E4",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Pizzeria",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.6,
+    "rating": 4.1,
+    "reviewCount": 423,
+    "description": "Neighborhood pizzeria in Queensborough, New Westminster offering affordable pizza by the slice and full pies with a variety of toppings including tandoori chicken, butter chicken, and classic options. Known for friendly service and great value.",
+    "openingHours": {
+      "monday": "11:00 AM - 10:00 PM",
+      "tuesday": "11:00 AM - 10:00 PM",
+      "wednesday": "11:00 AM - 10:00 PM",
+      "thursday": "11:00 AM - 10:00 PM",
+      "friday": "11:00 AM - 11:00 PM",
+      "saturday": "11:00 AM - 11:00 PM",
+      "sunday": "11:00 AM - 10:00 PM"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T11:00:00",
+      "close": "2026-05-18T22:00:00"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvhPo8vtmowqj3FW1cvGrkyiMt0twl00RQ3BoLoQLusSMK-CJ9wuttPPYt1LSXgUiVcDJUou0m-Rk9tqGMhXAXPiaaJoViVL5s5Z94i2XTPqZS-psplerbjDsI69OPI10v8oYcmNY37MFk=w478-h240-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvhPo8vtmowqj3FW1cvGrkyiMt0twl00RQ3BoLoQLusSMK-CJ9wuttPPYt1LSXgUiVcDJUou0m-Rk9tqGMhXAXPiaaJoViVL5s5Z94i2XTPqZS-psplerbjDsI69OPI10v8oYcmNY37MFk=w478-h240-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHz_QYtIHhYKmq5g590433QFwSW12aQXGG2ZdTL__2tZS3BF20u7NVNhjQo2S9n7dqvnR5ADYLUXppukMevK2hXS5cXbmcHGRv-CzpUqPt9Qmq9iQj_cwhoTluHfHi3eLWljnHu=w224-h224-p-k-no"
+    ],
+    "website": "queensboropizza.com",
+    "phoneNumber": "(604) 515-9696",
+    "googleMapsUrl": "https://www.google.com/maps/place/Queensboro+Pizza/@49.1844128,-122.9507156,17z",
+    "serviceOptions": {
+      "dineIn": true,
+      "takeout": true,
+      "delivery": true,
+      "noContactDelivery": true
+    },
+    "vibeTags": [
+      "casual",
+      "neighborhood",
+      "family-friendly",
+      "value"
+    ],
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 3.5,
+      "service": 3.5,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": [
+        "pizza",
+        "Italian"
+      ],
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "goodForKids": true,
+      "cashOnly": false,
+      "priceRange": "$10-20"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_017",
+    "name": "Commissary Connect",
+    "nameKr": "커미서리 커넥트",
+    "address": "401 Industrial Ave",
+    "city": "Vancouver",
+    "province": "BC",
+    "postalCode": "V6A 2P8",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Food Truck",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.66,
+    "freshnessScore": 0.7,
+    "rating": 5.0,
+    "reviewCount": 33,
+    "description": "Shared-use commercial kitchen facility in Vancouver's industrial district. A hub for food entrepreneurs and startups, offering clean kitchen space, walk-in fridges, and supportive staff. Home to multiple food businesses including bakeries and momo vendors.",
+    "openingHours": {
+      "monday": "Open 24 hours",
+      "tuesday": "Open 24 hours",
+      "wednesday": "Open 24 hours",
+      "thursday": "Open 24 hours",
+      "friday": "Open 24 hours",
+      "saturday": "Open 24 hours",
+      "sunday": "Open 24 hours"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T00:00:00",
+      "close": "2026-05-18T23:59:59"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHDMLtJkC5svqcSIkSgo23mf68eaU55UYRl6MqtIuCaYqisf7czsGW_eIl_7X3PJlIvk4r836QOfjpZblUY_3cQg5W5kL45fOhBAwaONzX0iyM6mNKLW4CoP4um7XgT6_hPvDAql7NBms2H=w408-h408-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHDMLtJkC5svqcSIkSgo23mf68eaU55UYRl6MqtIuCaYqisf7czsGW_eIl_7X3PJlIvk4r836QOfjpZblUY_3cQg5W5kL45fOhBAwaONzX0iyM6mNKLW4CoP4um7XgT6_hPvDAql7NBms2H=w408-h408-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxVCXuAR1zgUw_HybbVGsR8KblMLzyZNC_uS_Cu5kceAhTLIvhM4-0wGreUEDmXX8VUZxVqkx3iltcJOCK1_LbCsH-yDQt-ioLirg4oGRZBKG7wpuCdA6VVzSk4VvXAJz5NYjGDg=w224-h224-p-k-no"
+    ],
+    "website": "commissaryconnect.com",
+    "phoneNumber": "(778) 558-7272",
+    "googleMapsUrl": "https://www.google.com/maps/place/Commissary+Connect+%E2%80%93+401+Industrial+Ave/@49.2700024,-123.0957949,17z",
+    "serviceOptions": {
+      "dineIn": false,
+      "takeout": false,
+      "delivery": false,
+      "noContactDelivery": false
+    },
+    "vibeTags": [
+      "industrial",
+      "entrepreneurial",
+      "community",
+      "professional"
+    ],
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 3.0,
+      "service": 5.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": [
+        "commissary kitchen",
+        "multi-vendor"
+      ],
+      "soloFriendly": false,
+      "groupFriendly": false,
+      "goodForKids": false,
+      "cashOnly": false,
+      "priceRange": null,
+      "note": "Shared-use commercial kitchen, not a traditional restaurant"
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_019",
+    "name": "Anna's Cake House",
+    "nameKr": "안나스 케이크 하우스",
+    "address": "606 E Broadway",
+    "city": "Vancouver",
+    "province": "BC",
+    "postalCode": "V5T 1X6",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Bakery",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "popularityScore": 0.82,
+    "freshnessScore": 0.9,
+    "rating": 4.2,
+    "reviewCount": 316,
+    "description": "Long-established Chinese bakery in Vancouver since the mid-1970s, renowned for specialty cakes including chestnut cake and fresh mango cake. Also offers egg tarts, cream puffs, buns, and savory items like chicken pot pie and curry beef pie. A nostalgic neighborhood bakery destination.",
+    "openingHours": {
+      "monday": "9:30 AM - 6:00 PM",
+      "tuesday": "9:30 AM - 6:00 PM",
+      "wednesday": "9:30 AM - 6:00 PM",
+      "thursday": "9:30 AM - 6:00 PM",
+      "friday": "9:30 AM - 6:00 PM",
+      "saturday": "9:30 AM - 6:00 PM",
+      "sunday": "9:30 AM - 6:00 PM"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T09:30:00",
+      "close": "2026-05-18T18:00:00"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE36Y8N8a6RiRREdoeMhutJ4wW49ugCCUhyKPCnDx4Oex2_qaPE_M-hO2jT73VFjdEJPI_qYcRJVDPmHsUEZxg5kF7Qh3Y0IO4Ywz8MDuxZ2ajHGfIl2h25UVWwEYx4dfK-Bbad=w408-h306-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE36Y8N8a6RiRREdoeMhutJ4wW49ugCCUhyKPCnDx4Oex2_qaPE_M-hO2jT73VFjdEJPI_qYcRJVDPmHsUEZxg5kF7Qh3Y0IO4Ywz8MDuxZ2ajHGfIl2h25UVWwEYx4dfK-Bbad=w408-h306-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLfZI2f4WikSYqHv4DXY1z920yS5M2jv6Ft4omvXS1Irs3fbpeI9MggAm_z5MzjLP8cCq0bgfG-5Lx6qaKoyWHWzXlkrIyPL6zVKdkzQ9uXVwBeaZFTLv1N7RcvwGilBtOKrYM=w224-h224-p-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFN4MtomUPZbYCIJET9dpc-aAIB4VLjPZoPVzEVwWw4lY1lfupFaXbry_8QNTBivY_TdknM-y2NlhmwgnQiyFgwHUzeWki_w9CIDL6UBcEGywsYqqDuXPma0ZH7KSHH7dO_P71D=w224-h224-p-k-no"
+    ],
+    "website": "annas.ca",
+    "phoneNumber": "(604) 876-6532",
+    "googleMapsUrl": "https://www.google.com/maps/place/Anna's+Cake+House/@49.2623253,-123.0908404,17z",
+    "serviceOptions": {
+      "dineIn": false,
+      "takeout": true,
+      "delivery": true,
+      "noContactDelivery": false
+    },
+    "vibeTags": [
+      "nostalgic",
+      "traditional",
+      "neighborhood",
+      "family-owned"
+    ],
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 4.0,
+      "service": 3.0,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": [
+        "Chinese bakery",
+        "bakery",
+        "cakes"
+      ],
+      "soloFriendly": true,
+      "groupFriendly": false,
+      "goodForKids": true,
+      "cashOnly": false,
+      "priceRange": "$1-50",
+      "highlights": [
+        "chestnut cake",
+        "mango cake",
+        "egg tarts",
+        "cream puffs",
+        "wedding cakes"
+      ]
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_020",
+    "name": "BT Cafe",
+    "nameKr": "BT 카페",
+    "address": "920 Kingsway",
+    "city": "Vancouver",
+    "province": "BC",
+    "postalCode": "V5V 3C4",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Asian Restaurant > Chinese Restaurant",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.6,
+    "rating": 4.1,
+    "reviewCount": 509,
+    "description": "Hong Kong-style Cantonese cafe (cha chaan teng) on Kingsway known for classic comfort dishes like baked rice with tomato sauce, French toast, milk tea, and beef chow fun. A beloved hidden gem with a mom-and-pop atmosphere. Cash only.",
+    "openingHours": {
+      "monday": "11:00 AM - 8:00 PM",
+      "tuesday": "Closed",
+      "wednesday": "11:00 AM - 8:00 PM",
+      "thursday": "11:00 AM - 8:00 PM",
+      "friday": "11:00 AM - 8:00 PM",
+      "saturday": "11:00 AM - 8:00 PM",
+      "sunday": "11:00 AM - 8:00 PM"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T11:00:00",
+      "close": "2026-05-18T20:00:00"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpkSt2q2inpgFa9xwFn2r6h5Y2z_78DNVXTkGmhPVvkyiHLc7ZogBGt0lAC13SExRm-9SGPPy3FbfkWi13RHO5OnZk9dwCf5nf3W1Qf84mIZSmZmX_DoptbIMk_8eaoeMe9tmcqw=w408-h305-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpkSt2q2inpgFa9xwFn2r6h5Y2z_78DNVXTkGmhPVvkyiHLc7ZogBGt0lAC13SExRm-9SGPPy3FbfkWi13RHO5OnZk9dwCf5nf3W1Qf84mIZSmZmX_DoptbIMk_8eaoeMe9tmcqw=w408-h305-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEB8EPWewUA9en4V_ElzgvtKgaIcq3S6P-8DBY02A12ea1xnO-qN6pS9nCUcZ7FS0gjd4xfhCH06yADC5n9mIdKH2L6yMA6wZfVgimG2g5RPmEbiv0PmAlyouM5HZLnAdqJoz6l=w224-h224-p-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFaujzhb35_vJs5nfLpvYv8PHEjFMCozHmrzXOPKWmlJsZebumj7yeVz-smoj13vjqBxiOB0BR_czTnsOHpi7bpARpHSl0IMWrC3llCbwNHNZTDOz0_26Q8aKhpDmSPeo5NuCWyTA=w224-h224-p-k-no"
+    ],
+    "website": null,
+    "phoneNumber": "(604) 872-3368",
+    "googleMapsUrl": "https://www.google.com/maps/place/BT+Cafe/@49.2543161,-123.0850815,17z",
+    "serviceOptions": {
+      "dineIn": true,
+      "takeout": true,
+      "delivery": true,
+      "noContactDelivery": false
+    },
+    "vibeTags": [
+      "hidden gem",
+      "nostalgic",
+      "mom-and-pop",
+      "comfort food",
+      "casual"
+    ],
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "taste": 4.0,
+      "service": 3.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": [
+        "Cantonese",
+        "Hong Kong-style",
+        "cha chaan teng"
+      ],
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "goodForKids": true,
+      "cashOnly": true,
+      "priceRange": "$10-20",
+      "highlights": [
+        "baked rice with fish fillet",
+        "French toast",
+        "milk tea",
+        "beef chow fun",
+        "pork chop"
+      ]
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_024",
+    "name": "Van Cha 温茶里",
+    "nameKr": "반 차 온차리",
+    "address": "433 Hornby St",
+    "city": "Vancouver",
+    "province": "BC",
+    "postalCode": "V6C 2Y2",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Tea Room",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "popularityScore": 0.5,
+    "freshnessScore": 0.7,
+    "rating": 4.6,
+    "reviewCount": 106,
+    "description": "Cozy downtown teahouse offering premium traditional Chinese leaf tea tastings including black tea, white tea, oolong, and Pu-erh. Features an authentic tea master, calming minimalist setting, handcrafted incense, and tea accessories. A peaceful retreat from the busy city for both tea newcomers and aficionados.",
+    "openingHours": {
+      "monday": "12:00 PM - 5:00 PM",
+      "tuesday": "12:00 PM - 5:00 PM",
+      "wednesday": "12:00 PM - 5:00 PM",
+      "thursday": "12:00 PM - 5:00 PM",
+      "friday": "12:00 PM - 5:00 PM",
+      "saturday": "12:00 PM - 5:00 PM",
+      "sunday": "12:00 PM - 5:00 PM"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T12:00:00",
+      "close": "2026-05-18T17:00:00"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEt8BYT1NRNGsA7XJiFvq-b1Pg37F3bdnh3lnf1OblVVf35oXwH0F8f0NM8v9JzgeJRxw0H34o5fhUTo9xnl3qE4zEw6zzOABHpVT4Uo2kj3eUCylaLkg0Ca4svonBJh8T5026s4fuxbTr2=w408-h544-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEt8BYT1NRNGsA7XJiFvq-b1Pg37F3bdnh3lnf1OblVVf35oXwH0F8f0NM8v9JzgeJRxw0H34o5fhUTo9xnl3qE4zEw6zzOABHpVT4Uo2kj3eUCylaLkg0Ca4svonBJh8T5026s4fuxbTr2=w408-h544-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH7pnp2sM3VqgRF0HKGvr3Mkadym9CfXL5PnQ784ERe90ON6sOMIHvaEJtRqMUum7-ZVPOEbrgXMESoiQZ3r_taOH2TTI4PcwVLSLCdWvqDU3dW7ToVTEfdnbEoFEj0r39yPmWKRw--yDAq=w529-h298-k-no"
+    ],
+    "website": "vancha.ca",
+    "phoneNumber": "(604) 564-6999",
+    "googleMapsUrl": "https://www.google.com/maps/place/VANCHA+Downtown+Shop+%E6%B8%A9%E8%8C%B6%E9%87%8CDT%E5%BA%97/@49.286284,-123.1164945,17z",
+    "serviceOptions": {
+      "dineIn": true,
+      "takeout": false,
+      "delivery": true,
+      "noContactDelivery": false
+    },
+    "vibeTags": [
+      "peaceful",
+      "minimalist",
+      "zen",
+      "cozy",
+      "artisanal"
+    ],
+    "dimensionScores": {
+      "atmosphere": 4.0,
+      "taste": 4.0,
+      "service": 4.5,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": [
+        "Chinese tea",
+        "tea tasting"
+      ],
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "goodForKids": false,
+      "cashOnly": false,
+      "priceRange": "$10-30",
+      "highlights": [
+        "tea tasting experience",
+        "black tea",
+        "oolong",
+        "Pu-erh",
+        "handcrafted incense",
+        "tea accessories"
+      ]
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_025",
+    "name": "Le Pho Vietnamese Cuisine",
+    "nameKr": "르 포 베트남 퀴진",
+    "address": "2503 E Hastings St",
+    "city": "Vancouver",
+    "province": "BC",
+    "postalCode": "V5K 1Z2",
+    "country": "CA",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "category_label": "Dining and Drinking > Restaurant > Asian Restaurant > Vietnamese Restaurant",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "popularityScore": 0.58,
+    "freshnessScore": 0.8,
+    "rating": 4.5,
+    "reviewCount": 829,
+    "description": "Basic strip-mall Vietnamese cafe in East Vancouver offering traditional fare including pho, banh mi, spring rolls, deep fried chicken wings, and hot and sour soup. A family-run establishment known for reliable comfort food at great value. Closed on Tuesdays.",
+    "openingHours": {
+      "monday": "11:00 AM - 8:00 PM",
+      "tuesday": "Closed",
+      "wednesday": "11:00 AM - 8:00 PM",
+      "thursday": "11:00 AM - 8:00 PM",
+      "friday": "11:00 AM - 8:00 PM",
+      "saturday": "11:00 AM - 8:00 PM",
+      "sunday": "11:00 AM - 8:00 PM"
+    },
+    "todayOpeningHours": {
+      "open": "2026-05-18T11:00:00",
+      "close": "2026-05-18T20:00:00"
+    },
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG_VYzcZr5HINu--Omu9ahzOpeE2kAfphz9cK1__e9NDvrmkZZ32SyJDaeqY8I1NX2dDKqI529GNbT14zAMQS1fHfeIoGQho5Hs0yr33iCe3fpWY87ub9nZnl4TzIjShM7D-jqUQA=w408-h544-k-no",
+    "imageUrls": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG_VYzcZr5HINu--Omu9ahzOpeE2kAfphz9cK1__e9NDvrmkZZ32SyJDaeqY8I1NX2dDKqI529GNbT14zAMQS1fHfeIoGQho5Hs0yr33iCe3fpWY87ub9nZnl4TzIjShM7D-jqUQA=w408-h544-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH597sbcImi-mXjpZ8L6lcJPMhlmZcvRvx4XM0HVo9ckhYFP3JuatScpTemt2IOVhCxOi-aVm1ms_J1M8P6s_lNP36O6sa4eC589splMrjr9GBebUoIPpQ_9cOXY8p3RjSwrj9u=w224-h224-p-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE7PKU17VqDMGBR9qPg5R4l8nGp9k-L3PmW41OmI21G4QCQRj2aB9yrqL8sgz-tP6VLOeo-BXWpKED7z_kcAuRKvWAsTTeRHa-zPk33gdeMqjf6kr4dtt2uOk4Fpt_QsNRhgcKv=w224-h224-p-k-no"
+    ],
+    "website": "facebook.com",
+    "phoneNumber": "(604) 255-9897",
+    "googleMapsUrl": "https://www.google.com/maps/place/Le+Pho+Vietnamese+Restaurant/@49.281274,-123.054338,17z",
+    "serviceOptions": {
+      "dineIn": true,
+      "takeout": true,
+      "delivery": true,
+      "noContactDelivery": false
+    },
+    "vibeTags": [
+      "family-run",
+      "casual",
+      "comfort food",
+      "neighborhood",
+      "value"
+    ],
+    "dimensionScores": {
+      "atmosphere": 2.0,
+      "taste": 4.0,
+      "service": 3.5,
+      "value_for_money": 4.5
+    },
+    "metadata": {
+      "cuisineType": [
+        "Vietnamese",
+        "pho"
+      ],
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "goodForKids": true,
+      "cashOnly": false,
+      "priceRange": "$10-20",
+      "highlights": [
+        "Rare Beef Pho",
+        "Grilled Lemongrass Chicken",
+        "deep fried spring rolls",
+        "deep fried chicken wings",
+        "hot and sour soup",
+        "banh mi"
+      ]
+    },
+    "dataQuality": "enriched",
+    "updatedAt": "2026-05-18T12:00:00Z"
+  },
+  {
+    "id": "food_026",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "nameEn": "Blenz Coffee",
+    "nameKr": "블렌즈 커피",
+    "description": "Canadian specialty coffee chain known for premium hand-crafted beverages with cozy neighbourhood vibes, free Wi-Fi, and welcoming atmosphere for remote work and casual meetings.",
+    "city": "Vancouver",
+    "district": "Vancouver",
+    "address": "508 West Hastings Street",
+    "coordinates": {
+      "lat": 49.2848168,
+      "lng": -123.1260461
+    },
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXIRgIV0KwYg7IebmbfBD7VpOLI4A6fqSfzuwIziqy_0pcay_kT04OFV4gvmogswaPKJ_FG44aD613K-8YUDynv08hkyX-Uc4hwBfkKuC9DI6NaL62Fpp8sEGUgEHsnoSiw1wKv825GrOF=w426-h240-k-no",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": true,
+    "sourceType": "fsq_os",
+    "dataQuality": "enriched",
+    "rating": 4.1,
+    "reviewCount": 472,
+    "popularityScore": 0.66,
+    "freshnessScore": 0.9,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "06:00 AM - 10:00 PM",
+      "startDateTime": "2026-05-18T06:00:00",
+      "endDateTime": "2026-05-18T22:00:00"
+    },
+    "vibeTags": [
+      "cozy",
+      "laptop-friendly",
+      "casual",
+      "neighbourhood-cafe",
+      "outdoor-seating"
+    ],
+    "dimensionScores": {
+      "atmosphere": 3.5,
+      "taste": 3.5,
+      "service": 4.0,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": "coffee-shop",
+      "soloFriendly": true,
+      "groupFriendly": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T16:30:00.000Z",
+    "_fsq_category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Coffee Shop",
+    "_enrichment_note": "Exact 508 W Hastings location not found on Google Maps; enriched with chain data from nearest Blenz Coffee (935 Denman St) which had the most reviews."
+  },
+  {
+    "id": "food_028",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "cafe",
+    "subcategoryDisplayKr": "카페",
+    "nameEn": "Tim Hortons",
+    "nameKr": "팀 홀튼스",
+    "description": "Canadian chain for signature premium-blend coffee, plus light fare, pastries and breakfast sandwiches, located in Il Mercato on Commercial Drive with dine-in, takeout, and delivery options.",
+    "city": "Vancouver",
+    "district": "Vancouver",
+    "address": "1635 Commercial Dr",
+    "coordinates": {
+      "lat": 49.2700833,
+      "lng": -123.0700009
+    },
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzdLUJiLqp5gf-3KWq-SvrQJkuZ95QN1rYgrpSUGChkp0aj-Pl2tijuaNDqgFrwqSnJkg1NWO_nogQFKzF9GCRDth9WMUIjN3U860O7Tkk8KuMOEALicn1iUYEYixgr3lGfehw=w532-h240-k-no",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": true,
+    "sourceType": "fsq_os",
+    "dataQuality": "enriched",
+    "rating": 3.8,
+    "reviewCount": 1127,
+    "popularityScore": 0.82,
+    "freshnessScore": 0.7,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "06:00 AM - 10:00 PM",
+      "startDateTime": "2026-05-18T06:00:00",
+      "endDateTime": "2026-05-18T22:00:00"
+    },
+    "vibeTags": [
+      "quick-service",
+      "casual",
+      "familiar",
+      "family-friendly",
+      "grab-and-go"
+    ],
+    "dimensionScores": {
+      "atmosphere": 3.0,
+      "taste": 3.0,
+      "service": 3.5,
+      "value_for_money": 3.5
+    },
+    "metadata": {
+      "cuisineType": "coffee-shop",
+      "soloFriendly": true,
+      "groupFriendly": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T16:30:00.000Z",
+    "_fsq_category_label": "Dining and Drinking > Cafe, Coffee, and Tea House > Coffee Shop"
+  },
+  {
+    "id": "food_030",
     "type": "place",
     "category": "food",
     "subcategoryContent": "restaurant",
     "subcategoryDisplayKr": "식당",
-    "nameEn": "Egg & Stone",
-    "nameKr": "에그 앤 스톤",
-    "description": "Kitsilano의 인기 브런치 스팟. 주말이면 1시간 대기는 기본인 동네 명소. 트러플 에그 베네딕트와 리코타 팬케이크가 시그니처. 인스타에 자주 올라오는 비주얼과 자연광 가득한 인테리어.",
-    "city": "Vancouver",
-    "district": "Kitsilano",
-    "address": "2095 W 4th Ave, Vancouver, BC V6J 1N3",
+    "nameEn": "Kuroki Kaiseki Omakase Kitchen",
+    "nameKr": "쿠로키 가이세키 오마카세 키친",
+    "description": "Intimate upscale Japanese kaiseki and omakase restaurant in Steveston, Richmond, offering multi-course seasonal menus featuring premium sashimi, A5 wagyu, uni, and traditional chawanmushi, with reservation-only seating for a minimum of two guests.",
+    "city": "Richmond",
+    "district": "Richmond",
+    "address": "3880 Chatham St #110",
     "coordinates": {
-      "lat": 49.2706,
-      "lng": -123.1539
+      "lat": 49.1262394,
+      "lng": -123.182134
     },
-    "imageURL": "/mockup/images/food_006.jpg",
-    "priceTier": "$$",
-    "priceLevel": 2,
-    "vibeTags": [
-      "instagrammable",
-      "brunch-spot",
-      "trendy",
-      "bright"
-    ],
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwedgfa2idt8OjsEc3CFGiN_Y4IRCGm6VimNhD1ixdQtSjFXw7BntWn8ph4Tyywjp7laPx9UEw3eSiAO4BFlU_1xaW3F8no6XhyCFLgSJ0HB53dMcwsWV4x88AV9gUn4L0SqnUYg=w426-h240-k-no",
+    "priceTier": "$$$$",
+    "priceLevel": 4,
+    "isActive": true,
+    "sourceType": "fsq_os",
+    "dataQuality": "enriched",
+    "rating": 4.8,
+    "reviewCount": 215,
+    "popularityScore": 0.58,
+    "freshnessScore": 0.9,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon-Sun 8:00-15:00",
-      "startDateTime": null,
-      "endDateTime": null
+      "openingHours": "06:30 PM - 09:30 PM",
+      "startDateTime": "2026-05-18T18:30:00",
+      "endDateTime": "2026-05-18T21:30:00"
     },
-    "dimensionScores": {
-      "atmosphere": 3,
-      "taste": 4,
-      "service": 3.5,
-      "value_for_money": 3.5
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.78,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.3,
-    "reviewCount": 756,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "cuisineType": "Brunch",
-      "soloFriendly": true,
-      "groupFriendly": true
-    }
-  },
-  {
-    "id": "food_007",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "cafe",
-    "subcategoryDisplayKr": "카페",
-    "nameEn": "Vintage House",
-    "nameKr": "빈티지 하우스",
-    "description": "Gastown 좁은 골목에 숨어 있는 빈티지 컨셉 카페. 1970년대 LP와 골동품 가구로 채워진 공간. 시그니처 메뉴는 흑임자 라떼와 호두 파이. 천천히 책 읽기 좋은 곳.",
-    "city": "Vancouver",
-    "district": "Gastown",
-    "address": "210 Carrall St, Vancouver, BC V6B 2J1",
-    "coordinates": {
-      "lat": 49.2839,
-      "lng": -123.1067
-    },
-    "imageURL": "/mockup/images/food_007.jpg",
-    "priceTier": "$$",
-    "priceLevel": 2,
-    "vibeTags": [
-      "vintage",
-      "hidden-gem",
-      "cozy",
-      "instagrammable"
-    ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Wed-Sun 10:00-19:00, Closed Mon-Tue",
-      "startDateTime": null,
-      "endDateTime": null
-    },
-    "dimensionScores": {
-      "atmosphere": 2,
-      "taste": 3.5,
-      "service": 4,
-      "value_for_money": 3.5
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.68,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.1,
-    "reviewCount": 198,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "cuisineType": null,
-      "soloFriendly": true,
-      "groupFriendly": false
-    }
-  },
-  {
-    "id": "food_008",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "cafe",
-    "subcategoryDisplayKr": "카페",
-    "nameEn": "Daily Grind",
-    "nameKr": "데일리 그라인드",
-    "description": "Downtown 비즈니스 지구의 캐주얼 체인 카페. 출근길 직장인들의 빠른 커피 픽업 장소. 가격 대비 양 많은 시그니처 라떼와 베이글 콤보가 강점. 자리는 좁지만 회전율 빠름.",
-    "city": "Vancouver",
-    "district": "Downtown",
-    "address": "888 Burrard St, Vancouver, BC V6Z 1X9",
-    "coordinates": {
-      "lat": 49.2848,
-      "lng": -123.1145
-    },
-    "imageURL": "/mockup/images/food_008.jpg",
-    "priceTier": "$",
-    "priceLevel": 1,
-    "vibeTags": [
-      "casual",
-      "grab-and-go",
-      "modern"
-    ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Mon-Fri 6:30-18:00, Sat-Sun 8:00-17:00",
-      "startDateTime": null,
-      "endDateTime": null
-    },
-    "dimensionScores": {
-      "atmosphere": 2.5,
-      "taste": 2.5,
-      "service": 3,
-      "value_for_money": 4
-    },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.63,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 3.8,
-    "reviewCount": 421,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
-    "metadata": {
-      "cuisineType": null,
-      "soloFriendly": true,
-      "groupFriendly": false
-    }
-  },
-  {
-    "id": "food_009",
-    "type": "place",
-    "category": "food",
-    "subcategoryContent": "bar",
-    "subcategoryDisplayKr": "바",
-    "nameEn": "The Velvet Lounge",
-    "nameKr": "벨벳 라운지",
-    "description": "Yaletown 지하에 위치한 시그니처 칵테일 바. 헤드 바텐더가 직접 만드는 시즌 칵테일과 어둑한 조명, 라이브 재즈가 주말마다 진행. 데이트 코스나 친구 모임의 마무리 장소로 인기.",
-    "city": "Vancouver",
-    "district": "Yaletown",
-    "address": "1132 Hamilton St, Vancouver, BC V6B 2S2",
-    "coordinates": {
-      "lat": 49.2734,
-      "lng": -123.1208
-    },
-    "imageURL": "/mockup/images/food_009.jpg",
-    "priceTier": "$$$",
-    "priceLevel": 3,
     "vibeTags": [
       "upscale",
-      "date-night",
-      "late-night",
-      "intimate"
+      "intimate",
+      "omakase",
+      "seasonal",
+      "reservation-only",
+      "chef-driven"
     ],
-    "schedule": {
-      "type": "recurring",
-      "openingHours": "Tue-Sat 18:00-02:00, Closed Sun-Mon",
-      "startDateTime": null,
-      "endDateTime": null
-    },
     "dimensionScores": {
-      "atmosphere": 4,
+      "atmosphere": 4.5,
       "taste": 4.5,
       "service": 4.5,
-      "value_for_money": 3
+      "value_for_money": 3.5
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.85,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.5,
-    "reviewCount": 317,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
-      "cuisineType": null,
+      "cuisineType": "japanese-kaiseki-omakase",
       "soloFriendly": false,
       "groupFriendly": true
-    }
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T16:30:00.000Z",
+    "_fsq_category_label": "Dining and Drinking > Restaurant > Asian Restaurant > Japanese Restaurant > Sushi Restaurant",
+    "_enrichment_note": "Listed as 'Kuroki Kaiseki Omakase Kitchen 黑木関西会席料理' on Google Maps. Original FSQ name had 'Sashimi Omalase' which appears to be a typo. Actual price is $100+ ($$$$), not $$ as in source data. Reservation only, min 2 people."
   },
   {
-    "id": "food_010",
+    "id": "food_032",
     "type": "place",
     "category": "food",
     "subcategoryContent": "bar",
     "subcategoryDisplayKr": "바",
-    "nameEn": "Sunset Brewing Co.",
-    "nameKr": "선셋 브루잉",
-    "description": "Mount Pleasant의 크래프트 비어 브루어리 탭룸. 매주 새로운 시즌 IPA 출시. 야외 패티오에서 강아지 동반 가능하며, 트럭 푸드 트럭이 주말마다 다른 메뉴로 등장. 캐주얼하고 시끌벅적한 분위기.",
+    "nameEn": "Blind Tiger",
+    "nameKr": "블라인드 타이거",
+    "description": "Industrial-style speakeasy in Chinatown specializing in dumplings and cocktails with a laid-back atmosphere. Disguised as a dumpling shop, ordering the secret menu item reveals a swanky cocktail bar within.",
     "city": "Vancouver",
-    "district": "Mount Pleasant",
-    "address": "2125 Main St, Vancouver, BC V5T 3C5",
+    "district": "Vancouver",
+    "address": "251 E Georgia St, Vancouver, BC V6A 4J7",
     "coordinates": {
-      "lat": 49.2658,
-      "lng": -123.1011
+      "lat": 49.2786624,
+      "lng": -123.0980056
     },
-    "imageURL": "/mockup/images/food_010.jpg",
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjKVPU_Nctk-xLPzh-cDAp0hXJKKugkTMfleLex9ywnmVtW03jce8pFK1KgHzxBV15D88nR9T-pdSsJMUeb7x6kXk2P-2lS244rCo21X5HU2f6o9dSBxvosxZB-X2b5e3cn_Q63UPyUaJf=w408-h544-k-no",
     "priceTier": "$$",
     "priceLevel": 2,
-    "vibeTags": [
-      "lively",
-      "casual",
-      "group-friendly",
-      "outdoor"
-    ],
+    "isActive": true,
+    "sourceType": "fsq_os",
+    "dataQuality": "enriched",
+    "rating": 3.8,
+    "reviewCount": 514,
+    "popularityScore": 0.74,
+    "freshnessScore": 0.7,
     "schedule": {
       "type": "recurring",
-      "openingHours": "Mon-Sun 15:00-23:00",
-      "startDateTime": null,
-      "endDateTime": null
+      "openingHours": "Mon-Thu 17:00-01:00, Fri-Sat 17:00-02:00, Sun 17:00-01:00",
+      "startDateTime": "2026-05-18T17:00:00",
+      "endDateTime": "2026-05-19T01:00:00"
     },
+    "vibeTags": [
+      "speakeasy",
+      "industrial",
+      "trendy",
+      "hidden-gem",
+      "cocktail-focused",
+      "date-night"
+    ],
     "dimensionScores": {
-      "atmosphere": 4.5,
-      "taste": 4,
-      "service": 3.5,
-      "value_for_money": 4
+      "atmosphere": 4.0,
+      "taste": 4.0,
+      "service": 4.0,
+      "value_for_money": 3.0
     },
-    "sourceType": "manual",
-    "dataQuality": "mock",
-    "popularityScore": 0.85,
-    "freshnessScore": 0.65,
-    "isActive": true,
-    "rating": 4.4,
-    "reviewCount": 693,
-    "createdAt": "2026-05-10T00:00:00Z",
-    "updatedAt": "2026-05-10T00:00:00Z",
     "metadata": {
-      "cuisineType": null,
-      "soloFriendly": false,
-      "groupFriendly": true
-    }
+      "cuisineType": "Dumplings & Cocktails",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "dineIn": true,
+      "takeout": true,
+      "delivery": true,
+      "website": "laowai.ca",
+      "priceRange": "$20-70",
+      "googleMapsName": "Blnd Tger Dumplings",
+      "liveMusic": true
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T14:30:00.000Z",
+    "_fsq_category_label": "Dining and Drinking > Bar"
+  },
+  {
+    "id": "food_034",
+    "type": "place",
+    "category": "food",
+    "subcategoryContent": "restaurant",
+    "subcategoryDisplayKr": "식당",
+    "nameEn": "Shawarma Palace",
+    "nameKr": "샤와르마 팰리스",
+    "description": "Popular halal restaurant in Richmond offering generous portions of shawarma, falafel, and other Middle Eastern dishes at affordable prices. Known for flavorful chicken shawarma platters and a loyal local following.",
+    "city": "Richmond",
+    "district": "Richmond",
+    "address": "11020 No 5 Rd #123, Richmond, BC V7A 4E7",
+    "coordinates": {
+      "lat": 49.1323438,
+      "lng": -123.0915123
+    },
+    "imageURL": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG1ZKDiWUUgcdjUtb-1VR2Tj-oS7woJDVQB3V51wWu-cL22opZGP5m2yIkKlMSctLz_B-UNBvJqSm3Vse1tsmYG4rXHK3YYg1ncdfe-BUCGgFHI4PBe5Mvgbp-nNCHsVb4IYhZHyg=w408-h272-k-no",
+    "priceTier": "$$",
+    "priceLevel": 2,
+    "isActive": true,
+    "sourceType": "fsq_os",
+    "dataQuality": "enriched",
+    "rating": 4.0,
+    "reviewCount": 1027,
+    "popularityScore": 0.5,
+    "freshnessScore": 0.9,
+    "schedule": {
+      "type": "recurring",
+      "openingHours": "Mon-Sat 10:00-22:00, Sun 10:00-21:00",
+      "startDateTime": "2026-05-18T10:00:00",
+      "endDateTime": "2026-05-18T22:00:00"
+    },
+    "vibeTags": [
+      "casual",
+      "family-friendly",
+      "budget-friendly",
+      "halal"
+    ],
+    "dimensionScores": {
+      "atmosphere": 2.5,
+      "taste": 4.0,
+      "service": 3.0,
+      "value_for_money": 4.0
+    },
+    "metadata": {
+      "cuisineType": "Middle Eastern / Halal",
+      "soloFriendly": true,
+      "groupFriendly": true,
+      "dineIn": true,
+      "takeout": true,
+      "delivery": true,
+      "website": "shawarmapalacebc.com",
+      "phone": "(604) 284-2742",
+      "priceRange": "$10-20"
+    },
+    "createdAt": "2026-05-18T00:00:00.000Z",
+    "updatedAt": "2026-05-18T14:30:00.000Z",
+    "_fsq_category_label": "Dining and Drinking > Restaurant > Mediterranean Restaurant"
   }
 ]
