@@ -264,6 +264,127 @@ struct AIPreferenceResetPlaceholderView: View {
     }
 }
 
+struct AIPreferenceResetView: View {
+    @ObservedObject var viewModel: RecommendationViewModel
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var loadedPreference: UserPreference?
+    @State private var isLoading = true
+    @State private var isSaving = false
+    @State private var errorMessage: String?
+
+    var body: some View {
+        Group {
+            if isLoading {
+                VStack(spacing: 16) {
+                    ProgressView()
+                        .tint(DooriStyle.accent)
+
+                    Text("취향 정보를 불러오는 중이에요")
+                        .dooriText(.bodySmall)
+                        .foregroundStyle(DooriStyle.secondaryText)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(DooriStyle.canvas)
+            } else if let loadedPreference {
+                PreferenceQuestionnaireView(
+                    mode: .editProfile,
+                    initialPreference: loadedPreference,
+                    isSaving: isSaving,
+                    loadExistingSelection: true,
+                    onBackFromFirstQuestion: { dismiss() },
+                    onComplete: savePreference
+                )
+                .overlay(alignment: .bottom) {
+                    if let errorMessage {
+                        Text(errorMessage)
+                            .dooriText(.captionSmall)
+                            .foregroundStyle(.white)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 10)
+                            .background(Color.red.opacity(0.88), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 112)
+                    }
+                }
+            } else {
+                VStack(spacing: 18) {
+                    Text("취향 정보를 불러오지 못했어요")
+                        .dooriText(.subheading)
+                        .foregroundStyle(DooriStyle.ink)
+
+                    if let errorMessage {
+                        Text(errorMessage)
+                            .dooriText(.bodySmall)
+                            .foregroundStyle(DooriStyle.secondaryText)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 24)
+                    }
+
+                    Button {
+                        Task {
+                            await loadPreference()
+                        }
+                    } label: {
+                        Text("다시 시도")
+                            .dooriText(.body, english: true)
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 54)
+                            .background(DooriStyle.accent, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 16)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(DooriStyle.canvas)
+            }
+        }
+        .navigationBarBackButtonHidden(isSaving)
+        .task {
+            await loadPreference()
+        }
+    }
+
+    @MainActor
+    private func loadPreference() async {
+        isLoading = true
+        errorMessage = nil
+
+        do {
+            loadedPreference = try await viewModel.loadCurrentPreferenceForEditing()
+        } catch {
+            loadedPreference = nil
+            errorMessage = error.localizedDescription
+        }
+
+        isLoading = false
+    }
+
+    private func savePreference(_ preference: UserPreference) {
+        guard !isSaving else { return }
+
+        isSaving = true
+        errorMessage = nil
+
+        Task {
+            do {
+                try await viewModel.saveEditedPreference(preference)
+                await MainActor.run {
+                    isSaving = false
+                    dismiss()
+                }
+            } catch {
+                await MainActor.run {
+                    isSaving = false
+                    errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+}
+
 struct RecentlyViewedPlacesPlaceholderView: View {
     var body: some View {
         // TODO: Show recently viewed places when the recent-history design and data flow are finalized.
