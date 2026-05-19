@@ -24,8 +24,8 @@ struct ForYouView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.top, 70)
-            .padding(.bottom, 28)
+            .padding(.top, 24)
+            .padding(.bottom, 120)
         }
         .background(DooriStyle.canvas)
         .navigationBarBackButtonHidden()
@@ -225,8 +225,8 @@ struct AllPicksView: View {
                 .padding(.top, 8)
             }
             .padding(.horizontal, 16)
-            .padding(.top, 70)
-            .padding(.bottom, 28)
+            .padding(.top, 24)
+            .padding(.bottom, 120)
         }
         .background(DooriStyle.canvas)
         .navigationBarBackButtonHidden()

@@ -41,8 +41,8 @@ struct AccountView: View {
                 )
             }
             .padding(.horizontal, 16)
-            .padding(.top, 74)
-            .padding(.bottom, 40)
+            .padding(.top, 24)
+            .padding(.bottom, 120)
         }
         .background(DooriStyle.canvas)
     }

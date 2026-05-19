@@ -47,15 +47,15 @@ struct AllView: View {
     }
 
     private let columns = [
-        GridItem(.flexible(), spacing: 14),
-        GridItem(.flexible(), spacing: 14)
+        GridItem(.flexible(minimum: 0), spacing: 12),
+        GridItem(.flexible(minimum: 0), spacing: 12)
     ]
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
                 popularSection
-                    .padding(.top, 24)
+                    .padding(.top, 8)
                     .padding(.bottom, 28)
 
                 Divider()
@@ -65,8 +65,8 @@ struct AllView: View {
                     .padding(.top, 24)
             }
             .padding(.horizontal, 17)
-            .padding(.top, 56)
-            .padding(.bottom, 32)
+            .padding(.top, 24)
+            .padding(.bottom, 120)
         }
         .background(DooriStyle.canvas)
         .onAppear {
@@ -160,12 +160,14 @@ struct AllView: View {
                 categoryGrid
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var categoryGrid: some View {
         LazyVGrid(columns: columns, spacing: 16) {
             ForEach(Array(visibleCategoryItems.enumerated()), id: \.element.id) { index, item in
                 CategoryContentCard(item: item, onTap: { onSelectItem(item) })
+                    .frame(maxWidth: .infinity)
                     .onAppear {
                         if index == visibleCategoryItems.count - 1 && visibleCount < filteredCategoryItems.count {
                             visibleCount += 8
@@ -173,6 +175,7 @@ struct AllView: View {
                     }
             }
         }
+        .frame(maxWidth: .infinity)
     }
 
     private func originalIndex(_ item: ContentItem) -> Int {

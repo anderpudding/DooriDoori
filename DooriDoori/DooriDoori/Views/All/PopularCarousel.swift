@@ -23,11 +23,12 @@ struct PopularCarousel: View {
                     }
                     Spacer(minLength: 0)
                 }
-                .padding(.bottom, 28)
+                .padding(.top, 8)
+                .padding(.bottom, 48)
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
-        .frame(height: 433)
+        .frame(height: 440)
         .onAppear {
             UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(DooriStyle.accent)
             UIPageControl.appearance().pageIndicatorTintColor = UIColor(DooriStyle.softGray)

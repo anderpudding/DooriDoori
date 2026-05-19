@@ -10,10 +10,12 @@ struct CategoryContentCard: View {
                 ContentImageView(item: item, height: 147, cornerRadius: 10)
                     .frame(maxWidth: .infinity)
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text(item.category.titleKr)
                         .dooriText(.captionSmall)
                         .foregroundStyle(DooriStyle.secondaryText)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
 
                     Text(item.title)
                         .dooriText(.caption, english: true)
@@ -26,17 +28,19 @@ struct CategoryContentCard: View {
                         Text(item.district)
                             .dooriText(.captionSmall, english: true)
                             .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                     .foregroundStyle(DooriStyle.muted)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(12)
-            .frame(height: 256, alignment: .top)
+            .frame(maxWidth: .infinity, minHeight: 278, alignment: .top)
             .background(DooriStyle.surface)
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.black, lineWidth: 1))
         }
+        .frame(maxWidth: .infinity)
         .buttonStyle(.plain)
     }
 }

@@ -12,6 +12,8 @@ struct SmallFeedCard: View {
                 Text(item.category.titleKr)
                     .dooriText(.captionSmall)
                     .foregroundStyle(DooriStyle.secondaryText)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
 
                 Text(item.title)
                     .dooriText(.subheading, english: true)
@@ -23,6 +25,7 @@ struct SmallFeedCard: View {
                     .dooriText(.bodySmall, english: true)
                     .foregroundStyle(DooriStyle.muted)
                     .lineLimit(1)
+                    .truncationMode(.tail)
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 12)
@@ -53,6 +56,8 @@ struct AllPickRow: View {
                     Text(item.category.titleKr)
                         .dooriText(.captionSmall)
                         .foregroundStyle(DooriStyle.secondaryText)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
 
                     Text(item.title)
                         .dooriText(.subheading, english: true)
@@ -67,6 +72,7 @@ struct AllPickRow: View {
                         Text(item.district)
                             .dooriText(.bodySmall, english: true)
                             .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                     .foregroundStyle(DooriStyle.muted)
                 }

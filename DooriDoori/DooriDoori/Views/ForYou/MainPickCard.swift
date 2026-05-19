@@ -47,6 +47,8 @@ struct MainPickCard: View {
                     Text(item.category.titleKr)
                         .dooriText(.captionSmall)
                         .foregroundStyle(DooriStyle.secondaryText)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
 
                     Text(item.title)
                         .dooriText(.h2, english: true)
@@ -60,10 +62,13 @@ struct MainPickCard: View {
                             Text(item.address)
                                 .dooriText(.bodySmall, english: true)
                                 .lineLimit(1)
+                                .truncationMode(.tail)
                                 .minimumScaleFactor(0.7)
                         }
                         Label(item.priceTier, systemImage: "wallet.pass")
                             .dooriText(.bodySmall, english: true)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                     .foregroundStyle(DooriStyle.longText)
 

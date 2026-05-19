@@ -6,6 +6,16 @@ struct ContentImageView: View {
     var cornerRadius: CGFloat = 10
 
     var body: some View {
+        GeometryReader { proxy in
+            imageContent(width: proxy.size.width)
+        }
+        .frame(height: height)
+        .clipped()
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+    }
+
+    @ViewBuilder
+    private func imageContent(width: CGFloat) -> some View {
         ZStack {
             if let imageURL = item.imageURL, let url = URL(string: imageURL) {
                 AsyncImage(url: url) { phase in
@@ -14,19 +24,21 @@ struct ContentImageView: View {
                         image
                             .resizable()
                             .scaledToFill()
+                            .frame(width: width, height: height)
+                            .clipped()
                     default:
-                        placeholder
+                        placeholder(width: width)
                     }
                 }
             } else {
-                placeholder
+                placeholder(width: width)
             }
         }
-        .frame(height: height)
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+        .frame(width: width, height: height)
+        .clipped()
     }
 
-    private var placeholder: some View {
+    private func placeholder(width: CGFloat) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .fill(DooriStyle.softGray)
@@ -46,5 +58,7 @@ struct ContentImageView: View {
                     .foregroundStyle(.white)
             }
         }
+        .frame(width: width, height: height)
+        .clipped()
     }
 }

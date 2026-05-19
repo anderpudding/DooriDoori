@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8823A2E92FBBE70F00A8797B /* RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8823A2E82FBBE70F00A8797B /* RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf */; };
 		8823A2F32FBBE74100A8797B /* NotoSansKR-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8823A2EA2FBBE74100A8797B /* NotoSansKR-Black.ttf */; };
 		8823A2F42FBBE74100A8797B /* NotoSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8823A2EB2FBBE74100A8797B /* NotoSansKR-Bold.ttf */; };
 		8823A2F52FBBE74100A8797B /* NotoSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8823A2EE2FBBE74100A8797B /* NotoSansKR-Light.ttf */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8823A2E82FBBE70F00A8797B /* RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf"; sourceTree = "<group>"; };
 		8823A2EA2FBBE74100A8797B /* NotoSansKR-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.ttf"; sourceTree = "<group>"; };
 		8823A2EB2FBBE74100A8797B /* NotoSansKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		8823A2EC2FBBE74100A8797B /* NotoSansKR-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		8823A2E72FBBE6EA00A8797B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8823A2E82FBBE70F00A8797B /* RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf */,
 				8823A2EA2FBBE74100A8797B /* NotoSansKR-Black.ttf */,
 				8823A2EB2FBBE74100A8797B /* NotoSansKR-Bold.ttf */,
 				8823A2EC2FBBE74100A8797B /* NotoSansKR-ExtraBold.ttf */,
@@ -272,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8823A2E92FBBE70F00A8797B /* RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf in Resources */,
 				8823A2F32FBBE74100A8797B /* NotoSansKR-Black.ttf in Resources */,
 				8823A2F42FBBE74100A8797B /* NotoSansKR-Bold.ttf in Resources */,
 				8823A2F52FBBE74100A8797B /* NotoSansKR-Light.ttf in Resources */,

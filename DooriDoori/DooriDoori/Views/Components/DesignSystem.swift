@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 enum DooriStyle {
     static let accent = Color(red: 0.357, green: 0.267, blue: 0.773)
@@ -37,12 +38,55 @@ enum DooriTextStyle {
         }
     }
 
-    var weight: Font.Weight {
-        switch self {
-        case .h1: return .black
-        case .h2, .subheading: return .bold
-        case .caption, .navBar: return .medium
-        case .body, .bodySmall, .captionSmall: return .regular
+}
+
+enum AppFont {
+    private enum NotoSansKR {
+        static let black = "NotoSansKR-Black"
+        static let bold = "NotoSansKR-Bold"
+        static let extraBold = "NotoSansKR-ExtraBold"
+        static let extraLight = "NotoSansKR-ExtraLight"
+        static let light = "NotoSansKR-Light"
+        static let medium = "NotoSansKR-Medium"
+        static let regular = "NotoSansKR-Regular"
+        static let semiBold = "NotoSansKR-SemiBold"
+        static let thin = "NotoSansKR-Thin"
+
+        static let registeredNames = [
+            black,
+            bold,
+            extraBold,
+            extraLight,
+            light,
+            medium,
+            regular,
+            semiBold,
+            thin
+        ]
+    }
+
+    static func font(_ style: DooriTextStyle) -> Font {
+        Font.custom(fontName(for: style), size: style.size)
+    }
+
+    #if DEBUG
+    static func validateRegisteredFonts() {
+        for fontName in NotoSansKR.registeredNames where UIFont(name: fontName, size: 12) == nil {
+            print("Missing app font registration: \(fontName). Check UIAppFonts and target membership.")
+        }
+    }
+    #endif
+
+    private static func fontName(for style: DooriTextStyle) -> String {
+        switch style {
+        case .h1:
+            return NotoSansKR.black
+        case .h2, .subheading:
+            return NotoSansKR.bold
+        case .caption, .navBar:
+            return NotoSansKR.medium
+        case .body, .bodySmall, .captionSmall:
+            return NotoSansKR.regular
         }
     }
 }
@@ -53,8 +97,7 @@ extension View {
     }
 
     func dooriText(_ style: DooriTextStyle, english: Bool = false) -> some View {
-        let fontName = english ? "Roboto Flex" : "Noto Sans KR"
-        return font(.custom(fontName, size: style.size).weight(style.weight))
+        font(AppFont.font(style))
             .tracking(english ? style.size * 0.03 : 0)
     }
 }

@@ -385,7 +385,7 @@ struct ReviewWriteView: View {
                 }
 
                 TextEditor(text: $comment)
-                    .font(.custom("Noto Sans KR", size: DooriTextStyle.body.size).weight(DooriTextStyle.body.weight))
+                    .font(AppFont.font(.body))
                     .foregroundStyle(DooriStyle.ink)
                     .scrollContentBackground(.hidden)
                     .padding(10)

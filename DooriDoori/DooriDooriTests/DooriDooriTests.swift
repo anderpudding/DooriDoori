@@ -2,11 +2,16 @@ import Foundation
 import Testing
 @testable import DooriDoori
 
+@Suite(.serialized)
 struct DooriDooriTests {
+    enum TestDataError: Error {
+        case missingReviewedSeedData(URL)
+    }
+
     @Test func reviewedSeedDataDecodesAndUsesNormalizedCategories() throws {
         let items = try reviewedItems()
 
-        #expect(items.count == 30)
+        #expect(items.count == 64)
         #expect(Set(items.map(\.category.rawValue)) == ["food", "events", "lifestyle"])
         #expect(items.filter { $0.type == .event }.allSatisfy { $0.category.rawValue != "event" })
         let allItemsAreActive = items.allSatisfy { $0.isActive }
@@ -229,7 +234,7 @@ struct DooriDooriTests {
             languagePreference: .both,
             updatedAt: Date()
         )
-        #expect(service.rankedItems(for: eventsPreference, items: items).first?.item.id == "event_005")
+        #expect(service.rankedItems(for: eventsPreference, items: items).first?.item.id == "event_luma_029")
 
         let lifestylePreference = UserPreference(
             selectedCategories: ["lifestyle"],
@@ -240,7 +245,7 @@ struct DooriDooriTests {
             languagePreference: .both,
             updatedAt: Date()
         )
-        #expect(service.rankedItems(for: lifestylePreference, items: items).first?.item.id == "lifestyle_009")
+        #expect(service.rankedItems(for: lifestylePreference, items: items).first?.item.id == "lifestyle_001")
     }
 
     @Test func categoryFilteringAndInactiveExclusionWork() {
@@ -301,7 +306,9 @@ struct DooriDooriTests {
             .appendingPathComponent("DooriDoori")
             .appendingPathComponent("dooridoori_reviewed_mock_data")
             .appendingPathComponent("dooridoori_mvp_content_items.json")
-        #expect(FileManager.default.fileExists(atPath: url.path))
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            throw TestDataError.missingReviewedSeedData(url)
+        }
         return url
     }
 

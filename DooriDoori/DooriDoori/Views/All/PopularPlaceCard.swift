@@ -12,6 +12,8 @@ struct PopularPlaceCard: View {
                     Text(item.category.titleKr)
                         .dooriText(.captionSmall)
                         .foregroundStyle(DooriStyle.secondaryText)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
 
                     Text("#\(rank)  \(item.title)")
                         .dooriText(.subheading, english: true)
@@ -26,6 +28,7 @@ struct PopularPlaceCard: View {
                         Text(item.district)
                             .dooriText(.bodySmall, english: true)
                             .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                     .foregroundStyle(DooriStyle.muted)
 
@@ -34,19 +37,21 @@ struct PopularPlaceCard: View {
                             .font(.system(size: 11))
                         Text("\(item.viewCount)명이 관심 있음")
                             .dooriText(.bodySmall)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
                     }
                     .foregroundStyle(DooriStyle.muted)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-                ContentImageView(item: item, height: 88, cornerRadius: 10)
-                    .frame(width: 114)
+                ContentImageView(item: item, height: 82, cornerRadius: 10)
+                    .frame(width: 106)
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .frame(height: 127)
+            .padding(.vertical, 10)
+            .frame(height: 120)
             .background(DooriStyle.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.black, lineWidth: 1))
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(Color.black, lineWidth: 1))
         }
         .buttonStyle(.plain)
     }
