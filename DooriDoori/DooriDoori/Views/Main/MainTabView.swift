@@ -22,6 +22,10 @@ enum MainRoute: Hashable {
     case allPicks
     case notifications
     case writeReview(ContentItem)
+    case editProfile
+    case resetAIPreferences
+    case recentlyViewedPlaces
+    case savedPlaces
 }
 
 struct MainTabView: View {
@@ -52,7 +56,21 @@ struct MainTabView: View {
                             }
                         )
                     case .account:
-                        AccountView(viewModel: recommendations)
+                        AccountView(
+                            viewModel: recommendations,
+                            onEditProfile: {
+                                path.append(.editProfile)
+                            },
+                            onResetAIPreferences: {
+                                path.append(.resetAIPreferences)
+                            },
+                            onShowRecentlyViewed: {
+                                path.append(.recentlyViewedPlaces)
+                            },
+                            onShowSavedPlaces: {
+                                path.append(.savedPlaces)
+                            }
+                        )
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -80,6 +98,14 @@ struct MainTabView: View {
                     NotificationView()
                 case .writeReview(let item):
                     ReviewWriteView(item: item)
+                case .editProfile:
+                    ProfileEditPlaceholderView()
+                case .resetAIPreferences:
+                    AIPreferenceResetPlaceholderView()
+                case .recentlyViewedPlaces:
+                    RecentlyViewedPlacesPlaceholderView()
+                case .savedPlaces:
+                    SavedPlacesPlaceholderView()
                 }
             }
         }
